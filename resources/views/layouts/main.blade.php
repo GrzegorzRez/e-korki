@@ -27,8 +27,8 @@
 
                   </ul>
                    <ul class="nav navbar-nav navbar-right">
-                              <li><a href="#">Rejestracja</a></li>
-                              <li><a href="#">Logowanie</a></li>
+                              <li><a href="{{ route('register') }}">Rejestracja</a></li>
+                              <li><a href="{{ route('login') }}">Logowanie</a></li>
                             </ul>
                </div>
 
