@@ -19,6 +19,7 @@
     </div>
 
     <div class="item">
+      <h2>Tekst</h2>
       <img class="img-rounded center-block" src="images/main_page_slider_photo.jpg" alt="apple">
     </div>
   </div>
