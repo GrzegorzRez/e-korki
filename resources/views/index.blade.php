@@ -9,17 +9,17 @@
   </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img class="img-rounded img-responsive"  src="images/main_page_chalkboard_slider.jpg" alt="Tablica">
+  <div class="carousel-inner carousel">
+    <div class="item active ">
+      <img class="img-rounded"  src="images/main_page_chalkboard_slider.jpg" alt="Tablica">
     </div>
 
     <div class="item">
-      <img class="img-rounded img-responsive" src="images/main_page_reading_book_slide.jpg" alt="Czyta">
+      <img class="img-rounded" src="images/main_page_reading_book_slide.jpg" alt="Czyta">
     </div>
 
     <div class="item">
-      <img class="img-rounded img-responsive" src="images/main_page_slider_photo.jpg" alt="apple">
+      <img class="img-rounded " src="images/main_page_slider_photo.jpg" alt="apple">
     </div>
   </div>
 
