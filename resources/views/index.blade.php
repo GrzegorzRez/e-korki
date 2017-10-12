@@ -11,15 +11,17 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner carousel">
     <div class="item active ">
+      <h2 class="carousel-caption" >Tekst</h2>
       <img class="img-rounded center-block"  src="images/main_page_chalkboard_slider.jpg" alt="Tablica">
     </div>
 
     <div class="item">
+      <h2 class="carousel-caption" >Tekst</h2>
       <img class="img-rounded center-block" src="images/main_page_reading_book_slide.jpg" alt="Czyta">
     </div>
 
     <div class="item">
-      <h2>Tekst</h2>
+      <h2 class="carousel-caption" >Tekst</h2>
       <img class="img-rounded center-block" src="images/main_page_slider_photo.jpg" alt="apple">
     </div>
   </div>
