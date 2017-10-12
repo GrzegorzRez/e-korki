@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', "MainController@index");
+Route::get('/', "MainController@index")->name('index');
