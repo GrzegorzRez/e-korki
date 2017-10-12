@@ -33,20 +33,18 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<<<<<<< HEAD
 <div class="row">
   <div class="col-sm-4">
   	<div class="row text-center"><img width="30%" src="images/cloud_arrow_up.svg"/> </div>
-  	<div class="row text-center">ddds </div>
+  	<div class="row text-center">Udostępnianie materiałów dydaktycznych </div>
   </div>
   <div class="col-sm-4">
   	<div class="row text-center"><img width="30%" src="images/compass.svg"/> </div>
-  	<div class="row text-center">ddds </div>
+  	<div class="row text-center">Mnóstwo ofert z całej polski</div>
   </div>
     <div class="col-sm-4">
   	<div class="row text-center"><img width="30%" src="images/heart-icon.svg"/> </div>
-  	<div class="row text-center">ddds </div>
+  	<div class="row text-center">Korzystaj z usług i oceniaj korepetytorów </div>
   </div>
-=======
->>>>>>> 6c24e0a4adb04e0d61548eb616bfde7908f44640
+
 @endsection
