@@ -33,7 +33,7 @@
                            
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">{{ Auth::user()->name }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                         <li><a href="#">Profil</a></li>
+                         <li><a href="{{ route('profile.index')  }}">Profil</a></li>
                         <li><a href="#">Wiadomości</a></li>
                         <li class="divider"></li>
                         <li>
