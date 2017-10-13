@@ -2,14 +2,12 @@
 Route::get('/', "MainController@index")->name('index');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profil', 'ProfileController@index')->name('profile.index');
 Route::get('/profile/{id}', 'ProfileController@show')->name('profile.show');
 Route::get('/profil/edytuj', 'ProfileController@edit')->name('profile.edit');
-Route::post('/profile/store', 'ProfileController@store')->name('profile.store');
-
+Route::post('/profil/store', 'ProfileController@store')->name('profile.store');
 
 Route::get('/oferty','OfferController@index')->name('offers.index');
 Route::get('/oferty/dodaj', 'OfferController@add')->name('offers.add');
