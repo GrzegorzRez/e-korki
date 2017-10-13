@@ -19,10 +19,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile/{id}', 'ProfileController@profile')->name('profile');
 
-Route::get('/offer','OfferController@index');
-
-
-Route::get('/offer/add', 'OfferController@add');
+Route::get('/oferty','OfferController@index')->name('offers.index');
+Route::get('/oferty/dodaj', 'OfferController@add')->name('offers.add');
+Route::post('/oferty/store', 'OfferController@add')->name('offers.store');
 
 Route::get('/opinie', 'OpinionsController@index')->name('opinions.index');
 

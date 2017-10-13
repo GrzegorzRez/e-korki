@@ -30,6 +30,6 @@ class User extends Authenticatable
     ];
 
     public function opinions(){
-        return $this->hasMany('App\Opinions');
+        return $this->hasMany('App\Opinion');
     }
 }

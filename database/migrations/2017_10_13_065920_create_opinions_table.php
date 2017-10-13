@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOpiononsTable extends Migration
+class CreateOpinionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateOpiononsTable extends Migration
      */
     public function up()
     {
-        Schema::create('opionons', function (Blueprint $table) {
+        Schema::create('opinions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('teacher_id')->unsigned();
             $table->integer('student_id')->unsigned();
@@ -22,10 +22,10 @@ class CreateOpiononsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('opionons',function (Blueprint $table) {
+        Schema::table('opinions',function (Blueprint $table) {
             $table->foreign('teacher_id')->references('id')->on('users');
         });
-        Schema::table('opionons',function (Blueprint $table) {
+        Schema::table('opinions',function (Blueprint $table) {
             $table->foreign('student_id')->references('id')->on('users');
         });
     }
@@ -37,6 +37,6 @@ class CreateOpiononsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('opionons');
+        Schema::dropIfExists('opinions');
     }
 }
