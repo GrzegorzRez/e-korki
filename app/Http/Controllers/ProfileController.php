@@ -31,7 +31,7 @@ class ProfileController extends Controller
 
 	public function store(Request $request)
 	{
-		User::update($request->all());
-		return redirect('profile');
+        Auth::user()->update($request->all());
+		return redirect(route('profile.index'));
 	}
 }
