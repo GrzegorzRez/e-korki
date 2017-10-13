@@ -17,8 +17,8 @@ class CreateOffersTable extends Migration
             $table->increments('id');
             $table->decimal('price_per_hour');
             $table->integer('user_id');
-            $table->text('nazwa');
-            $table->text('opis');
+            $table->text('offer_name');
+            $table->text('description');
             $table->timestamps();
         });
     }
