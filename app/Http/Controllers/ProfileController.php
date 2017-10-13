@@ -22,4 +22,16 @@ class ProfileController extends Controller
     	$opinions = Opinion::all()->where('teacher_id',$id);
     	return view('profile')->with('user', $user)->with('opinions', $opinions);
 	}
+
+	public function edit()
+	{
+		$user = Auth::user();
+		return view('/profile/edit')->with('user',$user);
+	}
+
+	public function store(Request $request)
+	{
+		User::update($request->all());
+		return redirect('profile');
+	}
 }

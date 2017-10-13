@@ -30,14 +30,18 @@
 					        <td>{{$user->location}}</td> 
 					      </tr>
  					 </table>
+ 					 @if(Auth::id()==$user->id)
  					 <button class="btn btn-primary btn-lg">
-                        Edytuj Profil
+                       <a href="{{route('profile.edit')}}"> Edytuj Profil</a>
                     </button>
+					@endif
+
 					<a href="{{  route('opinions.add',['id'=>$user->id]) }}">
 						<button class="btn btn-lg">
 							Wystaw opinię
 						</button>
 					</a>
+
 			</div>
 
 
