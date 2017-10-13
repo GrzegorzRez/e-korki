@@ -57,8 +57,17 @@
   <li><a href="#2kartajust" role="tab" data-toggle="tab">OFERTY</a></li>
 </ul>
 </div>
+	@foreach($opinions as $opinion)
+		<div class="media">
+			<div class="media-body">
+				<h4 class="media-heading">{{ $opinion->student->name }} {{ $opinion->student->surname }}<small><i>Wystawiono: {{ $opinion->created_at }}</i></small></h4>
+				<p>{{ $opinion->content }}</p>
+				<p>Ocena: {{ $opinion->grade }}</p>
+			</div>
+		</div>
+	@endforeach
 <div class="tab-content">
-  <div class="tab-pane" id="1kartajust">Zawartość pierwszej karty</div>
+  <div class="tab-pane" id="1kartajust"></div>
   <div class="tab-pane" id="2kartajust">Zawartość drugiej karty</div>
 </div>
 
