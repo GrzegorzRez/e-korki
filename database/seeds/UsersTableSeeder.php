@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
         $user->surname='Nowak';
         $user->location='Bydgoszcz';
         $user->description='Opis';
-        $user->email='adam@adam.pl';
+        $user->email='adam'.rand(1,100).'@adam.pl';
         $user->password=bcrypt('adam');
 
         $user->save();
