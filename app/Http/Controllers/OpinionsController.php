@@ -2,15 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Opionon;
+use App\Opinion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class OpinionsController extends Controller
 {
     public function index(){
-        $opinions = Opionon::all();
+        $opinions = Opinion::all();
         return view('opinions.index')->with('opinions',$opinions);
+    }
+
+    public function add( User $user ){
+        return view('opinions.index')->with('opinions');
+    }
+
+    public function store( Request $request ){
+        Opinion::create($request->all());
+        return redirect('index');
     }
     
     
