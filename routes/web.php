@@ -18,3 +18,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/offer','OfferController@index');
+
+Route::get('/offer/add', 'OfferController@add');

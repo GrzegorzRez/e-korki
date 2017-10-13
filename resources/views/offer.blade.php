@@ -1,8 +1,10 @@
 @extends('layouts/main')
 @section('content')
-	{{ Auth::user()->name }}
-	{{ Auth::user()->email }}
-	{{ Offers:find(1)->user_id}}
-	{{ Offers:find(1)->user_id }}
-	{{ Offers:find(1)->user_id }}
+	@foreach($offers as $offer)
+		<h4>{{ $offer->user->name }} </h4>
+		<h3>{{ $offer->name }} </h3>
+
+
+
+	@endforeach
 @endsection
