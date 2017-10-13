@@ -22,7 +22,7 @@ class OpinionsController extends Controller
         $opinion = new Opinion($request->all());
         $opinion->student_id = Auth::id();
         $opinion->save();
-        return redirect(route('opinions.index'));
+        return Redirect::back();
     }
     
 }
