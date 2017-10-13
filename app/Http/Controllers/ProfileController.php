@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class ProfileController extends Controller
 {
 	public function profile($id)
     {
-    	//return view('profile')->with('id', $id);
-    	$elo = $id;
-    	return view('profile');
+    	$user = User::find($id);
+    	return view('profile')->with('user', $user);
 	}
 }

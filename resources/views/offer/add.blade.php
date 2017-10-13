@@ -2,12 +2,13 @@
 
 @section('content')
 	<div class="panel-body">
-                    <form class="form-horizontal" method="POST" >
+                    <form class="form-horizontal" method="POST" action="{{route('offers.store')}}">
+                        {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="offer_name" class="col-md-4 control-label">Nazwa Oferty</label>
+                            <label for="name" class="col-md-4 control-label">Nazwa Oferty</label>
 
                             <div class="col-md-6">
-                                <input id="offer_name" type="text" class="form-control" name="offer_name" value="" required autofocus>
+                                <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
                             </div>
                         </div>
 

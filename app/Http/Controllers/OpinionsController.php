@@ -2,16 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Opionon;
+use App\Opinion;
+use App\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class OpinionsController extends Controller
 {
     public function index(){
-        $opinions = Opionon::all();
+        $opinions = Opinion::all();
         return view('opinions.index')->with('opinions',$opinions);
     }
-    
+
+    public function add( User $teacher ){
+        return view('opinions.add')->with('teacher',$teacher);
+    }
+
+    public function store( Request $request ){
+        $opinion = new Opinion($request->all());
+        $opinion->student_id = Auth::id();
+        $opinion->save();
+        return redirect(route('opinions.index'));
+    }
     
 }

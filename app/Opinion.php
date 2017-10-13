@@ -4,8 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Opionon extends Model
+class Opinion extends Model
 {
+    protected $table = 'opinions';
+
     protected $fillable = [
         'teacher_id', 'student_id' , 'content', 'grade'
     ];
