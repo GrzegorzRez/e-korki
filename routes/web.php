@@ -17,6 +17,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/profile/{id}', 'ProfileController@profile')->name('profile');
+
 Route::get('/offer','OfferController@index');
 
+
 Route::get('/offer/add', 'OfferController@add');
+
+Route::get('/opinie', 'OpinionsController@index')->name('opinions.index');
+
