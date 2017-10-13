@@ -7,7 +7,43 @@
     </head>
     <body>
         <header>
+            @auth
+            <nav class = "navbar navbar-default" role = "navigation">
 
+               <div class = "navbar-header">
+                  <button type = "button" class = "navbar-toggle" 
+                     data-toggle = "collapse" data-target = "#example-navbar-collapse">
+                     <span class = "sr-only">Toggle navigation</span>
+                     <span class = "icon-bar"></span>
+                     <span class = "icon-bar"></span>
+                     <span class = "icon-bar"></span>
+                  </button>
+
+                  <a class = "navbar-brand" href = "{{ route('index') }}">e-Korki</a>
+               </div>
+
+               <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+
+
+                  </ul>
+                   <ul class="nav navbar-nav navbar-right">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                   </ul>
+               </div>
+
+            </nav>             
+            @endauth
+            @guest
             <nav class = "navbar navbar-default" role = "navigation">
 
                <div class = "navbar-header">
@@ -32,7 +68,9 @@
                             </ul>
                </div>
 
-            </nav>
+            </nav>   
+            @endauth
+            
             
         </header>
         <div class="container">
