@@ -5,13 +5,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-<<<<<<< HEAD
-Route::get('/profile/{id}', 'ProfileController@profile')->name('profile');
-Route::get('/profile/edit','ProfileController@edit')->name('profile.edit');
-=======
 Route::get('/profile', 'ProfileController@index')->name('profile.index');
 Route::get('/profile/{id}', 'ProfileController@show')->name('profile.show');
->>>>>>> d2a55bba7345322c12b9a9702082adfa331cad8f
 
 Route::get('/oferty','OfferController@index')->name('offers.index');
 Route::get('/oferty/dodaj', 'OfferController@add')->name('offers.add');
