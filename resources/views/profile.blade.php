@@ -34,13 +34,11 @@
  					 <button class="btn btn-primary btn-lg">
                        <a href="{{route('profile.edit')}}"> Edytuj Profil</a>
                     </button>
-<<<<<<< HEAD
                     @endif
-=======
+
 					<button class="btn btn-lg">
 						Wystaw opinię
 					</button>
->>>>>>> d2a55bba7345322c12b9a9702082adfa331cad8f
 			</div>
 
 
