@@ -36,11 +36,17 @@
                          <li><a href="#">Profil</a></li>
                         <li><a href="#">Wiadomości</a></li>
                         <li class="divider"></li>
-                        <li><a href="{{ route('logout') }}"
+                        <li>
+                                        <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Wyloguj się
-                                        </a></li>
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
                     </ul>
                 </li>
             </ul>
