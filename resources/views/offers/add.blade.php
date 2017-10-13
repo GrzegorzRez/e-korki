@@ -1,11 +1,12 @@
 @extends('layouts/main')
 
 @section('content')
+    <h1>Dodaj ofertę</h1>
 	<div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{route('offers.store')}}">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">Nazwa Oferty</label>
+                            <label for="name" class="col-md-4 control-label">Nazwa</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
@@ -13,10 +14,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="description" class="col-md-4 control-label">Opis oferty</label>
+                            <label for="description" class="col-md-4 control-label">Opis</label>
 
                             <div class="col-md-6">
-                                <input id="description" type="text" class="form-control" name="description" value="" required>
+                                <textarea id="description" name="description" class="form-control" required></textarea>
                             </div>
                         </div>
 
