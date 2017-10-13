@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Opinion;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class OpinionsController extends Controller
 {
@@ -21,6 +20,5 @@ class OpinionsController extends Controller
         Opinion::create($request->all());
         return redirect('index');
     }
-    
     
 }
