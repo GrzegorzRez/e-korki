@@ -38,7 +38,7 @@
 
 </div>
 
-<div class="row border-radius-4" style="background-color:#DBE9DF">
+<div class="row profile_description" style="background-color:#DBE9DF">
         <div class="col-sm-2"><img src="/images/info.svg" width="100%"/></div>
            
         <div class="col-sm-10">
