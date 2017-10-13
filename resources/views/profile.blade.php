@@ -33,6 +33,9 @@
  					 <button class="btn btn-primary btn-lg">
                         Edytuj Profil
                     </button>
+					<button class="btn btn-lg">
+						Wystaw opinię
+					</button>
 			</div>
 
 
