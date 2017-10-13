@@ -16,10 +16,21 @@ class UsersTableSeeder extends Seeder
         $user->name='Adam';
         $user->surname='Nowak';
         $user->location='Bydgoszcz';
-        $user->description='Opis';
-        $user->email='adam'.rand(1,100).'@adam.pl';
+        $user->description='Opis życia i kom jestem';
+        $user->email='adam@adam.pl';
         $user->password=bcrypt('adam');
-
         $user->save();
+
+        $faker = Faker\Factory::create();
+        for( $i=0 ; $i < 100 ; $i++ ){
+            $user = new User();
+            $user->name=$faker->firstName();
+            $user->surname=$faker->lastName;
+            $user->location=$faker->city;
+            $user->description=$faker->sentence(64);
+            $user->email=$faker->email;
+            $user->password=bcrypt('123456');
+            $user->save();
+        }
     }
 }
