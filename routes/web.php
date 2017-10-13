@@ -12,3 +12,5 @@ Route::get('/oferty/dodaj', 'OfferController@add')->name('offers.add');
 Route::post('/oferty/store', 'OfferController@store')->name('offers.store');
 
 Route::get('/opinie', 'OpinionsController@index')->name('opinions.index');
+Route::get('/opinie/dodaj/{teacher}', 'OpinionsController@add')->name('opinions.add');
+Route::post('/opinie/store', 'OpinionsController@store')->name('opinions.store');
