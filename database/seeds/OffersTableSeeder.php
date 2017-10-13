@@ -20,5 +20,15 @@ class OffersTableSeeder extends Seeder
         $offer->name='Matematyka';
         $offer->description='Opis oferty';
         $offer->save();
+
+        $faker = Faker\Factory::create();
+        for( $i=1 ; $i <= 100 ; $i++ ){
+            $offer= new Offer();
+            $offer->user_id=$i;
+            $offer->price_per_hour=$faker->numberBetween(2,50);
+            $offer->name=$faker->word;
+            $offer->description=$faker->sentence(40);
+            $offer->save();
+        }
     }
 }

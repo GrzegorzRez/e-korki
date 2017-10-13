@@ -12,14 +12,17 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $user= new User();
-        $user->name='Adam';
-        $user->surname='Nowak';
-        $user->location='Bydgoszcz';
-        $user->description='Opis życia i kom jestem';
-        $user->email='adam@adam.pl';
-        $user->password=bcrypt('adam');
-        $user->save();
+
+        if( User::find(1) == null ){
+            $user= new User();
+            $user->name='Adam';
+            $user->surname='Nowak';
+            $user->location='Bydgoszcz';
+            $user->description='Opis życia i kom jestem';
+            $user->email='adam@adam.pl';
+            $user->password=bcrypt('adam');
+            $user->save();
+        }
 
         $faker = Faker\Factory::create();
         for( $i=0 ; $i < 100 ; $i++ ){
