@@ -14,19 +14,19 @@
 			<div class="col-sm-6">
 					<table class="table table-striped">
 					      <tr>
-					        <td>IMIĘ:</td>
+					        <td><b>IMIĘ:</b></td>
 					        <td>{{$user->name}}</td> 
 					      </tr>
 					      <tr>
-					        <td>NAZWISKO:</td>
+					        <td><b>NAZWISKO:</b></td>
 					        <td>{{$user->surname}}</td> 
 					      </tr>
 					      <tr>
-					        <td>EMAIL:</td>
+					        <td><b>EMAIL:</b></td>
 					        <td>{{$user->email}}</td> 
 					      </tr>
 					      <tr>
-					        <td>MIASTO:</td>
+					        <td><b>MIASTO:</b></td>
 					        <td>{{$user->location}}</td> 
 					      </tr>
  					 </table>
@@ -45,9 +45,19 @@
         	<h2>Kilka słów o mnie...</h2>
       	 		<p> {{$user->description}}</p>
       	</div>
-            
  </div>
 
+
+<div>
+<ul class="nav nav-tabs nav-justified" role="tablist">
+  <li><a href="#1kartajust" role="tab" data-toggle="tab">OPINIE</a></li>
+  <li><a href="#2kartajust" role="tab" data-toggle="tab">OFERTY</a></li>
+</ul>
 </div>
-           
+<div class="tab-content">
+  <div class="tab-pane" id="1kartajust">Zawartość pierwszej karty</div>
+  <div class="tab-pane" id="2kartajust">Zawartość drugiej karty</div>
+</div>
+
+</div>
 @endsection
