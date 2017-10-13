@@ -38,8 +38,7 @@
         <div class="container">
         @yield('content')
         </div>
-        <footer>
-            
+        <footer class="footer">
         </footer>
     </body>
     <script src="js/app.js"></script>

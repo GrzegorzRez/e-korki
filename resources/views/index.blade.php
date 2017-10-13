@@ -60,7 +60,7 @@
   	<div class="row text-center"><p class="lead"><b>Przeglądaj oferty korepetytorów z całej Polski i wybierz te, które najbardziej Ci odpowiadają!</b></p> </div>
   </div>
     <div class="col-sm-4">
-  	<div class="row text-center"><img width="40%" src="images/cloud_arrow_up.svg"/> </div>
+  	<div class="row text-center"><img width="40%" src="images/description.svg"/> </div>
   	<div class="row text-center"><p class="lead"><b>Używaj prostego i wygodnego czego(?), aby filtrować oferty według włąsnych preferencji! </b></div>
   </div>
 
