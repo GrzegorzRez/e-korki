@@ -8,8 +8,10 @@ use App\Http\Controllers\Controller;
 
 class OpinionsController extends Controller
 {
-    public function show( int $id ){
-        $opinion = Opionons::find(1);
-        dd($opinion->teacher());
+    public function index(){
+        $opinions = Opionons::all();
+        return view('opinions.index')->with('opinions',$opinions);
     }
+    
+    
 }
