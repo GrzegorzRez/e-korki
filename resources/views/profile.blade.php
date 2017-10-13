@@ -34,14 +34,8 @@
  					 <button class="btn btn-primary btn-lg">
                        <a href="{{route('profile.edit')}}"> Edytuj Profil</a>
                     </button>
-<<<<<<< HEAD
-                    @endif
 
-					<button class="btn btn-lg">
-						Wystaw opinię
-					</button>
-=======
-					@endif
+                    @endif
 
 					<a href="{{  route('opinions.add',['id'=>$user->id]) }}">
 						<button class="btn btn-lg">
@@ -49,7 +43,6 @@
 						</button>
 					</a>
 
->>>>>>> d8d7bbb2f0196d42acd7507da42b5cb62ce7a470
 			</div>
 
 
