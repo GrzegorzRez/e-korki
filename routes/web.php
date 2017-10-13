@@ -21,3 +21,5 @@ Route::get('/profile/{id}', 'ProfileController@profile')->name('profile');
 
 Route::get('/offer','OfferController@index');
 
+Route::get('/opinie/{id}', 'OpinionsController@show')->name('opinions.show');
+
