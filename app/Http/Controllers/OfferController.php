@@ -11,11 +11,11 @@ class OfferController extends Controller
 {
 	public function index(){
 		$offers = Offer::all();
-		return view('offer')->with('offers',$offers);
+		return view('offers.index')->with('offers',$offers);
 	}
 
 	public function add(){
-		return view('offer/add');
+		return view('offers.add');
 	}
 
 	public function store(Request $request){
