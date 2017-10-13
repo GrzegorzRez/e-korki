@@ -6,6 +6,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile/{id}', 'ProfileController@profile')->name('profile');
+Route::get('/profile/edit','ProfileController@edit')->name('profile.edit');
 
 Route::get('/oferty','OfferController@index')->name('offers.index');
 Route::get('/oferty/dodaj', 'OfferController@add')->name('offers.add');

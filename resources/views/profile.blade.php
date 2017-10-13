@@ -30,9 +30,11 @@
 					        <td>{{$user->location}}</td> 
 					      </tr>
  					 </table>
+ 					 @if(Auth::id()==$user->id)
  					 <button class="btn btn-primary btn-lg">
-                        Edytuj Profil
+                       <a href="{{route('profile.edit')}}"> Edytuj Profil</a>
                     </button>
+                    @endif
 			</div>
 
 

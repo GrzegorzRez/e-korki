@@ -13,4 +13,16 @@ class ProfileController extends Controller
     	$user = User::find($id);
     	return view('profile')->with('user', $user);
 	}
+
+	public function edit()
+	{
+		$user = Auth::user();
+		return view('/profile/edit')->with('user',$user);
+	}
+
+	public function store(Request $request)
+	{
+		User::update($request->all());
+		return redirect('profile');
+	}
 }
