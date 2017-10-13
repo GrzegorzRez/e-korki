@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Offer extends Model
 {
     protected $fillable = [
-        'offer_name', 'description', 'price_per_hour'
+        'name', 'description', 'price_per_hour'
     ];
 
     public function user(){

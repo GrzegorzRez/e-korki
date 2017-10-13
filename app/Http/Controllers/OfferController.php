@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Offer;
+use Illuminate\Support\Facades\Auth;
 
 class OfferController extends Controller
 {
@@ -18,7 +19,10 @@ class OfferController extends Controller
 	}
 
 	public function store(Request $request){
-		return Offer::create($request->all());
+	    $offer = new Offer($request->all());
+        $offer->user_id = Auth::id();
+        $offer->save();
+        return redirect(route('offers.index'));
 	}
     
 }
