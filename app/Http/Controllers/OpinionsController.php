@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Opinion;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OpinionsController extends Controller
 {
@@ -12,13 +14,15 @@ class OpinionsController extends Controller
         return view('opinions.index')->with('opinions',$opinions);
     }
 
-    public function add( User $user ){
-        return view('opinions.index')->with('opinions');
+    public function add( User $teacher ){
+        return view('opinions.add')->with('teacher',$teacher);
     }
 
     public function store( Request $request ){
-        Opinion::create($request->all());
-        return redirect('index');
+        $opinion = new Opinion($request->all());
+        $opinion->student_id = Auth::id();
+        $opinion->save();
+        return redirect(route('opinions.index'));
     }
     
 }

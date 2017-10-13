@@ -14,19 +14,19 @@
 			<div class="col-sm-6">
 					<table class="table table-striped">
 					      <tr>
-					        <td>IMIĘ:</td>
+					        <td><b>IMIĘ:</b></td>
 					        <td>{{$user->name}}</td> 
 					      </tr>
 					      <tr>
-					        <td>NAZWISKO:</td>
+					        <td><b>NAZWISKO:</b></td>
 					        <td>{{$user->surname}}</td> 
 					      </tr>
 					      <tr>
-					        <td>EMAIL:</td>
+					        <td><b>EMAIL:</b></td>
 					        <td>{{$user->email}}</td> 
 					      </tr>
 					      <tr>
-					        <td>MIASTO:</td>
+					        <td><b>MIASTO:</b></td>
 					        <td>{{$user->location}}</td> 
 					      </tr>
  					 </table>
@@ -34,7 +34,13 @@
  					 <button class="btn btn-primary btn-lg">
                        <a href="{{route('profile.edit')}}"> Edytuj Profil</a>
                     </button>
+<<<<<<< HEAD
                     @endif
+=======
+					<button class="btn btn-lg">
+						Wystaw opinię
+					</button>
+>>>>>>> d2a55bba7345322c12b9a9702082adfa331cad8f
 			</div>
 
 
@@ -47,9 +53,28 @@
         	<h2>Kilka słów o mnie...</h2>
       	 		<p> {{$user->description}}</p>
       	</div>
-            
  </div>
 
+
+<div>
+<ul class="nav nav-tabs nav-justified" role="tablist">
+  <li><a href="#1kartajust" role="tab" data-toggle="tab">OPINIE</a></li>
+  <li><a href="#2kartajust" role="tab" data-toggle="tab">OFERTY</a></li>
+</ul>
 </div>
-           
+	@foreach($opinions as $opinion)
+		<div class="media">
+			<div class="media-body">
+				<h4 class="media-heading">{{ $opinion->student->name }} {{ $opinion->student->surname }}<small><i>Wystawiono: {{ $opinion->created_at }}</i></small></h4>
+				<p>{{ $opinion->content }}</p>
+				<p>Ocena: {{ $opinion->grade }}</p>
+			</div>
+		</div>
+	@endforeach
+<div class="tab-content">
+  <div class="tab-pane" id="1kartajust"></div>
+  <div class="tab-pane" id="2kartajust">Zawartość drugiej karty</div>
+</div>
+
+</div>
 @endsection
