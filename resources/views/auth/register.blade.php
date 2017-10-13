@@ -25,6 +25,42 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
+                            <label for="surname" class="col-md-4 control-label">Nazwisko</label>
+
+                            <div class="col-md-6">
+                                <input id="surname" type="text" class="form-control" name="surname" value="{{ old('surname') }}" required>
+
+                                @if ($errors->has('surname'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('surname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
+                            <label for="location" class="col-md-4 control-label">Miejscowość</label>
+
+                            <div class="col-md-6">
+                                <input id="location" type="text" class="form-control" name="location" value="{{ old('location') }}" required>
+
+                                @if ($errors->has('location'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('location') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                            <label for="description" class="col-md-4 control-label">Opis</label>
+
+                            <div class="col-md-6">
+                                <textarea id="description" class="form-control" name="description"></textarea>
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-mail</label>
 
