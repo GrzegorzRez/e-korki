@@ -29,18 +29,16 @@
 					        <td><b>MIASTO:</b></td>
 					        <td>{{$user->location}}</td> 
 					      </tr>
- 					 </table>
- 					 @if(Auth::id()==$user->id)
- 					 <button class="btn btn-primary btn-lg">
-                       <a href="{{route('profile.edit')}}"> Edytuj Profil</a>
-                    </button>
+					</table>
 
+ 					@if(Auth::id()==$user->id)
+					<a class="btn btn-primary btn-lg" role="button" href="{{ route('profile.edit') }}">
+                        Edytuj profil
+					</a>
                     @endif
 
-					<a href="{{  route('opinions.add',['id'=>$user->id]) }}">
-						<button class="btn btn-lg">
-							Wystaw opinię
-						</button>
+					<a class="btn btn-lg" role="button" href="{{  route('opinions.add',['id'=>$user->id]) }}">
+						Wystaw opinię
 					</a>
 
 			</div>
@@ -59,23 +57,26 @@
 
 
 <div>
-<ul class="nav nav-tabs nav-justified" role="tablist">
-  <li><a href="#1kartajust" role="tab" data-toggle="tab">OPINIE</a></li>
-  <li><a href="#2kartajust" role="tab" data-toggle="tab">OFERTY</a></li>
-</ul>
+	<ul class="nav nav-tabs nav-justified" role="tablist">
+	  	<li><a href="#oferty_tab" role="tab" data-toggle="tab">OFERTY</a></li>
+		<li><a href="#opinie_tab" role="tab" data-toggle="tab">OPINIE</a></li>
+	</ul>
 </div>
-	@foreach($opinions as $opinion)
-		<div class="media">
-			<div class="media-body">
-				<h4 class="media-heading">{{ $opinion->student->name }} {{ $opinion->student->surname }}<small><i>Wystawiono: {{ $opinion->created_at }}</i></small></h4>
-				<p>{{ $opinion->content }}</p>
-				<p>Ocena: {{ $opinion->grade }}</p>
-			</div>
-		</div>
-	@endforeach
 <div class="tab-content">
-  <div class="tab-pane" id="1kartajust"></div>
-  <div class="tab-pane" id="2kartajust">Zawartość drugiej karty</div>
+	<div class="tab-pane" id="oferty_tab">
+		OFERTY UŻYTKOWNIKA
+	</div>
+	<div class="tab-pane" id="opinie_tab">
+		@foreach($opinions as $opinion)
+			<div class="media">
+				<div class="media-body">
+					<h4 class="media-heading">{{ $opinion->student->name }} {{ $opinion->student->surname }}<small><i>Wystawiono: {{ $opinion->created_at }}</i></small></h4>
+					<p>{{ $opinion->content }}</p>
+					<p>Ocena: {{ $opinion->grade }}</p>
+				</div>
+			</div>
+		@endforeach
+	</div>
 </div>
 
 </div>
