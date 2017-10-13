@@ -79,7 +79,7 @@
                </div>
 
             </nav>   
-            @endauth
+            @endguest
             
             
         </header>
