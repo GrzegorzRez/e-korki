@@ -41,9 +41,17 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="description" class="col-md-4 control-label">Opis</label>
+
+                            <div class="col-md-6">
+                                <textarea id="description" class="form-control" name="description">{{$user->description}}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Dodaj Ofertę
+                                    Zatwierdź zmiany
                                 </button>
                             </div>
                         </div>
