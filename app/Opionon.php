@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Opionons extends Model
+class Opionon extends Model
 {
     protected $fillable = [
         'teacher_id', 'student_id' , 'content', 'grade'
