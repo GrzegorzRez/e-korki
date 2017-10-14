@@ -25,5 +25,11 @@ class OpinionsController extends Controller
         $opinion->save();
         return redirect(route('profile.show',['id' => $opinion->teacher->id ]));
     }
+
+    public function delete( Opinion $opinion ){
+        if( $opinion->student->id == Auth::id() ){
+            $opinion->delete();
+        }
+    }
     
 }

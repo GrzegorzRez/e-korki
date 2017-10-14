@@ -70,9 +70,16 @@
 		@foreach($opinions as $opinion)
 			<div class="media">
 				<div class="media-body">
-					<h4 class="media-heading">{{ $opinion->student->name }} {{ $opinion->student->surname }}<small><i>Wystawiono: {{ $opinion->created_at }}</i></small></h4>
+					<div class="row">
+						<h4 class="media-heading left">{{ $opinion->student->name }} {{ $opinion->student->surname }}<small class="right"><i>Wystawiono: {{ $opinion->created_at }}</i></small></h4>
+					</div>
 					<p>{{ $opinion->content }}</p>
 					<p>Ocena: {{ $opinion->grade }}</p>
+					@if( $opinion->student->id == Auth::id() )
+					<a class="btn btn-sm" role="button" href="" onclick="sendDeleteOpinionRequest({{  $opinion->id  }})">
+						Usuń
+					</a>
+					@endif
 				</div>
 			</div>
 		@endforeach
@@ -80,4 +87,19 @@
 </div>
 
 </div>
+
+
+
+	<script>
+
+		function sendDeleteOpinionRequest(id) {
+            $.ajax({
+                url: '{{ route('opinions.delete',[ '$opinion'=> '' ]) }}/'+id,
+                type: 'DELETE',
+                data: { _token : '{{ csrf_token() }}' }
+            });
+            location.reload();
+        }
+
+	</script>
 @endsection
