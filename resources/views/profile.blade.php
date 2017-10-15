@@ -40,6 +40,10 @@
 					      </tr>
 					</table>
 				</div>
+				
+				<div>
+					<h1 class="text-center">Średnia ocena: {{ $averageScope  }}</h1>
+				</div>
 
 				<div>
  					@if(Auth::id()==$user->id)
@@ -54,8 +58,6 @@
 				</div>
 
 			</div>
-
-
 </div>
 
 <div class="row profile_description">
@@ -69,19 +71,23 @@
 
 
 <div>
-	<ul class="nav nav-tabs nav-justified" role="tablist">
+	<ul class="nav nav-tabs nav-justified tabs_css" role="tablist">
 	  	<li><a href="#oferty_tab" role="tab" data-toggle="tab">OFERTY</a></li>
 		<li><a href="#opinie_tab" role="tab" data-toggle="tab">OPINIE</a></li>
 	</ul>
 </div>
 <div class="tab-content">
 	<div class="tab-pane" id="oferty_tab">
-		OFERTY UŻYTKOWNIKA
+
+		OFERTY
+
 	</div>
+
+
 	<div class="tab-pane" id="opinie_tab">
-        Średnia ocen: {{ $averageScope  }}
+
 		@foreach($opinions as $opinion)
-			<div class="media">
+			<div class="media opinion">
 				<div class="media-body">
 					<div>
 						<h4 class="media-heading left">{{ $opinion->student->name }} {{ $opinion->student->surname }}<small class="right"><i>Wystawiono: {{ $opinion->created_at }}</i></small></h4>
@@ -115,4 +121,6 @@
         }
 
 	</script>
+
+
 @endsection

@@ -5,7 +5,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profil', 'ProfileController@index')->name('profile.index');
-Route::get('/profile/{id}', 'ProfileController@show')->name('profile.show');
+Route::get('/profil/{id}', 'ProfileController@show')->name('profile.show');
 Route::get('/profil/edytuj', 'ProfileController@edit')->name('profile.edit');
 Route::post('/profil/store', 'ProfileController@store')->name('profile.store');
 

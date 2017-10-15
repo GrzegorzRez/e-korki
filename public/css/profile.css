@@ -7,6 +7,7 @@
 	padding-bottom: 2%;
 	border-style: solid;
 	font-family: 'Kaushan Script';
+	margin-bottom: 1%;
 }
 
 .note_board
@@ -39,4 +40,43 @@
 	margin-top: 25%;
 	font-family: 'Kalam';
 }
+/* ostylowanie ofert/opinii */
+.tabs_css > li
+{
+	border-style: solid;
+	border-radius: 20px;
+	font-weight: bold;
+}
 
+.tabs_css > li > a:link{
+  color: black;
+  background-color: #C5D1C8;
+}
+
+.tabs_css > li > a:hover{
+  background-color: white;
+  	border-style: solid;
+    border-radius: 20px;
+    color: black;
+}
+
+.tabs_css > li > a{
+  border-style: solid;
+  border-radius: 20px !important;
+
+}
+
+.tab-content{
+	border-radius: 20px;
+    background-color:white;
+    border-style: solid;
+    border-radius: 20px;
+    padding:5px
+}
+
+.opinion
+{
+	border-style: solid;
+	border-radius: 20px;
+	padding:2%;
+}
