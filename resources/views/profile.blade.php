@@ -67,6 +67,7 @@
 		OFERTY UŻYTKOWNIKA
 	</div>
 	<div class="tab-pane" id="opinie_tab">
+        Średnia ocen: {{ $averageScope  }}
 		@foreach($opinions as $opinion)
 			<div class="media">
 				<div class="media-body">

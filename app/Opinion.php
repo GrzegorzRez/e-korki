@@ -20,4 +20,14 @@ class Opinion extends Model
         return $this->belongsTo('App\User','student_id');
     }
 
+    public function scopeFindAllForUser($query, User $user)
+    {
+        return $query->where('teacher_id', $user->id)->get();
+    }
+
+    public function scopeAverageGradeForUser($query, User $user)
+    {
+        return $query->where('teacher_id', $user->id)->avg('grade');
+    }
+
 }

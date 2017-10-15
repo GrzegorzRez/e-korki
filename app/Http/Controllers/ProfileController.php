@@ -19,8 +19,9 @@ class ProfileController extends Controller
 	public function show($id)
     {
     	$user = User::find($id);
-    	$opinions = Opinion::all()->where('teacher_id',$id);
-    	return view('profile')->with('user', $user)->with('opinions', $opinions);
+    	$opinions = Opinion::findAllForUser($user);
+        $averageScope = Opinion::averageGradeForUser($user);
+    	return view('profile')->with('user', $user)->with('opinions', $opinions)->with('averageScope',$averageScope);
 	}
 
 	public function edit()
