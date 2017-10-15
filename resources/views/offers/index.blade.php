@@ -5,7 +5,7 @@
 		<h4><a href="{{ route('profile.show',['id'=>$offer->user->id]) }}">{{ $offer->user->name }}</a> </h4>
 		<h3>{{ $offer->name }} </h3>
 		<h3>{{ $offer->price_per_hour }}</h3>
-		<h3>{{ $offer->description }}</h3>
+		<h3>{{ str_limit($offer->description, $limit=1000, $end="...") }}</h3>
 	</div>
 	@endforeach
 @endsection
