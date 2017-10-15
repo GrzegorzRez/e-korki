@@ -24,15 +24,24 @@ class UsersTableSeeder extends Seeder
             $user->save();
         }
 
+        $names = ['Andrzej','Bartek','Cezary','Daniel','Filip','Grzegorz','Hubert','Igor','Jacek','Kacper','Lech','Łukasz','Mateusz','Nikodem','Olaf','Paweł','Robert','Stanisław','Tomasz','Władysław','Zenon'];
+        $surnames = ['Nowak','Kowalski','Wiśniewski','Wójcik','Kowalczyk','Kamiński','Lewandowski','Zieliński','Szymański','Woźniak','Dąbrowski','Kozłowski','Jankowski','Mazur','Wojciechowski','Kwiatkowski','Krawczyk','Kaczmarek','Piotrowski','Grabowski','Zając','Pawłowski','Michalski','Król','Jabłoński'];
+        $locations = ['Warszawa','Kraków','Łódź','Poznań','Wrocław','Gdańsk','Szczecin','Bydgoszcz','Lublin','Katowice','Białystok','Gdynia','Częstochowa','Radom','Sosnowiec','Toruń','Kielce','Rzeszów','Gliwice','Zabrze','Bielsko-Biała','Bytom','Zielona Góra','Rybnik','Ruda Śląska'];
+
         $faker = Faker\Factory::create();
         for( $i=0 ; $i < 100 ; $i++ ){
             $user = new User();
-            $user->name=$faker->firstName();
-            $user->surname=$faker->lastName;
-            $user->location=$faker->city;
-            $user->description=$faker->sentence(64);
-            $user->email=$faker->email;
-            $user->password=bcrypt('123456');
+            $name = $names[array_rand($names)];
+            $surname = $surnames[array_rand($surnames)];
+            $location = $locations[array_rand($locations)];
+            $email = $name.'.'.$surname.'.'.rand(1,100).'@gmail.com';
+            $user->name = $name;
+            $user->surname = $surname;
+            $user->location = $location;
+            $user->description = $faker->sentence(64);
+            $user->email = $email;
+            //$user->email = $faker->email;
+            $user->password = bcrypt('123456');
             $user->save();
         }
     }
