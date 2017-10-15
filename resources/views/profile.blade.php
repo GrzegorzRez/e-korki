@@ -7,12 +7,17 @@
 
 <div class="row">
 
-          	<div class="col-sm-6">
-            	<img src="/images/zdjecie.jpg" class="img-circle"/>
+          	<div class="col-sm-6 profile_picture_div">
+            	<img src="/images/classic.png" class="img-rounded profile_picture img-responsive"/>
             </div>
 
-			<div class="col-sm-6">
-					<table class="table table-striped">
+			<div class="col-sm-6 ">
+				 <div class="contact">
+            		<h1 class="text-center">DANE KONTAKTOWE</h1>
+           		 </div>
+
+				<div  class="note_board">
+					<table class="table">
 					      <tr>
 					        <td><b>IMIĘ:</b></td>
 					        <td>{{$user->name}}</td> 
@@ -29,8 +34,14 @@
 					        <td><b>MIASTO:</b></td>
 					        <td>{{$user->location}}</td> 
 					      </tr>
+					      <tr>
+					        <td><b>TELEFON:</b></td>
+					        <td>OPCJONALNIE</td> 
+					      </tr>
 					</table>
+				</div>
 
+				<div>
  					@if(Auth::id()==$user->id)
 					<a class="btn btn-primary btn-lg" role="button" href="{{ route('profile.edit') }}">
                         Edytuj profil
@@ -40,14 +51,15 @@
 					<a class="btn btn-lg" role="button" href="{{  route('opinions.add',['id'=>$user->id]) }}">
 						Wystaw opinię
 					</a>
+				</div>
 
 			</div>
 
 
 </div>
 
-<div class="row profile_description" style="background-color:#DBE9DF">
-        <div class="col-sm-2"><img src="/images/info.svg" width="100%"/></div>
+<div class="row profile_description">
+        <div class="col-sm-2"><img src="/images/info.png" class="img-responsive"/></div>
            
         <div class="col-sm-10">
         	<h2>Kilka słów o mnie...</h2>
