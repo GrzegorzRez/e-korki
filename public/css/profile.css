@@ -20,7 +20,6 @@
 
 .profile_picture_div
 {
-	min-height: 500px;
 	background-image: url("/images/zdjecie.jpg");
 	background-size: 66% 55%;
 	background-repeat: no-repeat;
@@ -40,3 +39,4 @@
 	margin-top: 25%;
 	font-family: 'Kalam';
 }
+

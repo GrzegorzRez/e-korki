@@ -48,7 +48,7 @@
 					</a>
                     @endif
 
-					<a class="btn btn-lg" role="button" href="{{  route('opinions.add',['id'=>$user->id]) }}">
+					<a class="btn btn-primary btn-lg" role="button" href="{{  route('opinions.add',['id'=>$user->id]) }}">
 						Wystaw opinię
 					</a>
 				</div>
