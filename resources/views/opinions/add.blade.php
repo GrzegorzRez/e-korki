@@ -2,6 +2,7 @@
 @section('content')
 
     <h1 class="text-center">Dodaj opinie o {{ $teacher->name  }} {{ $teacher->surname  }}</h1>
+
     <form class="form-horizontal" method="POST" action="{{route('opinions.store')}}">
         {{ csrf_field() }}
 
@@ -11,7 +12,7 @@
             <label for="content" class="col-md-4 control-label">Treść</label>
 
             <div class="col-md-6">
-                <textarea id="content" class="form-control" name="content" autofocus></textarea>
+                <textarea id="content" class="form-control" name="content" autofocus>{{ old('content') }}</textarea>
             </div>
         </div>
 
@@ -46,6 +47,16 @@
             </div>
         </div>
     </form>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
 @endsection
 

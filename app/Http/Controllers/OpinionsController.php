@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OpinionRequest;
 use App\Opinion;
 use App\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 
 class OpinionsController extends Controller
 {
@@ -19,7 +18,7 @@ class OpinionsController extends Controller
         return view('opinions.add')->with('teacher',$teacher);
     }
 
-    public function store( Request $request ){
+    public function store( OpinionRequest $request ){
         $opinion = new Opinion($request->all());
         $opinion->student_id = Auth::id();
         $opinion->save();
