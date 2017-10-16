@@ -1,4 +1,5 @@
 <?php
+Route::group(['middleware' => 'web'], function () {
 Route::get('/', "MainController@index")->name('index');
 
 Auth::routes();
@@ -17,3 +18,4 @@ Route::get('/opinie', 'OpinionsController@index')->name('opinions.index');
 Route::get('/opinie/dodaj/{teacher}', 'OpinionsController@add')->name('opinions.add');
 Route::post('/opinie/store', 'OpinionsController@store')->name('opinions.store');
 Route::delete('/opinie/{opinion}', 'OpinionsController@delete')->name('opinions.delete');
+});

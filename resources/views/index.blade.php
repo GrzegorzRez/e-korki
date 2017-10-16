@@ -1,6 +1,6 @@
 @extends('layouts/main')
 @section('content')
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -36,6 +36,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
 <h1 class="text-center">Jesteś nauczycielem?</h1>
 <div class="row">
   <div class="col-sm-4">

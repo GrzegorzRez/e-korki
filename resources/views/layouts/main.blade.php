@@ -25,7 +25,7 @@
 
                 @auth
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Ucz innych</a></li>
+                    <li><a href="{{ route('offers.add') }}">Ucz innych</a></li>
                     <li><a href="{{ route('offers.index') }}">Naucz się</a></li>
                 </ul>
 

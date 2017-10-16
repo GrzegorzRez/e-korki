@@ -52,9 +52,11 @@
 					</a>
                     @endif
 
+                    @if(Auth::id()!=$user->id)
 					<a class="btn btn-primary btn-lg" role="button" href="{{  route('opinions.add',['id'=>$user->id]) }}">
 						Wystaw opinię
 					</a>
+					@endif
 				</div>
 
 			</div>
@@ -78,9 +80,8 @@
 </div>
 <div class="tab-content">
 	<div class="tab-pane" id="oferty_tab">
-
-		OFERTY
-
+		
+	OFERTY
 	</div>
 
 
