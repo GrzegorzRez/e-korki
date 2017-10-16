@@ -32,4 +32,8 @@ class User extends Authenticatable
     public function opinions(){
         return $this->hasMany('App\Opinion');
     }
+
+    public function getFullName(){
+        return $this->name.' '.$this->surname;
+    }
 }

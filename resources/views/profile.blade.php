@@ -1,6 +1,6 @@
 @extends('layouts/main')
 
-@section('title',"Profil")
+@section('title',$user->getFullName())
 
 @section('style')
 	<link rel="stylesheet" href="/css/profile.css">
