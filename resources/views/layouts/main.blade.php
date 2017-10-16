@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/footer-basic-centered.css">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Kalam:400,700|Kaushan+Script" rel="stylesheet">
 
 </head>
@@ -62,11 +63,32 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div>
         @yield('content')
     </div>
-    <footer class="footer">
-    </footer>
+    
+    <footer class="footer-basic-centered">
+
+            <p class="footer-company-motto">There's more ahead...</p>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                ·
+                <a href="#">Blog</a>
+                ·
+                <a href="#">Pricing</a>
+                ·
+                <a href="#">About</a>
+                ·
+                <a href="#">Faq</a>
+                ·
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">Company Name &copy; 2015</p>
+
+        </footer>
 </body>
+
 <script src="/js/app.js"></script>
 </html>

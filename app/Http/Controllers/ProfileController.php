@@ -22,7 +22,7 @@ class ProfileController extends Controller
     	$opinions = Opinion::findAllForUser($user);
         $averageScope = Opinion::averageGradeForUser($user);
     	return view('profile')->with('user', $user)->with('opinions', $opinions)->with('averageScope',$averageScope);
-	}
+    }
 
 	public function edit()
 	{

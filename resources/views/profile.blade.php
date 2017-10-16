@@ -82,6 +82,7 @@
 	<div class="tab-pane" id="oferty_tab">
 		
 	OFERTY
+	
 	</div>
 
 

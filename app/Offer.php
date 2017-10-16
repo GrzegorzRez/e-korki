@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Offer extends Model
 {
+
     protected $fillable = [
         'name', 'description', 'price_per_hour'
     ];

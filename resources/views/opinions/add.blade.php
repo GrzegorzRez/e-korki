@@ -1,7 +1,7 @@
 @extends('layouts/main')
 @section('content')
 
-    <h1>Dodaj opinie o {{ $teacher->name  }} {{ $teacher->surname  }}</h1>
+    <h1 class="text-center">Dodaj opinie o {{ $teacher->name  }} {{ $teacher->surname  }}</h1>
     <form class="form-horizontal" method="POST" action="{{route('opinions.store')}}">
         {{ csrf_field() }}
 

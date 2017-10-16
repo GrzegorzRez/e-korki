@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="row text-center">
-    	<h2><b>EDYCJA PROFILU UŻYTKOWNIKA</b></h2>
+    	<h2 class="text-center"><b>EDYCJA PROFILU UŻYTKOWNIKA</b></h2>
 	</div>
 
 	<div class="panel-body">

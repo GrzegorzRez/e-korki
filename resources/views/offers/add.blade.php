@@ -1,7 +1,7 @@
 @extends('layouts/main')
 
 @section('content')
-    <h1>Dodaj ofertę</h1>
+    <h1 class="text-center">Dodaj ofertę</h1>
 	<div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{route('offers.store')}}">
                         {{ csrf_field() }}
