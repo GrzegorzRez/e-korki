@@ -1,4 +1,11 @@
 @extends('layouts/main')
+
+@section('title',"Profil")
+
+@section('style')
+	<link rel="stylesheet" href="/css/profile.css">
+@endsection
+
 @section('content')
 <div class="container">
 <div class="row text-center">
