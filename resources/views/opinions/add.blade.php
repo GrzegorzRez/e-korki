@@ -11,16 +11,31 @@
             <label for="content" class="col-md-4 control-label">Treść</label>
 
             <div class="col-md-6">
-                <input id="content" type="text" class="form-control" name="content" required autofocus>
+                <textarea id="content" class="form-control" name="content" autofocus></textarea>
             </div>
         </div>
 
         <div class="form-group">
             <label for="grade" class="col-md-4 control-label">Ocena</label>
 
-            <div class="col-md-6">
-                <input id="grade" type="number" class="form-control" name="grade" required>
-            </div>
+            <label class="radio-inline">
+                <input type="radio" name="grade" value="1">1
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="grade" value="2">2
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="grade" value="3">3
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="grade" value="4">4
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="grade" value="5">5
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="grade" value="6">6
+            </label>
         </div>
 
         <div class="form-group">
