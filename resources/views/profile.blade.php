@@ -57,9 +57,7 @@
 					<a class="btn btn-primary btn-lg" role="button" href="{{ route('profile.edit') }}">
                         Edytuj profil
 					</a>
-                    @endif
-
-                    @if(Auth::id()!=$user->id)
+                    @else
 					<a class="btn btn-primary btn-lg" role="button" href="{{  route('opinions.add',['id'=>$user->id]) }}">
 						Wystaw opinię
 					</a>
