@@ -40,13 +40,14 @@ class Opinion extends Model
     {
         if (isset($user)) {
             $result = $query->where('teacher_id', $user->id)->avg('grade');
-            if( is_float($result) ){
+            if( Opinion::countOfGradeForUser($user) != 0 ){
                 return $result;
             }else{
                 return 0;
             }
         }
     }
+
     public function scopeCountOfGradeForUser($query, User $user, int $gradeValue = null)
     {
         if( isset($user) ) {
