@@ -84,12 +84,14 @@
 
 	<div class="tab-pane" id="opinie_tab">
 		<div class="row">
+			@if(Auth::id()!=$user->id)
 			<div class="col-md-12">
 				<h2>Twoja opinia o {{$user->getFullName()}}</h2>
 			</div>
 			<div class="col-md-6">
 				@include('opinions.form',['teacher' => $user , 'authOpinion' => $authOpinion])
 			</div>
+			@endif
 			<div class="col-md-6">
 				@include('opinions.statistics',['gradesCount' => $gradesCount])
 			</div>
