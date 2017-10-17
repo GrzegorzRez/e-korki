@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ route('index') }}">e-Korki</a>
+                <a class="navbar-brand" href="{{ route('index') }}"><img src="images/logoV2.png" height="33px" class=/></a>
             </div>
             <!-- Collection of nav links, forms, and other content for toggling -->
             <div id="navbarCollapse" class="collapse navbar-collapse">
