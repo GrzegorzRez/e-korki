@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class OfferController extends Controller
 {
 	public function index(){
-		$offers = Offer::all();
+		$offers = Offer::Paginate(10);
 		return view('offers.index')->with('offers',$offers);
 	}
 
@@ -25,5 +25,5 @@ class OfferController extends Controller
         $offer->save();
         return redirect(route('offers.index'));
 	}
-    
+
 }

@@ -9,5 +9,6 @@
 		<h3>{{ $offer->description }}</h3>
 	</div>
 	@endforeach
+	{{ $offers->links() }}
 </div>	
 @endsection
