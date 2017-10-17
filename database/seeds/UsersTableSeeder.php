@@ -34,14 +34,17 @@ class UsersTableSeeder extends Seeder
             $name = $names[array_rand($names)];
             $surname = $surnames[array_rand($surnames)];
             $location = $locations[array_rand($locations)];
-            $email = $name.'.'.$surname.'.'.rand(1,100).'@gmail.com';
+            $email = $name.'.'.$surname.'.'.rand(1,32452).'@gmail.com';
             $user->name = $name;
             $user->surname = $surname;
             $user->location = $location;
             $user->description = $faker->sentence(64);
             $user->email = $email;
-            //$user->email = $faker->email;
             $user->password = bcrypt('123456');
+            $user->save();
+            $avatar = $faker->image(public_path('uploads\avatars'),300,300, 'people');
+            rename($avatar,public_path('uploads\avatars\\'.$user->id.'.jpg'));
+            $user->avatar = $user->id.'.jpg';
             $user->save();
         }
     }
