@@ -26,12 +26,23 @@ class ProfileController extends Controller
         }else{
             $authOpinion = null;
         }
+
+        //statistics
         $averageScope = Opinion::averageGradeForUser($user);
+        $gradesCount['all'] = Opinion::countOfGradeForUser($user);
+        $gradesCount['1'] = Opinion::countOfGradeForUser($user,1);
+        $gradesCount['2'] = Opinion::countOfGradeForUser($user,2);
+        $gradesCount['3'] = Opinion::countOfGradeForUser($user,3);
+        $gradesCount['4'] = Opinion::countOfGradeForUser($user,4);
+        $gradesCount['5'] = Opinion::countOfGradeForUser($user,5);
+        $gradesCount['6'] = Opinion::countOfGradeForUser($user,6);
+
     	return view('profile')
             ->with('user', $user)
             ->with('opinions', $opinions)
             ->with('averageScope',$averageScope)
-            ->with('authOpinion',$authOpinion);
+            ->with('authOpinion',$authOpinion)
+            ->with('gradesCount',$gradesCount);
     }
 
 	public function edit()

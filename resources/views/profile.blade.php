@@ -47,10 +47,6 @@
 					      </tr>
 					</table>
 				</div>
-				
-				<div>
-					<h1 class="text-center">Średnia ocena: {{ $averageScope  }}</h1>
-				</div>
 
 				<div>
  					@if(Auth::id()==$user->id)
@@ -87,8 +83,17 @@
 	</div>
 
 	<div class="tab-pane" id="opinie_tab">
-		<h2>Twoja opinia o {{$user->getFullName()}}</h2>
-		@include('opinions.form',['teacher' => $user , 'authOpinion' => $authOpinion])
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Twoja opinia o {{$user->getFullName()}}</h2>
+			</div>
+			<div class="col-md-6">
+				@include('opinions.form',['teacher' => $user , 'authOpinion' => $authOpinion])
+			</div>
+			<div class="col-md-6">
+				@include('opinions.statistics',['gradesCount' => $gradesCount])
+			</div>
+		</div>
 		<h2>Opinie innych użytkowników:</h2>
 		@each('opinions.opinion',$opinions,'opinion');
 	</div>

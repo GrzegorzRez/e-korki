@@ -31,9 +31,18 @@ class Opinion extends Model
         return $query->where('teacher_id', $user->id)->where('student_id', Auth::id())->get();
     }
 
+    //statistics
     public function scopeAverageGradeForUser($query, User $user)
     {
         return $query->where('teacher_id', $user->id)->avg('grade');
+    }
+    public function scopeCountOfGradeForUser($query, User $user, int $gradeValue = null)
+    {
+        if( $gradeValue == null ){
+            return $query->where('teacher_id', $user->id)->count();
+        }else{
+            return $query->where('teacher_id', $user->id)->where('grade', $gradeValue)->count();
+        }
     }
 
 }
