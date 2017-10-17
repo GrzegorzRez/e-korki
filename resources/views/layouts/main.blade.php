@@ -75,9 +75,7 @@
             <p class="footer-company-motto">There's more ahead...</p>
 
             <p class="footer-links">
-                <a href="#">Home</a>
-                ·
-                <a href="#">Blog</a>
+                <a href="{{ route('index') }}">Home</a>
                 ·
                 <a href="#">Pricing</a>
                 ·
@@ -88,7 +86,7 @@
                 <a href="#">Contact</a>
             </p>
 
-            <p class="footer-company-name">Company Name &copy; 2015</p>
+            <p class="footer-company-name">e-korki &copy; 2017</p>
 
         </footer>
 </body>
