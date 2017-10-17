@@ -39,7 +39,12 @@ class Opinion extends Model
     public function scopeAverageGradeForUser($query, User $user)
     {
         if (isset($user)) {
-            return $query->where('teacher_id', $user->id)->avg('grade');
+            $result = $query->where('teacher_id', $user->id)->avg('grade');
+            if( is_float($result) ){
+                return $result;
+            }else{
+                return 0;
+            }
         }
     }
     public function scopeCountOfGradeForUser($query, User $user, int $gradeValue = null)

@@ -1,3 +1,8 @@
+@if( $averageScope == 0 )
+    <div class="row">
+        <h4>Brak ocen</h4>
+    </div>
+@else
 <div class="row">
     <div class="col-sm-4">
         <div class="rating-block">
@@ -80,3 +85,4 @@
         </div>
     </div>
 </div>
+@endif
