@@ -28,10 +28,10 @@
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class=""></span>
   </a>
   <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class=""></span>
   </a>
 </div>
 
@@ -61,7 +61,7 @@
   </div>
     <div class="col-sm-4">
   	<div class="row text-center"><img width="25%" src="images/description.svg"/> </div>
-  	<div class="row text-center"><p class="lead"><b>Używaj prostego i wygodnego czego(?), aby filtrować oferty według włąsnych preferencji! </b></div>
+  	<div class="row text-center"><p class="lead"><b>Używaj prostego i wygodnego menu, aby filtrować oferty według własnych preferencji! </b></div>
   </div>
 
 
