@@ -20,11 +20,11 @@
 
 .profile_picture_div
 {
-	background-image: url("/images/zdjecie.jpg");
 	background-size: 66% 55%;
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
 
 .profile_picture
 {
@@ -32,11 +32,11 @@
 	padding-bottom: 5%;
 	padding-left: 5%;
 	padding-right: 5%;
+	border-radius: 50%;
 }
 
 .contact
 {
-	margin-top: 25%;
 	font-family: 'Kalam';
 }
 /* ostylowanie ofert/opinii */

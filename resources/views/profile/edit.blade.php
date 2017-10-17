@@ -6,8 +6,17 @@
 	</div>
 
 	<div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{route('profile.store')}}">
+                    <form class="form-horizontal" method="POST" action="{{route('profile.store')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
+
+                        <div class="form-group">
+                            <label for="avatar" class="col-md-4 control-label">Avatar</label>
+
+                            <div class="col-md-6">
+                                <input id="avatar" type="file" class="form-control" name="avatar" accept="image/*">
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Imię</label>
 
@@ -56,4 +65,14 @@
                             </div>
                         </div>
                     </form>
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+    @endif
 @endsection

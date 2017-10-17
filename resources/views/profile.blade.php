@@ -15,7 +15,7 @@
 <div class="row">
 
           	<div class="col-sm-6 profile_picture_div">
-            	<img src="/images/classic.png" class="img-rounded profile_picture img-responsive"/>
+            	<img src="/uploads/avatars/{{ $user->avatar }}" class="img-rounded profile_picture img-responsive"/>
             </div>
 
 			<div class="col-sm-6 ">

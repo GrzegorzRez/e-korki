@@ -35,8 +35,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">{{ Auth::user()->name }} <b class="caret"></b></a>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"> {{ Auth::user()->getFullName() }} <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('profile.index')  }}">Profil</a></li>
                             <li><a href="#">Wiadomości</a></li>
