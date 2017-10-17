@@ -19,9 +19,19 @@ class ProfileController extends Controller
 	public function show($id)
     {
     	$user = User::find($id);
-    	$opinions = Opinion::findAllForUser($user);
+    	$opinions = Opinion::findFromNotAuthForUser($user);
+    	$authOpinions = Opinion::findFromAuthForUser($user);
+        if( $authOpinions->count() == 1 ){
+            $authOpinion = $authOpinions->first();
+        }else{
+            $authOpinion = null;
+        }
         $averageScope = Opinion::averageGradeForUser($user);
-    	return view('profile')->with('user', $user)->with('opinions', $opinions)->with('averageScope',$averageScope);
+    	return view('profile')
+            ->with('user', $user)
+            ->with('opinions', $opinions)
+            ->with('averageScope',$averageScope)
+            ->with('authOpinion',$authOpinion);
     }
 
 	public function edit()

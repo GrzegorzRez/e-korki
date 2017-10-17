@@ -57,10 +57,6 @@
 					<a class="btn btn-primary btn-lg" role="button" href="{{ route('profile.edit') }}">
                         Edytuj profil
 					</a>
-                    @else
-					<a class="btn btn-primary btn-lg" role="button" href="{{  route('opinions.add',['id'=>$user->id]) }}">
-						Wystaw opinię
-					</a>
 					@endif
 				</div>
 
@@ -91,26 +87,12 @@
 	</div>
 
 	<div class="tab-pane" id="opinie_tab">
+		<h2>Twoja opinia o {{$user->getFullName()}}</h2>
+		@include('opinions.form',['teacher' => $user , 'authOpinion' => $authOpinion])
+		<h2>Opinie innych użytkowników:</h2>
 		@each('opinions.opinion',$opinions,'opinion');
 	</div>
 </div>
 
 </div>
-
-
-
-	<script>
-
-		function sendDeleteOpinionRequest(id) {
-            $.ajax({
-                url: '{{ route('opinions.delete',[ '$opinion'=> '' ]) }}/'+id,
-                type: 'DELETE',
-                data: { _token : '{{ csrf_token() }}' }
-            });
-            location.reload();
-        }
-
-	</script>
-
-
 @endsection

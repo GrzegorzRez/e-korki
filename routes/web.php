@@ -14,8 +14,6 @@ Route::get('/oferty','OfferController@index')->name('offers.index');
 Route::get('/oferty/dodaj', 'OfferController@add')->name('offers.add');
 Route::post('/oferty/store', 'OfferController@store')->name('offers.store');
 
-Route::get('/opinie', 'OpinionsController@index')->name('opinions.index');
-Route::get('/opinie/dodaj/{teacher}', 'OpinionsController@add')->name('opinions.add');
 Route::post('/opinie/store', 'OpinionsController@store')->name('opinions.store');
 Route::delete('/opinie/{opinion}', 'OpinionsController@delete')->name('opinions.delete');
 });

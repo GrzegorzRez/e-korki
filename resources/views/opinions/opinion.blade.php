@@ -5,10 +5,5 @@
         </div>
         <p>{{ $opinion->content }}</p>
         <p>Ocena: {{ $opinion->grade }}</p>
-        @if( $opinion->student->id == Auth::id() )
-            <a class="btn btn-sm" role="button" href="" onclick="sendDeleteOpinionRequest({{  $opinion->id  }})">
-                Usuń
-            </a>
-        @endif
     </div>
 </div>
