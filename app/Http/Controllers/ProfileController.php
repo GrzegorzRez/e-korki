@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileRequest;
 use App\Opinion;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
@@ -48,12 +48,20 @@ class ProfileController extends Controller
 	public function edit()
 	{
 		$user = Auth::user();
-		return view('/profile/edit')->with('user',$user);
+		return view('profile.edit')->with('user',$user);
 	}
 
-	public function store(Request $request)
+	public function store(ProfileRequest $request)
 	{
-        Auth::user()->update($request->all());
+        $user = Auth::user();
+        if(  $request->hasFile('avatar') ){
+            $avatar = $request->avatar;
+            $filename = $user->id.'.'.$avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300,300)->save( public_path('uploads/avatars/'.$filename) );
+            $user->avatar = $filename;
+            $user->save();
+        }
+        $user->update($request->all());
 		return redirect(route('profile.index'));
 	}
 }
