@@ -20,7 +20,7 @@ class Offer extends Model
     public function scopeFindFromAuthForUser($query, User $user)
     {
         if( isset($user) ) {
-            return $query->where('user_id', Auth::id())->get();
+            return $query->where('user_id',$user->id)->get();
         }
     }
 }
