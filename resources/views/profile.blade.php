@@ -77,9 +77,9 @@
 </div>
 <div class="tab-content">
 	<div class="tab-pane" id="oferty_tab">
-		
-	OFERTY
-	
+		<div class="row">
+		</div>
+		@each('offers.offer',$offers,'offer');
 	</div>
 
 	<div class="tab-pane" id="opinie_tab">
