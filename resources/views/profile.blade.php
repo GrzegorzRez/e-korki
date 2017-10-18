@@ -2,7 +2,7 @@
 
 @section('title',$user->getFullName())
 
-@push('style')
+@push('styles')
 	<link rel="stylesheet" href="/css/profile.css">
 @endpush
 
@@ -97,6 +97,9 @@
 			</div>
 		</div>
 		<h2>Opinie innych użytkowników:</h2>
+		@push('styles')
+			<link rel="stylesheet" href="/css/opinion.css">
+		@endpush
 		@each('opinions.opinion',$opinions,'opinion');
 	</div>
 </div>

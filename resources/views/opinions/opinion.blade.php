@@ -1,6 +1,3 @@
-@push('styles')
-    <link rel="stylesheet" href="/css/opinion.css">
-@endpush
 <div class="row review-block">
     <div class="col-xs-3">
         <a href="{{ $opinion->student->getProfileHref() }}"><img src="{{  $opinion->student->getAvatarHref() }}" class="img-rounded img-responsive"></a>
