@@ -11,7 +11,7 @@
 		Cena max: <input type="number" name="price_max" value="{{Input::get('price_max')}}">
 		<div>
 		<div>
-		Miasto nauczyciela: <input type="text" name="city"> <!--chyba warto? -->
+		Lokalizacja: <input type="text" name="location"> <!--chyba warto? -->
 		<div>
 		<div>
 			<label for="">Tryb korepetycji</label>
@@ -29,6 +29,7 @@
 		<h3>{{ $offer->name }} </h3>
 		<h3>{{ $offer->price_per_hour }}</h3>
 		<h3>{{ $offer->description }}</h3>
+		<h4><b>Lokalizacja: </b>{{ $offer->user->location}}</h3>
 	</div>
 	@endforeach
 	{{ $offers->links() }}
