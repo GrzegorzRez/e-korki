@@ -2,9 +2,9 @@
 
 @section('title',$user->getFullName())
 
-@section('style')
+@push('style')
 	<link rel="stylesheet" href="/css/profile.css">
-@endsection
+@endpush
 
 @section('content')
 <div class="container">
@@ -15,7 +15,7 @@
 <div class="row">
 
           	<div class="col-sm-6 profile_picture_div">
-            	<img src="/uploads/avatars/{{ $user->avatar }}" class="img-rounded profile_picture img-responsive"/>
+            	<img src="{{ $user->getAvatarHref() }}" class="img-rounded profile_picture img-responsive"/>
             </div>
 
 			<div class="col-sm-6 ">

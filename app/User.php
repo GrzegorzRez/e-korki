@@ -36,4 +36,12 @@ class User extends Authenticatable
     public function getFullName(){
         return $this->name.' '.$this->surname;
     }
+
+    public function getAvatarHref(){
+        return '/uploads/avatars/'.$this->avatar;
+    }
+
+    public function getProfileHref(){
+        return route('profile.show',['id'=>$this->id]);
+    }
 }

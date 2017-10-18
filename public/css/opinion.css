@@ -1,0 +1,19 @@
+.review-block{
+    padding:15px;
+    margin-bottom:1.5vmin;
+    box-sizing: border-box;
+}
+.review-block-name{
+    font-size:3vmin;
+    margin:10px 0;
+}
+.review-block-date{
+    font-size:2vmin;
+}
+.review-block-rate{
+    font-size:3vmin;
+    margin-bottom:12px;
+}
+.review-block-content{
+    font-size:2.5vmin;
+}
