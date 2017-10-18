@@ -2,9 +2,9 @@
 
 @section('title',$user->getFullName())
 
-@section('style')
+@push('styles')
 	<link rel="stylesheet" href="/css/profile.css">
-@endsection
+@endpush
 
 @section('content')
 <div class="container">
@@ -15,7 +15,7 @@
 <div class="row">
 
           	<div class="col-sm-6 profile_picture_div">
-            	<img src="/uploads/avatars/{{ $user->avatar }}" class="img-rounded profile_picture img-responsive"/>
+            	<img src="{{ $user->getAvatarHref() }}" class="img-rounded profile_picture img-responsive"/>
             </div>
 
 			<div class="col-sm-6 ">
@@ -77,9 +77,9 @@
 </div>
 <div class="tab-content">
 	<div class="tab-pane" id="oferty_tab">
-		
-	OFERTY
-	
+		<div class="row">
+		</div>
+		@each('offers.offer',$offers,'offer');
 	</div>
 
 	<div class="tab-pane" id="opinie_tab">
@@ -97,6 +97,9 @@
 			</div>
 		</div>
 		<h2>Opinie innych użytkowników:</h2>
+		@push('styles')
+			<link rel="stylesheet" href="/css/opinion.css">
+		@endpush
 		@each('opinions.opinion',$opinions,'opinion');
 	</div>
 </div>

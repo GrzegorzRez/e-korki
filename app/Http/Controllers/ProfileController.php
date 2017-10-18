@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileRequest;
 use App\Opinion;
+use App\Offer;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -21,6 +22,7 @@ class ProfileController extends Controller
     	$user = User::find($id);
     	$opinions = Opinion::findFromNotAuthForUser($user);
     	$authOpinions = Opinion::findFromAuthForUser($user);
+        $offers = Offer::findFromAuthForUser($user);
         if( $authOpinions->count() == 1 ){
             $authOpinion = $authOpinions->first();
         }else{
@@ -42,7 +44,8 @@ class ProfileController extends Controller
             ->with('opinions', $opinions)
             ->with('averageScope',$averageScope)
             ->with('authOpinion',$authOpinion)
-            ->with('gradesCount',$gradesCount);
+            ->with('gradesCount',$gradesCount)
+            ->with('offers',$offers);
     }
 
 	public function edit()
