@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
@@ -58,12 +59,16 @@ class OfferController extends Controller
 	}
 
 	public function add(){
-		return view('offers.add');
+	    $categories = Category::all();
+		return view('offers.add')->with('categories',$categories);
 	}
 
 	public function store(Request $request){
 	    $offer = new Offer($request->all());
         $offer->user_id = Auth::id();
+        $offer->online = $request->has('online');
+        $offer->teacher_home = $request->has('teacher_home');
+        $offer->student_home = $request->has('student_home');
         $offer->save();
         return redirect(route('offers.index'));
 	}
