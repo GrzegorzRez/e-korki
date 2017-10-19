@@ -8,6 +8,7 @@ Route::get('/profil', 'ProfileController@index')->name('profile.index');
 Route::get('/profil/{id}', 'ProfileController@show')->name('profile.show')->where(['id' => '[0-9]+']);
 Route::get('/profil/edytuj', 'ProfileController@edit')->name('profile.edit');
 Route::post('/profil/store', 'ProfileController@store')->name('profile.store');
+Route::get('/profil/MojeMaterialy', 'MyMaterialsController@index');
 
 Route::get('/oferty','OfferController@index')->name('offers.index');
 Route::get('/oferty/dodaj', 'OfferController@add')->name('offers.add');
