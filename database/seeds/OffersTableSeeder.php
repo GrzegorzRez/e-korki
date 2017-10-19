@@ -27,6 +27,8 @@ class OffersTableSeeder extends Seeder
         $offer->student_home=1;
         $offer->save();
         $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'elo']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'tag numer 2']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'tag numer 3']) );
         $offer->save();
 
         $locations = ['Warszawa','Kraków','Łódź','Poznań','Wrocław','Gdańsk','Szczecin','Bydgoszcz','Lublin','Katowice','Białystok','Gdynia','Częstochowa','Radom','Sosnowiec','Toruń','Kielce','Rzeszów','Gliwice','Zabrze','Bielsko-Biała','Bytom','Zielona Góra','Rybnik','Ruda Śląska'];
@@ -43,6 +45,10 @@ class OffersTableSeeder extends Seeder
             $offer->online=$faker->boolean;
             $offer->teacher_home=$faker->boolean;
             $offer->student_home=$faker->boolean;
+            $offer->save();
+            for( $j=1 ; $j <= 10 ; $j++ ) {
+                $offer->tags()->save(new Tag(['offer_id' => $offer->id, 'name' => $faker->word]));
+            }
             $offer->save();
         }
     }
