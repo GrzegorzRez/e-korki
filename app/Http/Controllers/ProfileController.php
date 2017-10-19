@@ -39,7 +39,7 @@ class ProfileController extends Controller
         $gradesCount['5'] = Opinion::countOfGradeForUser($user,5);
         $gradesCount['6'] = Opinion::countOfGradeForUser($user,6);
 
-    	return view('profile')
+    	return view('profile.index')
             ->with('user', $user)
             ->with('opinions', $opinions)
             ->with('averageScope',$averageScope)

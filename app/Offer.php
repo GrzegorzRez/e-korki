@@ -10,7 +10,7 @@ class Offer extends Model
 {
 
     protected $fillable = [
-        'name', 'description', 'price_per_hour'
+       'category_id', 'name', 'description', 'price_per_hour','location'
     ];
 
     public function user(){

@@ -5,12 +5,27 @@
         </div>
         <div class="col-xs-9">
             <div class="row">
-                <div class="col-sm-10">
+                <div class="col-xs-10">
                     <h2>{{ $offer->name }}</h2>
-                    <p>{{ $offer->user->getFullName() }}</p>
+                    <h4  class="card-title">{{ $offer->user->getFullName() }}</h4>
                     <p>{{ $offer->description }}</p>
+                    @if( $offer->online )
+                        <span class="badge badge-pill badge-success">On-line</span>
+                    @endif
+                    @if( $offer->teacher_home )
+                        <span class="badge badge-pill badge-success">U nauczyciela</span>
+                    @endif
+                    @if( $offer->student_home )
+                        <span class="badge badge-pill badge-success">W domu ucznia</span>
+                    @endif
+                    @foreach($offer->tags as $tag)
+                        @if(  $loop->first)
+                            |
+                        @endif
+                        <span class="badge badge-pill badge-success">{{ $tag->name }}</span>
+                    @endforeach
                 </div>
-                <div class="col-sm-2 text-right">
+                <div class="col-xs-2 text-right">
                     <p>{{ $offer->category->name }}</p>
                     <p>{{ $offer->price_per_hour }} zł</p>
                     <p>60 min.</p>
