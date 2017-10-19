@@ -9,6 +9,15 @@
                     <h2>{{ $offer->name }}</h2>
                     <p>{{ $offer->user->getFullName() }}</p>
                     <p>{{ $offer->description }}</p>
+                    @if( $offer->online )
+                        <span class="badge badge-pill badge-success">On-line</span>
+                    @endif
+                    @if( $offer->teacher_home )
+                        <span class="badge badge-pill badge-success">U nauczyciela</span>
+                    @endif
+                    @if( $offer->student_home )
+                        <span class="badge badge-pill badge-success">W domu ucznia</span>
+                    @endif
                 </div>
                 <div class="col-sm-2 text-right">
                     <p>{{ $offer->category->name }}</p>
