@@ -16,9 +16,14 @@ class CreateOffersTable extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->integer('category_id');
             $table->decimal('price_per_hour');
             $table->text('name');
             $table->text('description');
+            $table->text('location');
+            $table->boolean('online');
+            $table->boolean('teacher_home');
+            $table->boolean('student_home');
             $table->timestamps();
         });
     }
