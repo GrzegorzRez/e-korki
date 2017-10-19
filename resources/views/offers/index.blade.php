@@ -3,7 +3,7 @@
 <div>
 	<form action="{{URL::current()}}">
 		<div>
-			Przedmiot: <input type="text" name="name" value="{{Input::get('name')}}">
+		Przedmiot: <input type="text" name="name" value="{{Input::get('name')}}">
 		<div>
 		<div>
 		<label for="">CENA</label>
@@ -11,27 +11,32 @@
 		Cena max: <input type="number" name="price_max" value="{{Input::get('price_max')}}">
 		<div>
 		<div>
-		Lokalizacja: <input type="text" name="location"> <!--chyba warto? -->
+		Lokalizacja: <input type="text" name="location" value="{{Input::get('location')}}"> <!--chyba warto? -->
 		<div>
 		<div>
 			<label for="">Tryb korepetycji</label>
 			Online<input type="checkbox" name="online">
-			Face-to-Face<input type="checkbox" name="face">
+			Miejsce zamieszkania nauczyciela<input type="checkbox" name="teacher-home">
+			Miejsce zamieszkania ucznia<input type="checkbox" name="student-home">
 		<div>
 		<input type="submit" value="wyszukaj">
 	</form>
 </div>
 
 <div class="container">
+<<<<<<< HEAD
 	@foreach($offers as $offer)
 	<div class="list-group-item">
 		<h4><a href="{{ route('profile.show',['id'=>$offer->user->id]) }}">{{ $offer->user->name }}</a> </h4>
 		<h3>{{ $offer->name }} </h3>
 		<h3>{{ $offer->price_per_hour }}</h3>
 		<h3>{{ $offer->description }}</h3>
-		<h4><b>Lokalizacja: </b>{{ $offer->user->location}}</h3>
+		<h4><b>Lokalizacja: </b>{{ $offer->location}}</h3>
 	</div>
 	@endforeach
+=======
+	@each('offers.offer',$offers,'offer');
+>>>>>>> 4fe9c449137b906a23e9e998dcc3929a5a67405b
 	{{ $offers->links() }}
 </div>	
 @endsection
