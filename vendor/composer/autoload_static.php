@@ -341,6 +341,7 @@ class ComposerStaticInite5f9d6470189a463b445b7d2a9a1b3e8
     );
 
     public static $classMap = array (
+        'App\\Attachment' => __DIR__ . '/../..' . '/app/Attachment.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -372,7 +373,7 @@ class ComposerStaticInite5f9d6470189a463b445b7d2a9a1b3e8
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-        'App\\Resourse' => __DIR__ . '/../..' . '/app/Resourse.php',
+        'App\\Resource' => __DIR__ . '/../..' . '/app/Resourse.php',
         'App\\Tag' => __DIR__ . '/../..' . '/app/Tag.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
