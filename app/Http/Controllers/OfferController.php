@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class OfferController extends Controller
 {
 	public function index(){
+		$categories = Category::all();
 		$offers = Offer::where(function($query)
 		{
 
@@ -59,7 +60,7 @@ class OfferController extends Controller
 			}
 
 		}) -> Paginate(10);
-		return view('offers.index')->with('offers',$offers);
+		return view('offers.index')->with('offers',$offers)->with('categories', $categories);
 	}
 
 	public function add(){

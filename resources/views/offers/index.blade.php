@@ -11,6 +11,20 @@
   </div>
 
 <div class="form-group">
+  <div>
+    <label>Kategoria:</label>
+  		<select name="category_id" class="form-control">
+     	@foreach( $categories as $category )
+     		<option value="{{  $category->id  }}" {{ $category->id == Input::get('category_id') ? 'selected' : '' }}>{{  $category->name  }}</option>
+     	@endforeach
+  		</select>
+  </div>
+</div>
+
+
+
+
+<div class="form-group">
 <label>Cena:</label>
 <div class="row">
   <div class="col-xs-6">
