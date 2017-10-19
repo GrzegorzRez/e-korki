@@ -40,11 +40,17 @@ class OfferController extends Controller
 			}
 			if(isset($name))
 			{
-				$query->where('name', $name);
+                $query->where('name', 'like', "%{$name}%")->orWhere(function ($query) use ($name) {
+                    $query->whereHas('tags', function ($query) use ($name) {
+                        $query->where(function ($query) use ($name) {
+                            $query->orWhere('tags.name', 'like', "%{$name}%");
+                        });
+                    });
+                });
 			}
 			if(isset($location))
 			{
-				$query->where('location', $location);
+				$query->where('location', 'like', "%{$location}%");
 			}
 			if ($online)
 			{
@@ -59,7 +65,7 @@ class OfferController extends Controller
 				 $query->where('student_home', '=', true);
 			}
 
-		}) -> Paginate(10);
+		})->orderBy('created_at','desc') -> Paginate(10);
 		return view('offers.index')->with('offers',$offers)->with('categories', $categories);
 	}
 
