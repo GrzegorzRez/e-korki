@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id' => '239424466589351',
         'client_secret' => '7b69dc75ba6afb671ca636fed8aee000',
-        'redirect' => 'http://localhost:8000/',
+        'redirect' => 'http://localhost:8000/loggedin',
     ],
 
 ];
