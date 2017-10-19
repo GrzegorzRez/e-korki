@@ -11,4 +11,9 @@ class Resource extends Model
     public function attachments(){
         return $this->hasMany('App\Attachment');
     }
+
+    public function user(){
+        return $this->belongsTo('App\User','user_id');
+    }
+
 }

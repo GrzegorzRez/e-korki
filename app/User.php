@@ -33,6 +33,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Opinion');
     }
 
+    public function resources(){
+        return $this->hasMany('App\Resource');
+    }
+
     public function getFullName(){
         return $this->name.' '.$this->surname;
     }
