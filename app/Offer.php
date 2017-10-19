@@ -17,6 +17,14 @@ class Offer extends Model
     	return $this->belongsTo('App\User','user_id');
     }
 
+    public function category(){
+        return $this->belongsTo('App\Category','category_id');
+    }
+
+    public function tags(){
+        return $this->hasMany('App\Tag');
+    }
+
     public function scopeFindFromAuthForUser($query, User $user)
     {
         if( isset($user) ) {
