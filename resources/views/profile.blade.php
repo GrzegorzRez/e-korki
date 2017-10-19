@@ -71,8 +71,8 @@
 
 <div>
 	<ul class="nav nav-tabs nav-justified tabs_css" role="tablist">
-	  	<li><a href="#oferty_tab" role="tab" data-toggle="tab">OFERTY</a></li>
-		<li><a href="#opinie_tab" role="tab" data-toggle="tab">OPINIE</a></li>
+	  	<li><a href="#oferty_tab" role="tab" data-toggle="tab">OFERTY <span class="badge badge-secondary">{{  count($offers)  }}</span></a></li>
+		<li><a href="#opinie_tab" role="tab" data-toggle="tab">OPINIE <span class="badge badge-secondary">{{  $gradesCount['all']  }}</span></a></li>
 	</ul>
 </div>
 <div class="tab-content">
