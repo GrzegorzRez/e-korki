@@ -12,7 +12,8 @@
                 </div>
                 <div class="col-sm-2 text-right">
                     <p>{{ $offer->category->name }}</p>
-                    <p>{{ $offer->price_per_hour }}/60 min.</p>
+                    <p>{{ $offer->price_per_hour }} zł</p>
+                    <p>60 min.</p>
                 </div>
             </div>
         </div>
