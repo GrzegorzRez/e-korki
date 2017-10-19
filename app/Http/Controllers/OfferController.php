@@ -18,8 +18,8 @@ class OfferController extends Controller
 			$price_max = Input::has('price_max')? Input::get('price_max'):null;
 			$location = Input::has('location')? Input::get('location'):null;
 			$online = Input::has('online')? Input::get('online'):null;
-			//$teacher_home = Input::has('teacher_home')? Input::get('teacher_home'):null;
-			//$student_home = Input::has('student_home')? Input::get('student_home'):null;
+			$teacher_home = Input::has('teacher_home')? Input::get('teacher_home'):null;
+			$student_home = Input::has('student_home')? Input::get('student_home'):null;
 			$name = Input::has('name')? Input::get('name'):null;
 
 			if(isset($price_min))
@@ -41,6 +41,14 @@ class OfferController extends Controller
 			if ($online)
 			{
 				 $query->where('online', '=', 1);
+			}
+			if ($teacher_home)
+			{
+				 $query->where('teacher_home', '=', 1);
+			}
+			if ($student_home)
+			{
+				 $query->where('student_home', '=', 1);
 			}
 
 
