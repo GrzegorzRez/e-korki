@@ -16,8 +16,11 @@ class FacebookLoginController extends Controller
 
 	public function handleProviderCallback()
 	{
+	dd(Socialite::with('facebook'));
     $user = Socialite::with('facebook')->user();
-
+    User::create(['name'=>$user->getName(), 'email'=>$user->getEmail()]);//dupa
+    //FB.getAuthResponse()
+   
     // $user->token;
 	}
 }
