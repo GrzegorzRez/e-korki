@@ -7,5 +7,8 @@ use App\Http\Controllers\Controller;
 
 class SharedMaterialsController extends Controller
 {
-    //
+        public function index()
+    {
+    	return view('sharedMaterials');
+    }
 }
