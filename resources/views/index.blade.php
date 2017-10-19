@@ -39,34 +39,61 @@
 <div class="row" >
   <h1 class="text-center">Jesteś nauczycielem?</h1>
   <div class="col-sm-4">
-  	<div class="row text-center"><img width="25%" src="images/heart-icon.svg"/> </div>
-  	<div class="row text-center"><p class="lead"><b>Stwórz własny profil, aby Uczniowie mogli kontaktować się z Tobą w sprawie korepetycji!</b></p></div>
+    <div class="row">
+  	<div class="col-lg-12 text-center"><img width="25%" src="images/heart-icon.svg"/> </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center"><p class="lead"><b>Stwórz własny profil, aby Uczniowie mogli kontaktować się z Tobą w sprawie korepetycji!</b></p></div>
+    </div>
   </div>
+  
   <div class="col-sm-4">
-  	<div class="row text-center"><img width="25%" src="images/cloud_arrow_up.svg"/> </div>
-  	<div class="row text-center"><p class="lead"><b>Korzystaj z wbudowanego kalendarza, aby organizacja Twojej pracy była jeszcze wygodniejsza!</b></p> </div>
+    <div class="row">
+  	<div class="col-lg-12 text-center"><img width="25%" src="images/cloud_arrow_up.svg"/> </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center"><p class="lead"><b>Korzystaj z wbudowanego kalendarza, aby organizacja Twojej pracy była jeszcze wygodniejsza!</b></p></div>
+    </div>
   </div>
+  
   <div class="col-sm-4">
-  	<div class="row text-center"><img width="25%" src="images/compass.svg"/> </div>
-  	<div class="row text-center"><p class ="lead"><b>Udostępniaj pomoce dydaktyczne on-line, aby współpraca z Uczniem była jeszcze efektywniejsza!</b></p></div>
+    <div class="row">
+  	<div class="col-lg-12 text-center"><img width="25%" src="images/compass.svg"/> </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center"><p class="lead"><b>Udostępniaj pomoce dydaktyczne on-line, aby współpraca z Uczniem była jeszcze efektywniejsza!</b></p></div>
+    </div>
   </div>
-
  </div>
  
  <div class="row" style=" background-color: skyblue;">
   <h1 class="text-center">Jesteś uczniem?</h1>
-  <div class="col-sm-4">
-  	<div class="row text-center"><img width="25%" src="images/compass.svg"/> </div>
-  	<div class="row text-center"><p class="lead"><b>Przeglądaj oferty korepetytorów z całej Polski i wybierz te,<br> które najbardziej Ci odpowiadają!</b></p> </div>
-  </div>
+  
     <div class="col-sm-4">
-  	<div class="row text-center"><img width="25%" src="images/description.svg"/> </div>
-  	<div class="row text-center"><p class="lead"><b>Używaj prostego i wygodnego menu, aby filtrować oferty według własnych preferencji! </b></div>
+    <div class="row">
+  	<div class="col-lg-12 text-center"><img width="25%" src="images/compass.svg"/> </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center"><p class="lead"><b>Przeglądaj oferty korepetytorów z całej Polski i wybierz te,<br> które najbardziej Ci odpowiadają!</b></p></div>
+    </div>
   </div>
-
-
-  <div class="col-sm-4">
-  	<div class="row text-center"><img width="25%" src="images/heart-icon.svg"/> </div>
-  	<div class="row text-center"><p class ="lead"><b>Po korepetycjach oceń Nauczyciela i prowadzone przez Niego zajęcia, aby dobór właściwych Nauczycieli był jeszcze dokładniejszy! </b></p></div>
+  
+    <div class="col-sm-4">
+    <div class="row">
+  	<div class="col-lg-12 text-center"><img width="25%" src="images/description.svg"/> </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center"><p class="lead"><b>Używaj prostego i wygodnego menu, aby filtrować oferty według własnych preferencji!</b></p></div>
+    </div>
   </div>
+  
+    <div class="col-sm-4">
+    <div class="row">
+  	<div class="col-lg-12 text-center"><img width="25%" src="images/heart-icon.svg"/> </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center"><p class="lead"><b>Po korepetycjach oceń Nauczyciela i prowadzone przez Niego zajęcia, aby dobór właściwych Nauczycieli był jeszcze dokładniejszy!</b></p></div>
+    </div>
+  </div>
+ </div>
   @endsection
