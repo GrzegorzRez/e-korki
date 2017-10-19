@@ -6,22 +6,18 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Uczeń</th>
         <th>Tytuł</th>
+        <th>Użytkownik</th>
         <th>Akcja</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td>informatyka</td>
         <td>John</td>
-        <td>historia</td>
         <td><button type="button" class="btn btn-default">Edytuj</button></td>
       </tr>
-      <tr>
-        <td>John</td>
-        <td>matematyka</td>
-        <td><button type="button" class="btn btn-default">Edytuj</button></td>
-      </tr>      
+      
     </tbody>
   </table>
   
