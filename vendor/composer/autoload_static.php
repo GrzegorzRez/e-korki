@@ -357,6 +357,7 @@ class ComposerStaticInite5f9d6470189a463b445b7d2a9a1b3e8
         'App\\Http\\Controllers\\OfferController' => __DIR__ . '/../..' . '/app/Http/Controllers/OfferController.php',
         'App\\Http\\Controllers\\OpinionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/OpinionsController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
+        'App\\Http\\Controllers\\ResourcesController' => __DIR__ . '/../..' . '/app/Http/Controllers/ResourcesController.php',
         'App\\Http\\Controllers\\SharedMaterialsController' => __DIR__ . '/../..' . '/app/Http/Controllers/SharedMaterialsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

@@ -22,6 +22,7 @@ return array(
     'App\\Http\\Controllers\\OfferController' => $baseDir . '/app/Http/Controllers/OfferController.php',
     'App\\Http\\Controllers\\OpinionsController' => $baseDir . '/app/Http/Controllers/OpinionsController.php',
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
+    'App\\Http\\Controllers\\ResourcesController' => $baseDir . '/app/Http/Controllers/ResourcesController.php',
     'App\\Http\\Controllers\\SharedMaterialsController' => $baseDir . '/app/Http/Controllers/SharedMaterialsController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
