@@ -7,7 +7,12 @@
 
     <link rel="stylesheet" href="/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Kalam:400,700|Kaushan+Script" rel="stylesheet">
+    @push('styles')
+            <link rel="stylesheet" href="/css/mainLayout.css">
+    @endpush     
     @stack('styles')
+    
+   
 
 </head>
 <body>
@@ -38,6 +43,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('profile.index')  }}">Profil</a></li>
                             <li><a href="#">Wiadomości</a></li>
+                            <li><a href="#">Moje materiały</a></li>
                             <li class="divider"></li>
                             <li>
                                 <a href="{{ route('logout') }}"

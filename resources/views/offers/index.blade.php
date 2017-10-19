@@ -24,6 +24,7 @@
 </div>
 
 <div class="container">
+<<<<<<< HEAD
 	@foreach($offers as $offer)
 	<div class="list-group-item">
 		<h4><a href="{{ route('profile.show',['id'=>$offer->user->id]) }}">{{ $offer->user->name }}</a> </h4>
@@ -33,6 +34,9 @@
 		<h4><b>Lokalizacja: </b>{{ $offer->location}}</h3>
 	</div>
 	@endforeach
+=======
+	@each('offers.offer',$offers,'offer');
+>>>>>>> 4fe9c449137b906a23e9e998dcc3929a5a67405b
 	{{ $offers->links() }}
 </div>	
 @endsection
