@@ -1,30 +1,46 @@
 @extends('layouts.main')
 @section('content')
-<div>
-	<form action="{{URL::current()}}">
-		<div>
-		Przedmiot: <input type="text" name="name" value="{{Input::get('name')}}">
-		<div>
-		<div>
-		<label for="">CENA</label>
-		Cena min: <input type="number" name="price_min" value="{{Input::get('price_min')}}">
-		Cena max: <input type="number" name="price_max" value="{{Input::get('price_max')}}">
-		<div>
-		<div>
-		Lokalizacja: <input type="text" name="location" value="{{Input::get('location')}}">
-		<div>
-		<div>
-			<label for="">Tryb korepetycji</label>
-			Online<input type="checkbox" name="online" {{ Input::get('online')=='on' ? 'checked' : '' }}>
-			Miejsce zamieszkania nauczyciela<input type="checkbox" name="teacher_home" {{ Input::get('teacher_home')=='on' ? 'checked' : '' }}>
-			Miejsce zamieszkania ucznia<input type="checkbox" name="student_home" {{ Input::get('student_home')=='on' ? 'checked' : '' }}>
-		<div>
-		<input type="submit" value="wyszukaj">
-	</form>
+<div class="container">
+
+<div class="col-sm-2">
+	<form>
+
+  <div class="form-group">
+    <label>Przedmiot:</label>
+    <input class="form-control" type="text" name="name" value="{{Input::get('name')}}">
+  </div>
+
+<div class="form-group">
+<label>Cena:</label>
+<div class="row">
+  <div class="col-xs-6">
+    <input placeholder="od" class="form-control" type="number" name="price_min" value="{{Input::get('price_min')}}">
+    </div>
+     <div class="col-xs-6">
+    <input placeholder="do" class="form-control" type="number" name="price_max" value="{{Input::get('price_max')}}">
+  </div>
+</div>
+</div>
+  <div class="form-group">
+    <label>Lokalizacja:</label>
+    <input class="form-control" type="text" name="location" value="{{Input::get('location')}}">
+  </div>
+
+  	<label>Tryb korepetycji:</label>
+  <div class="checkbox">
+    <label><input type="checkbox" name="online" {{ Input::get('online')=='on' ? 'checked' : '' }}> Online</label>
+    <label><input type="checkbox" name="teacher_home" {{ Input::get('teacher_home')=='on' ? 'checked' : '' }}> Miejsce zamieszkania nauczyciela</label>
+    <label><input type="checkbox" name="student_home" {{ Input::get('student_home')=='on' ? 'checked' : '' }}> Miejsce zamieszkania ucznia</label>
+  </div>
+
+  <input class="form-control btn-primary" type="submit" value="wyszukaj">
+
+</form>
 </div>
 
-<div class="container">
+<div class="col-sm-8">
 	@each('offers.offer',$offers,'offer');
 	{{ $offers->links() }}
+</div>
 </div>	
 @endsection
