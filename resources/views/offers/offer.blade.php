@@ -18,6 +18,12 @@
                     @if( $offer->student_home )
                         <span class="badge badge-pill badge-success">W domu ucznia</span>
                     @endif
+                    @foreach($offer->tags as $tag)
+                        @if(  $loop->first)
+                            |
+                        @endif
+                        <span class="badge badge-pill badge-success">{{ $tag->name }}</span>
+                    @endforeach
                 </div>
                 <div class="col-xs-2 text-right">
                     <p>{{ $offer->category->name }}</p>

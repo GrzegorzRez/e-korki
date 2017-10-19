@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Offer;
+use App\Tag;
 
 class OffersTableSeeder extends Seeder
 
@@ -24,6 +25,8 @@ class OffersTableSeeder extends Seeder
         $offer->online=1;
         $offer->teacher_home=1;
         $offer->student_home=1;
+        $offer->save();
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'elo']) );
         $offer->save();
 
         $locations = ['Warszawa','Kraków','Łódź','Poznań','Wrocław','Gdańsk','Szczecin','Bydgoszcz','Lublin','Katowice','Białystok','Gdynia','Częstochowa','Radom','Sosnowiec','Toruń','Kielce','Rzeszów','Gliwice','Zabrze','Bielsko-Biała','Bytom','Zielona Góra','Rybnik','Ruda Śląska'];
