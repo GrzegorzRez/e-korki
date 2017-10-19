@@ -50,7 +50,7 @@ class OfferController extends Controller
 			}
 			if(isset($location))
 			{
-				$query->where('name', 'like', "%{$location}%");
+				$query->where('location', 'like', "%{$location}%");
 			}
 			if ($online)
 			{

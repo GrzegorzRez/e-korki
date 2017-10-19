@@ -2,27 +2,28 @@
 @section('content')
 <div class="container">
 
-<div class="col-sm-2">
-	<form>
-
-  <div class="form-group">
-    <label>Przedmiot:</label>
-    <input class="form-control" type="text" name="name" value="{{Input::get('name')}}">
+  <form>
+  <div class="col-xs-12">
+    <div class="form-group input-group">
+      <input type="text" class="form-control" name="name" value="{{Input::get('name')}}" placeholder="Wpisz czego szukasz...">
+      <span class="input-group-btn">
+        <input type="submit" class="btn btn-default" type="button" value="Szukaj">
+      </span>
+    </div>
   </div>
+<div class="col-sm-2">
 
 <div class="form-group">
   <div>
     <label>Kategoria:</label>
   		<select name="category_id" class="form-control">
+          <option value="">Wszystkie</option>
      	@foreach( $categories as $category )
      		<option value="{{  $category->id  }}" {{ $category->id == Input::get('category_id') ? 'selected' : '' }}>{{  $category->name  }}</option>
      	@endforeach
   		</select>
   </div>
 </div>
-
-
-
 
 <div class="form-group">
 <label>Cena:</label>
@@ -49,11 +50,12 @@
 
   <input class="form-control btn-primary" type="submit" value="wyszukaj">
 
-</form>
-</div>
 
-<div class="col-sm-8">
-	@each('offers.offer',$offers,'offer');
+</div>
+  </form>
+
+<div class="col-sm-10">
+	@each('offers.offer',$offers,'offer','offers.none');
 	{{ $offers->links() }}
 </div>
 </div>	
