@@ -1,6 +1,12 @@
 @extends('layouts/main')
 
+@push('styles')
+    <link rel="stylesheet" href="/css/jquery.tagsinput.css">
+@endpush
+
 @section('content')
+    <script src="/js/jquery.tagsinput.js"></script>
+
     <h1 class="text-center">Dodaj ofertę</h1>
 	<div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{route('offers.store')}}">
@@ -69,6 +75,20 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="tags" class="col-md-4 control-label">Tagi</label>
+                            <div class="col-md-6">
+                                <input id="tags" type="text" class="form-control" name="tags" value="{{  old('tags')  }}" data-role="tagsinput">
+                            </div>
+                        </div>
+                        <script>
+                            $('#tags').tagsInput({
+                                'defaultText':'dodaj tag',
+                                'width':'100%',
+                                'height':'50px'
+                            });
+                        </script>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Dodaj Ofertę
@@ -76,4 +96,5 @@
                             </div>
                         </div>
                     </form>
+    </div>
 @endsection
