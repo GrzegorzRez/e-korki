@@ -22,10 +22,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="price_per_hour" class="col-md-4 control-label">Cena za Godzinę</label>
+                            <label for="price_per_hour" class="col-md-4 control-label">Cena</label>
 
                             <div class="col-md-6">
-                                <input id="price_per_hour" type="number" class="form-control" name="price_per_hour" value="{{  old('price_per_hour')  }}" required>
+                                <div class="col-md-6">
+                                    <input id="price_per_hour" type="number" class="form-control" name="price_per_hour" value="{{  old('price_per_hour')  }}" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>zł za 60 minut.</label>
+                                </div>
                             </div>
                         </div>
 
