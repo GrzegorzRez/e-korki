@@ -18,3 +18,6 @@ Route::post('/oferty/store', 'OfferController@store')->name('offers.store');
 
 Route::post('/opinie/store', 'OpinionsController@store')->name('opinions.store');
 Route::delete('/opinie/{opinion}', 'OpinionsController@delete')->name('opinions.delete');
+
+Route::get('/login/fb','FacebookLoginController@redirectToProvider');
+Route::get('/loggedin','FacebookLoginController@handleProviderCallback');
