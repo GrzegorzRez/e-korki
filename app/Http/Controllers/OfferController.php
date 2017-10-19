@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use App\Offer;
-use App\User;
+use App\Tag;
 use Illuminate\Support\Facades\Auth;
 
 class OfferController extends Controller
@@ -80,6 +80,11 @@ class OfferController extends Controller
         $offer->online = $request->has('online');
         $offer->teacher_home = $request->has('teacher_home');
         $offer->student_home = $request->has('student_home');
+        $offer->save();
+        $tags = explode(",",$request->tags);
+        foreach( $tags as $tag ) {
+            $offer->tags()->save(new Tag(['offer_id' => $offer->id, 'name' => $tag]));
+        }
         $offer->save();
         return redirect(route('offers.index'));
 	}
