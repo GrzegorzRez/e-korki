@@ -79,7 +79,12 @@
 	<div class="tab-pane" id="oferty_tab">
 		<div class="row">
 		</div>
-		@each('offers.offer',$offers,'offer');
+		@foreach($offers as $offer)
+			@include('offers.offer',['offer'=>$offer])
+			@if(Auth::id()==$user->id)
+				@include('offers.editBar',['offer'=>$offer])
+			@endif
+		@endforeach
 	</div>
 
 	<div class="tab-pane" id="opinie_tab">
