@@ -51,15 +51,18 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    Zapomniałeś hasła?
+                                </a>
                                 <button type="submit" class="btn btn-primary">
                                     Zaloguj
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Zapomniałeś hasła?
-                                </a>
+                                
+                                <a href="{{route('facebook.login')}}"><button type="button" class="btn btn-primary">Zaloguj przez Facebooka</button></a>
                             </div>
                         </div>
+                            
                     </form>
                 </div>
             </div>

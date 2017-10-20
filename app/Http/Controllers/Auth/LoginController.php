@@ -87,6 +87,7 @@ class LoginController extends Controller
             $newuser->password = $facebookUserInformation->token;
             $newuser->description = "";
             $newuser->location = "";
+            $newuser->phone = 111111111;
             $newuser->save();
            $filename = $newuser->id.'.jpg';
            //copy($facebookUserInformation->avatar,'uploads/avatars/'.$filename);
