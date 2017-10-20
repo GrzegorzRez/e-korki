@@ -55,15 +55,40 @@ class OfferController extends Controller
 			if ($online)
 			{
 				 $query->where('online', '=', true);
+				 if($teacher_home)
+				 {
+				 	$query->orWhere('teacher_home', '=', true);
+				 }
+				 if($student_home)
+				 {
+				 	$query->orWhere('student_home', '=', true);
+				 }
 			}
 			if ($teacher_home)
 			{
 				 $query->where('teacher_home', '=', true);
+				 if($student_home)
+				 {
+				 	$query->orWhere('student_home', '=', true);
+				 }
+				 if($online)
+				 {
+				 	$query->orWhere('online', '=', true);
+				 }
 			}
 			if ($student_home)
 			{
 				 $query->where('student_home', '=', true);
+				 if($teacher_home)
+				 {
+				 	$query->orWhere('teacher_home', '=', true);
+				 }
+				 if($online)
+				 {
+				 	$query->orWhere('online', '=', true);
+				 }
 			}
+
 
 		})->orderBy('created_at','desc') -> Paginate(10);
 		return view('offers.index')->with('offers',$offers)->with('categories', $categories);
