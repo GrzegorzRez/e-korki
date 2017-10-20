@@ -36,12 +36,17 @@
             <div class="btn-group-vertical">
                 <a href="{{ $offer->user->getProfileHref() }}" class="btn btn-primary" role="button">Zobacz profil</a>
                 <a href="#" class="btn btn-primary" role="button">Wyślij wiadomość</a>
-                <a href="#" class="btn btn-primary" role="button">Numer telefonu</a>
+                <a href="#" id="numberPhone" class="btn btn-primary" role="button" onclick="showNumberPhone();">Numer telefonu</a>
 
             </div>
         </div>
     </div>
-
+    <script>
+    function showNumberPhone()
+    {
+        document.getElementById('numberPhone').innerHTML = '{{ $offer->user->phone }}';
+    }
+    </script>
 </div>
 
 @endsection
