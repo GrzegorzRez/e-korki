@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Input;
 use App\Offer;
 use App\Tag;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class OfferController extends Controller
 {
@@ -55,22 +56,57 @@ class OfferController extends Controller
 			if ($online)
 			{
 				 $query->where('online', '=', true);
+				 if($teacher_home)
+				 {
+				 	$query->orWhere('teacher_home', '=', true);
+				 }
+				 if($student_home)
+				 {
+				 	$query->orWhere('student_home', '=', true);
+				 }
 			}
 			if ($teacher_home)
 			{
 				 $query->where('teacher_home', '=', true);
+				 if($student_home)
+				 {
+				 	$query->orWhere('student_home', '=', true);
+				 }
+				 if($online)
+				 {
+				 	$query->orWhere('online', '=', true);
+				 }
 			}
 			if ($student_home)
 			{
 				 $query->where('student_home', '=', true);
+				 if($teacher_home)
+				 {
+				 	$query->orWhere('teacher_home', '=', true);
+				 }
+				 if($online)
+				 {
+				 	$query->orWhere('online', '=', true);
+				 }
 			}
+
 
 		})->orderBy('created_at','desc') -> Paginate(10);
 		return view('offers.index')->with('offers',$offers)->with('categories', $categories);
 	}
 
     public function edit( Offer $offer ){
-        return view('offers.edit')->with('offer',$offer);
+        if( $offer->user_id == Auth::id() ) {
+            $categories = Category::all();
+            $tags = array_pluck($offer->tags, 'name');
+            $tagsString = '';
+            foreach ($tags as $tag) {
+                $tagsString .= $tag . ',';
+            }
+            return view('offers.edit')->with('offer',$offer)->with('categories', $categories)->with('tags', $tagsString);
+        }else{
+            return redirect(route('offers.index'));
+        }
     }
 
     public function show( $id ){
@@ -97,5 +133,26 @@ class OfferController extends Controller
         $offer->save();
         return redirect(route('offers.index'));
 	}
+
+	public function update( Request $request){
+        $offer = Offer::find($request->id);
+        if( $offer->user_id == Auth::id() ){
+            $offer->update($request->all());
+            $offer->tags->each->delete();
+            $tags = explode(",",$request->tags);
+            foreach( $tags as $tag ) {
+                $offer->tags()->save(new Tag(['offer_id' => $offer->id, 'name' => $tag]));
+            }
+            $offer->save();
+        }
+        return redirect(route('profile.index'));
+    }
+
+    public function delete(Offer $offer){
+	    if( $offer->user_id = Auth::id() ){
+            $offer->delete();
+        }
+        return back();
+    }
 
 }

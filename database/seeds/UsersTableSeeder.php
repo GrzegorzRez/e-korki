@@ -20,6 +20,7 @@ class UsersTableSeeder extends Seeder
             $user->location='Bydgoszcz';
             $user->description='Opis życia i kom jestem';
             $user->email='adam@adam.pl';
+            $user->phone='111222333';
             $user->password=bcrypt('adam');
             $user->save();
         }
@@ -40,6 +41,7 @@ class UsersTableSeeder extends Seeder
             $user->location = $location;
             $user->description = $faker->sentence(64);
             $user->email = $email;
+            $user->phone = rand(400111111,999999999);
             $user->password = bcrypt('123456');
             $user->save();
             $avatar = $faker->image(public_path('uploads\avatars'),300,300, 'people');
