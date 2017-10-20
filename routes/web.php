@@ -29,6 +29,3 @@ Route::delete('/opinie/{opinion}', 'OpinionsController@delete')->name('opinions.
 //facebook login
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
 Route::get('/loggedin', 'Auth\LoginController@handleProviderCallback');
-
-Route::get('wiadomosci/lista', );
-Route::get('wiadomosci/{}')
