@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Input;
 use App\Offer;
 use App\Tag;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class OfferController extends Controller
 {
@@ -145,6 +146,13 @@ class OfferController extends Controller
             $offer->save();
         }
         return redirect(route('profile.index'));
+    }
+
+    public function delete(Offer $offer){
+	    if( $offer->user_id = Auth::id() ){
+            $offer->delete();
+        }
+        return back();
     }
 
 }

@@ -9,11 +9,6 @@ Route::get('/profil/{id}', 'ProfileController@show')->name('profile.show')->wher
 Route::get('/profil/edytuj', 'ProfileController@edit')->name('profile.edit');
 Route::post('/profil/store', 'ProfileController@store')->name('profile.store');
 
-//do usunięcia póżniej
-Route::get('/mojeMaterialy', 'MyMaterialsController@index')->name('myMaterials.index');
-Route::get('/udostepnioneMaterialy', 'sharedMaterialsController@index')->name('sharedMaterials.index');
-//---------------
-
 Route::get('/materialy/moje', 'ResourcesController@index')->name('resources.index');
 Route::get('/materialy/moje/dodaj', 'ResourcesController@add')->name('resources.add');
 Route::get('/materialy/moje/{id}', 'ResourcesController@show')->name('resources.show')->where(['id' => '[0-9]+']);
@@ -26,11 +21,11 @@ Route::get('/oferty/{offer}/edytuj', 'OfferController@edit')->name('offers.edit'
 Route::post('/oferty/update', 'OfferController@update')->name('offers.update');
 Route::get('/oferty/dodaj', 'OfferController@add')->name('offers.add');
 Route::post('/oferty/store', 'OfferController@store')->name('offers.store');
+Route::get('/oferty/{offer}/usun', 'OfferController@delete')->name('offers.delete');
 
 Route::post('/opinie/store', 'OpinionsController@store')->name('opinions.store');
 Route::delete('/opinie/{opinion}', 'OpinionsController@delete')->name('opinions.delete');
 
-
 //facebook login
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
 Route::get('/loggedin', 'Auth\LoginController@handleProviderCallback');

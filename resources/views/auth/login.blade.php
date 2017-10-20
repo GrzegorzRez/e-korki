@@ -46,17 +46,20 @@
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Zapamiętaj mnie
                                     </label>
                                 </div>
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    Zapomniałeś hasła?
+                                </a>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
+                                
                                 <button type="submit" class="btn btn-primary">
                                     Zaloguj
                                 </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Zapomniałeś hasła?
+                                <a href="{{ route('facebook.login') }}">
+                                    <button type="button" class="btn btn-primary">Zaloguj przez Facebook</button>
                                 </a>
                             </div>
                         </div>
