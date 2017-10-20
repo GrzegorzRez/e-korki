@@ -44,7 +44,7 @@
                             <li><a href="{{ route('profile.index')  }}">Profil</a></li>
                             <li><a href="#">Wiadomości</a></li>
                             <li><a href="#">Udostępnione materiały</a></li>
-                            <li><a href="#">Moje materiały</a></li>
+                            <li><a href="{{ route('resources.index') }}">Moje materiały</a></li>
                             <li class="divider"></li>
                             <li>
                                 <a href="{{ route('logout') }}"
