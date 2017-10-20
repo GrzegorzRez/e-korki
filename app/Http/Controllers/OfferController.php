@@ -147,4 +147,11 @@ class OfferController extends Controller
         return redirect(route('profile.index'));
     }
 
+    public function delete(Offer $offer){
+        if( $offer->user_id = Auth::id() ){
+            $offer->delete();
+        }
+        return back();
+    }
+
 }
