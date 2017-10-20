@@ -7,7 +7,7 @@ use App\Message;
 
 class MessageController extends Controller
 {
-    public function sendMessage(Request $request){
+    public function send(Request $request){
     	$message = new Message($request->all());
     	$message->send_id = Auth::id();
     	$message->recieve_id = $request->has('recieve_id');
@@ -19,7 +19,7 @@ class MessageController extends Controller
 
     	
 
-    public function showMessages($id){
+    public function show($id){
     	$messages = Message::where('send_id',$id)->orWhere('recieve_id',$id);
 
     	return view('messages.messageslist')->with('messages',$messages);

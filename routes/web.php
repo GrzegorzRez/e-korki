@@ -30,4 +30,4 @@ Route::delete('/opinie/{opinion}', 'OpinionsController@delete')->name('opinions.
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
 Route::get('/loggedin', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('wiadomosci/lista/{id}', 'MessageController@showMessages')->name('messages.messageslist')->where(['id'=>'[0-9]+']);
+Route::get('wiadomosci/lista/{id}', 'MessageController@show')->name('messages.messageslist')->where(['id'=>'[0-9]+']);

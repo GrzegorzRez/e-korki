@@ -1,5 +1,6 @@
 <div>
 	
-	Konwersacja:@each('$messages')
-
+	@foreach( $messages as $message )
+	{{$message}}
+	@endforeach
 </div>
