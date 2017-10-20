@@ -70,7 +70,17 @@ class OfferController extends Controller
 	}
 
     public function edit( Offer $offer ){
-        return view('offers.edit')->with('offer',$offer);
+        if( $offer->user_id == Auth::id() ) {
+            $categories = Category::all();
+            $tags = array_pluck($offer->tags, 'name');
+            $tagsString = '';
+            foreach ($tags as $tag) {
+                $tagsString .= $tag . ',';
+            }
+            return view('offers.edit')->with('offer',$offer)->with('categories', $categories)->with('tags', $tagsString);
+        }else{
+            return redirect(route('offers.index'));
+        }
     }
 
     public function show( $id ){
@@ -97,5 +107,19 @@ class OfferController extends Controller
         $offer->save();
         return redirect(route('offers.index'));
 	}
+
+	public function update( Request $request){
+        $offer = Offer::find($request->id);
+        if( $offer->user_id == Auth::id() ){
+            $offer->update($request->all());
+            $offer->tags->each->delete();
+            $tags = explode(",",$request->tags);
+            foreach( $tags as $tag ) {
+                $offer->tags()->save(new Tag(['offer_id' => $offer->id, 'name' => $tag]));
+            }
+            $offer->save();
+        }
+        return redirect(route('profile.index'));
+    }
 
 }
