@@ -7,7 +7,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Socialite;
-//use Illuminate\Contracts\Auth\Authenticatable;
+use Intervention\Image\Image;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 class LoginController extends Controller
 {
@@ -59,36 +60,45 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('facebook')->user();
-        
-        $findUser = User::where('email',$user->email)->first();
+        $facebookUserInformation = Socialite::driver('facebook')->fields([
+            'first_name', 'last_name', 'email'
+        ])->scopes([
+            'email'
+        ])->stateless()->user();
 
-       if($findUser)
+        //dd($facebookUserInformation);
+
+        $user = User::where('email',$facebookUserInformation->email)->first();
+
+        //dd($user);
+
+       if($user)
        {
-            Auth::login($findUser);
+            Auth::login($user);
             return view('index');
-        
        }
        else
-       { 
-            $nameandsurname = explode(" ",$user->getName());
+       {
             $newuser = new User;
 
-            $newuser->name = $nameandsurname['0'];
-            $newuser->surname = $nameandsurname['1'];
-            $newuser->email = $user->getEmail();
-            $newuser->password = $user->token;
+            $newuser->name = $facebookUserInformation->user['first_name'];
+            $newuser->surname = $facebookUserInformation->user['last_name'];
+            $newuser->email = $facebookUserInformation->email;
+            $newuser->password = $facebookUserInformation->token;
             $newuser->description = "";
             $newuser->location = "";
-            $newuser->avatar = $user->getAvatar();
-
             $newuser->save();
+           $filename = $newuser->id.'.jpg';
+           //copy($facebookUserInformation->avatar,'uploads/avatars/'.$filename);
+           copy('https://graph.facebook.com/'.$facebookUserInformation->id.'/picture?width=300','uploads/avatars/'.$filename);
+           $newuser->avatar = $filename;
+           $newuser->save();
 
-            Auth::login($user);
-            return view('index'); 
+            Auth::login($newuser);
         }
+        return view('index');
 
-        
+
     }
 
 }
