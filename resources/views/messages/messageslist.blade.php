@@ -1,6 +1,5 @@
-<div>
-	
-	@foreach( $messages as $message )
-	{{$message}}
-	@endforeach
-</div>
+@foreach( $messages as $message )
+	<ul>
+	<li>{{ $message->content }}</li>
+	</ul>
+@endforeach
