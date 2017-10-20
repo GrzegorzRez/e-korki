@@ -1,6 +1,5 @@
 @extends('layouts/main')
 @section('content')
-
 <div class="container text-center">
  <form>
   <div class="form-group text-center">
@@ -13,5 +12,5 @@
   <button type="submit" class="btn btn-default">Dodaj materiał</button>
 </form> 
 </div>
-  @endsection
+@endsection
 
