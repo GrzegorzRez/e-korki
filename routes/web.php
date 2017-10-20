@@ -21,6 +21,8 @@ Route::post('/materialy/moje/store', 'ResourcesController@store')->name('resourc
 Route::delete('/materialy/moje/{resource}', 'ResourcesController@delete')->name('resources.delete');
 
 Route::get('/oferty','OfferController@index')->name('offers.index');
+Route::get('/oferty/{id}', 'OfferController@show')->name('offers.show')->where(['id' => '[0-9]+']);
+Route::get('/oferty/{offer}/edytuj', 'OfferController@edit')->name('offers.edit');
 Route::get('/oferty/dodaj', 'OfferController@add')->name('offers.add');
 Route::post('/oferty/store', 'OfferController@store')->name('offers.store');
 

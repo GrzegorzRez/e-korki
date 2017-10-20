@@ -69,6 +69,15 @@ class OfferController extends Controller
 		return view('offers.index')->with('offers',$offers)->with('categories', $categories);
 	}
 
+    public function edit( Offer $offer ){
+        return view('offers.edit')->with('offer',$offer);
+    }
+
+    public function show( $id ){
+        $offer = Offer::find($id);
+        return view('offers.show')->with('offer',$offer);
+    }
+
 	public function add(){
 	    $categories = Category::all();
 		return view('offers.add')->with('categories',$categories);
