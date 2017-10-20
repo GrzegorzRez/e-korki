@@ -1,4 +1,4 @@
-<div class="media opinion" onclick="{{  route('offers.show',['id'=>$offer->id])  }}">
+<div class="media opinion" onclick="window.location = '{{  route('offers.show',['id'=>$offer->id])  }}'">
     <div class="media-body row">
         <div class="col-xs-3">
             <img src="{{ $offer->user->getAvatarHref()  }}"  class="img-rounded img-responsive">
