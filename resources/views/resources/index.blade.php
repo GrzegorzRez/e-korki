@@ -16,7 +16,7 @@
       <tr>
         <td> {{ $resource->title }} </td>
         <td> {{ $resource->updated_at }} </td>
-        <td><button type="button" class="btn btn-default">Edytuj</button></td>
+        <td><a href="#" class="btn btn-default" role="button">Edytuj</a></td>
       </tr>
       @endforeach
     </tbody>
