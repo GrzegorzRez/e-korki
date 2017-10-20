@@ -16,6 +16,5 @@ class DatabaseSeeder extends Seeder
         $this->call(OffersTableSeeder::class);
         $this->call(OpinionsTableSeeder::class);
         $this->call(ResourceTableSeeder::class);
-        $this->call(MessagesTableSeeder::class);
     }
 }
