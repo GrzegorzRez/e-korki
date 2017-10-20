@@ -16,13 +16,19 @@
       <tr>
         <td> {{ $resource->title }} </td>
         <td> {{ $resource->updated_at }} </td>
-        <td><a href="#" class="btn btn-default" role="button">Edytuj</a></td>
+        <td><a href="{{  route('resources.show',['id'=>$resource->id])  }}" class="btn btn-primary" role="button">Otwórz</a><a href="#" class="btn btn-default" role="button">Edytuj</a>
+          <form action="{{  route('resources.delete',['resource'=>$resource]) }}" method="POST">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <input type="submit" class="btn btn-danger" value="Usuń">
+          </form>
+        </td>
       </tr>
       @endforeach
     </tbody>
   </table>
   
- <a href="#" class="btn btn-primary" role="button">Dodaj nowy materiał</a>
+ <a href="{{  route('resources.add')  }}" class="btn btn-primary" role="button">Dodaj nowy materiał</a>
   
 </div>
 @endsection
