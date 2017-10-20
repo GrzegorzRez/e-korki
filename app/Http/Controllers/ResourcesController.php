@@ -9,15 +9,15 @@ use Illuminate\Support\Facades\Auth;
 class ResourcesController extends Controller
 {
     public function index(){
-        return Auth::user()->resources;
+        return view('resources.index');
     }
 
     public function add(){
-        return 'Jakiś widok dodawania.';
+        return view('resources.add');
     }
 
     public function show($id){
-        return Resource::find($id);
+        return view('resources.show');
     }
 
     public function store(Request $request){

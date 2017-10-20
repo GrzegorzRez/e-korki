@@ -20,24 +20,25 @@ class MessagesTableSeeder extends Seeder
 
         $faker = Faker\Factory::create();
         for($j=1; $j<=6; $j++)
-        	{
-	        for( $i=1 ; $i <= 99 ; $i++ )
-	        	{
-	                $message = new Message();
-	                $message->send_id=$i;
-	                $message->receive_id=$i+1;
-	                $message->content = $faker->sentence(20);
-	                $message->save();
-	        	}
+        {
+            for( $i=1 ; $i <= 99 ; $i++ )
+            {
+                $message = new Message();
+                $message->send_id=$i;
+                $message->receive_id=$i+1;
+                $message->content = $faker->sentence(20);
+                $message->save();
+            }
 
-	        for( $i=100 ; $i >= 2 ; $i-- )
-	        	{
-	                $messege = new Message();
-	                $message->send_id=$i;
-	                $message->receive_id=$i-1;
-	                $message->content = $faker->sentence(20);
-	                $message->save();
-	        	}
-	        }
+            for( $i=100 ; $i >= 2 ; $i-- )
+            {
+                $messege = new Message();
+                $message->send_id=$i;
+                $message->receive_id=$i-1;
+                $message->content = $faker->sentence(20);
+                $message->save();
+            }
+        }
+
     }
 }
