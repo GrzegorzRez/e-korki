@@ -49,6 +49,14 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                            <label for="description" class="col-md-4 control-label">Nr Telefonu</label>
+
+                            <div class="col-md-6">
+                                <input type="number" minlength="7" maxlength="12" id="phone" class="form-control" name="phone"></input>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label for="description" class="col-md-4 control-label">Opis</label>
 
