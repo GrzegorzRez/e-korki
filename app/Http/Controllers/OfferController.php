@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use App\Offer;
 use App\Tag;
@@ -16,7 +15,6 @@ class OfferController extends Controller
 		$categories = Category::all();
 		$offers = Offer::where(function($query)
 		{
-
             $name = Input::has('name')? Input::get('name'):null;
             $category_id = Input::has('category_id')? Input::get('category_id'):null;
 			$price_min = Input::has('price_min')? Input::get('price_min'):null;
@@ -89,20 +87,24 @@ class OfferController extends Controller
 				 }
 			}
 
-
 		})->orderBy('created_at','desc') -> Paginate(10);
-		return view('offers.index')->with('offers',$offers)->with('categories', $categories);
+		return view('offers.index')
+            ->with('offers',$offers)
+            ->with('categories', $categories);
 	}
 
     public function edit( Offer $offer ){
-        if( $offer->user_id == Auth::id() ) {
+        if( $offer->user->id == Auth::id() ) {
             $categories = Category::all();
             $tags = array_pluck($offer->tags, 'name');
             $tagsString = '';
             foreach ($tags as $tag) {
                 $tagsString .= $tag . ',';
             }
-            return view('offers.edit')->with('offer',$offer)->with('categories', $categories)->with('tags', $tagsString);
+            return view('offers.edit')
+                ->with('offer',$offer)
+                ->with('categories', $categories)
+                ->with('tags', $tagsString);
         }else{
             return redirect(route('offers.index'));
         }
@@ -133,9 +135,9 @@ class OfferController extends Controller
         return redirect(route('offers.index'));
 	}
 
-	public function update( Request $request){
+	public function update( Request $request ){
         $offer = Offer::find($request->id);
-        if( $offer->user_id == Auth::id() ){
+        if( $offer->user->id == Auth::id() ){
             $offer->update($request->all());
             $offer->tags->each->delete();
             $tags = explode(",",$request->tags);
@@ -148,7 +150,7 @@ class OfferController extends Controller
     }
 
     public function delete(Offer $offer){
-        if( $offer->user_id = Auth::id() ){
+        if( $offer->user->id = Auth::id() ){
             $offer->delete();
         }
         return back();
