@@ -26,10 +26,10 @@ Route::get('/oferty/{offer}/edytuj', 'OfferController@edit')->name('offers.edit'
 Route::post('/oferty/update', 'OfferController@update')->name('offers.update');
 Route::get('/oferty/dodaj', 'OfferController@add')->name('offers.add');
 Route::post('/oferty/store', 'OfferController@store')->name('offers.store');
+Route::get('/oferty/{offer}/usun', 'OfferController@delete')->name('offers.delete');
 
 Route::post('/opinie/store', 'OpinionsController@store')->name('opinions.store');
 Route::delete('/opinie/{opinion}', 'OpinionsController@delete')->name('opinions.delete');
-
 
 //facebook login
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
