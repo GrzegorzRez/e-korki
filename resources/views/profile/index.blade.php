@@ -43,7 +43,7 @@
 					      </tr>
 					      <tr>
 					        <td><b>TELEFON:</b></td>
-					        <td>OPCJONALNIE</td> 
+					        <td>{{$user->phone}}</td> 
 					      </tr>
 					</table>
 				</div>
