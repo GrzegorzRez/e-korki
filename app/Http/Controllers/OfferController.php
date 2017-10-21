@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\OfferRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Offer;
@@ -120,7 +121,7 @@ class OfferController extends Controller
 		return view('offers.add')->with('categories',$categories);
 	}
 
-	public function store(Request $request){
+	public function store(OfferRequest $request){
 	    $offer = new Offer($request->all());
         $offer->user_id = Auth::id();
         $offer->online = $request->has('online');
@@ -135,7 +136,7 @@ class OfferController extends Controller
         return redirect(route('offers.index'));
 	}
 
-	public function update( Request $request ){
+	public function update( OfferRequest $request ){
         $offer = Offer::find($request->id);
         if( $offer->user->id == Auth::id() ){
             $offer->update($request->all());

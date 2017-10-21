@@ -13,12 +13,12 @@
 	<div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{route('offers.update')}}">
                         {{ csrf_field() }}
-                        <input type="hidden" name="id" value="{{ $offer->id }}" >
+                        <input type="hidden" name="id" value="{{ (old('id')=='') ? $offer->id : old('id') }}" >
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Nazwa</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ $offer->name }}" required autofocus>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ (old('name')=='') ? $offer->name : old('name')}}" required autofocus>
                             </div>
                         </div>
 
@@ -26,7 +26,7 @@
                             <label for="description" class="col-md-4 control-label">Opis</label>
 
                             <div class="col-md-6">
-                                <textarea id="description" name="description" class="form-control" required>{{ $offer->description }}</textarea>
+                                <textarea id="description" name="description" class="form-control" required>{{ (old('description')=='') ? $offer->description : old('description')}}</textarea>
                             </div>
                         </div>
 
@@ -34,11 +34,9 @@
                             <label for="price_per_hour" class="col-md-4 control-label">Cena</label>
 
                             <div class="col-md-6">
-                                <div class="col-md-6">
-                                    <input id="price_per_hour" type="number" class="form-control" name="price_per_hour" value="{{ $offer->price_per_hour }}" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label>zł za 60 minut.</label>
+                                <div class="input-group">
+                                    <input id="price_per_hour" type="number" step="0.01" class="form-control" name="price_per_hour" value="{{ (old('price_per_hour')=='') ? $offer->price_per_hour : old('price_per_hour')}}" required>
+                                    <span class="input-group-addon">zł / 60 minut</span>
                                 </div>
                             </div>
                         </div>
@@ -58,12 +56,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="price_per_hour" class="col-md-4 control-label">Kategoria:</label>
+                            <label for="category_id" class="col-md-4 control-label">Kategoria:</label>
 
                             <div class="col-md-6">
-                                <select name="category_id" class="form-control" >
+                                <select id="category_id" name="category_id" class="form-control" >
+                                    {{  $selectedCategoryId = (old('category_id')=='') ? $offer->category_id : old('category_id')  }}
                                     @foreach( $categories as $category )
-                                        @if( $offer->category_id == $category->id )
+                                        @if( $offer->category_id == $selectedCategoryId )
                                             <option value="{{  $category->id  }}" selected>{{  $category->name  }}</option>
                                         @else
                                             <option value="{{  $category->id  }}" >{{  $category->name  }}</option>
@@ -77,14 +76,14 @@
                             <label for="location" class="col-md-4 control-label">Lokalizacja</label>
 
                             <div class="col-md-6">
-                                <input id="location" type="text" class="form-control" name="location" value="{{ $offer->location }}" required>
+                                <input id="location" type="text" class="form-control" name="location" value="{{ (old('location')=='') ? $offer->location : old('location')}}" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="tags" class="col-md-4 control-label">Tagi</label>
                             <div class="col-md-6">
-                                <input id="tags" type="text" class="form-control" name="tags" value="{{ $tags }}" data-role="tagsinput">
+                                <input id="tags" type="text" class="form-control" name="tags" value="{{ (old('tags')=='') ? $tags : old('tags')}}" data-role="tagsinput">
                             </div>
                         </div>
                         <script>
@@ -103,5 +102,15 @@
                             </div>
                         </div>
                     </form>
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
 @endsection
