@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use Socialite;
 use Intervention\Image\Image;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
@@ -50,7 +50,9 @@ class LoginController extends Controller
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('facebook')->scopes([
+            'email', 'user_hometown'
+        ])->redirect();
     }
 
     /**
@@ -61,16 +63,12 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
         $facebookUserInformation = Socialite::driver('facebook')->fields([
-            'first_name', 'last_name', 'email'
-        ])->scopes([
-            'email'
+            'first_name', 'last_name', 'email', 'hometown'
         ])->stateless()->user();
 
         //dd($facebookUserInformation);
 
         $user = User::where('email',$facebookUserInformation->email)->first();
-
-        //dd($user);
 
        if($user)
        {
@@ -86,11 +84,14 @@ class LoginController extends Controller
             $newuser->email = $facebookUserInformation->email;
             $newuser->password = $facebookUserInformation->token;
             $newuser->description = "";
-            $newuser->location = "";
-            $newuser->phone = 111111111;
+            if( isset($facebookUserInformation['hometown']) ){
+                $newuser->location = $facebookUserInformation['hometown']['name'];
+            }else{
+                $newuser->location = '';
+            }
+            $newuser->phone = 656346246;
             $newuser->save();
            $filename = $newuser->id.'.jpg';
-           //copy($facebookUserInformation->avatar,'uploads/avatars/'.$filename);
            copy('https://graph.facebook.com/'.$facebookUserInformation->id.'/picture?width=300','uploads/avatars/'.$filename);
            $newuser->avatar = $filename;
            $newuser->save();
