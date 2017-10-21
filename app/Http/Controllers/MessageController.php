@@ -15,8 +15,12 @@ class MessageController extends Controller
     	$message->receive_id = $request->has('receive_id');
     	$message->content = $request->has('content');
     	$message->save();
+        $user = User::find($message->receive_id);
+        
 
-    	return redirect(route('messages/{receive_id}'));
+        return redirect(route('conversation'));
+        //return redirect()->route('konwersacja', [$user]);
+    	//return redirect()->route('messages.messages', ['user' => $user, 'messages' => $messages]);    
     }
 
     public function show(){

@@ -42,7 +42,7 @@
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#"> {{ Auth::user()->getFullName() }} <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('profile.index')  }}">Profil</a></li>
-                            <li><a href="#">Wiadomości</a></li>
+                            <li><a href="{{ route('messages.messageslist') }}">Wiadomości</a></li>
                             <li><a href="#">Udostępnione materiały</a></li>
                             <li><a href="{{ route('resources.index') }}">Moje materiały</a></li>
                             <li class="divider"></li>

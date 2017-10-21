@@ -15,7 +15,7 @@ class Message extends Model
     public function scopeFindForUser($query, User $user)
     {
         if( isset($user) ) {
-            return $query->where('send_id',$user->id)->orWhere('receive_id',$user->id)->get();
+            return $query->where('send_id',$user->id)->orWhere('receive_id',$user->id)->latest()->get();
         }
     }
 }

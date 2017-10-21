@@ -2,8 +2,17 @@
 
 @section('content')
 <div class="container">
-	<div >
+	<div>
+    <form method="POST" action="{{ route('message.send') }}">
+      <div class="form-group">
+        <label for="comment">Treść wiadomości:</label>
+        <textarea class="form-control" rows="5" id="comment"></textarea>
+        <input type="hidden" name="recieve_id" value="{{$user->id}}">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div> 
+    </form>
 		<div>
+      @if(isset($messages))
 			@foreach($messages as $message)
 				@if($message->send_id == Auth::id() && $message->receive_id == $user->id)
 				<div class="row">
@@ -32,7 +41,11 @@
     			</div>
 				@endif
 			@endforeach
+        <h3 class="text-center">Brak Wiadomości</h3>
+      @endif
+
 		</div> 
 	</div>
 </div>
+
 @endsection

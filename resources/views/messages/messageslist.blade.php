@@ -1,10 +1,12 @@
+@extends('layouts.main')
+@section('content')
 @foreach( $messages as $message )
-	<ul>
-	@if($message->send_id == Auth::id())	
-		<li color="red">{{ $message->content }}</li>
-	@else
-		<li><b>{{ $message->content}}</b></li>
+	@if($message->send_id == Auth::id())
+
+		<p>{{ $message->content }}</p>
+	@elseif($message->receive_id == Auth::id())
+		<p>{{ $message->content}}
 	@endif
-	</ul>
 @endforeach
+@endsection
 
