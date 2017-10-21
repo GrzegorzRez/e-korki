@@ -9,30 +9,21 @@ use App\User;
 
 class MessageController extends Controller
 {
-    public function send(Request $request){
-    	$message = new Message($request->all());
-    	$message->send_id = Auth::id();
-    	$message->receive_id = $request->has('receive_id');
-    	$message->content = $request->has('content');
-    	$message->save();
-        $user = User::find($message->receive_id);
-        
-
-        return redirect(route('conversation'));
-        //return redirect()->route('konwersacja', [$user]);
-    	//return redirect()->route('messages.messages', ['user' => $user, 'messages' => $messages]);    
+    public function index(){
+        return view('messages.index');
     }
 
-    public function show(){
-        $messages = Message::findForUser(Auth::user());
+    public function show( $receive_user_id ){
+        $receiveUser = User::find($receive_user_id);
+        $messages = Message::findForAuthWithUser($receiveUser);
+        return view('messages.conversation')->with('receiveUser',$receiveUser)->with('messages',$messages);
 
-    	return view('messages.messageslist')->with('messages',$messages);
     }
 
-    public function showConversation($id){
-        $user = User::find($id);
-        $messages = Message::findForUser(Auth::user());
-        return view('messages.messages')->with('user',$user)->with('messages',$messages);
-
+    public function store(Request $request){
+        $message = new Message($request->all());
+        $message->send_id = Auth::id();
+        $message->save();
+        return redirect(route('conversation',['id'=>$request->receive_id]));
     }
 }

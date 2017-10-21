@@ -30,6 +30,6 @@ Route::delete('/opinie/{opinion}', 'OpinionsController@delete')->name('opinions.
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
 Route::get('/loggedin', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('wiadomosci/lista', 'MessageController@show')->name('messages.messageslist');
-Route::get('konwersacja/{id}', 'MessageController@showConversation')->name('conversation')->where(['id' => '[0-9]+']);
-Route::post('/message/send', 'MessageController@send')->name('message.send');
+Route::get('wiadomosci', 'MessageController@index')->name('messages.index');
+Route::post('wiadomosci/store', 'MessageController@store')->name('messages.store');
+Route::get('konwersacja/{receive_user_id}', 'MessageController@show')->name('conversation')->where(['receive_user_id' => '[0-9]+']);
