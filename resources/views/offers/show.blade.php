@@ -35,7 +35,7 @@
         <div class="row">
             <div class="btn-group-vertical">
                 <a href="{{ $offer->user->getProfileHref() }}" class="btn btn-primary" role="button">Zobacz profil</a>
-                <a href="#" class="btn btn-primary" role="button">Wyślij wiadomość</a>
+                <a href="{{ route('messages.conversation',['receive_user_id'=>$offer->user->id]) }}" class="btn btn-primary" role="button">Wyślij wiadomość</a>
                 <a href="#" id="numberPhone" class="btn btn-primary" role="button" onclick="showNumberPhone();">Numer telefonu</a>
 
             </div>

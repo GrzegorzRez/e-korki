@@ -53,6 +53,10 @@
 					<a class="btn btn-primary btn-lg" role="button" href="{{ route('profile.edit') }}">
                         Edytuj profil
 					</a>
+					@else
+					<a class="btn btn-primary btn-lg" role="button" href="{{ route('messages.conversation',['receive_user_id'=>$user->id]) }}">
+						Napisz wiadomość
+					</a>
 					@endif
 				</div>
 
