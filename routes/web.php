@@ -31,3 +31,4 @@ Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('f
 Route::get('/loggedin', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('wiadomosci/lista', 'MessageController@show')->name('messages.messageslist');
+Route::get('konwersacja/{id}', 'MessageController@showConversation')->name('conversation')->where(['id' => '[0-9]+']);

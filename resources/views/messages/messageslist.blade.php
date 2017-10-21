@@ -1,5 +1,10 @@
 @foreach( $messages as $message )
 	<ul>
-	<li>{{ $message->content }}</li>
+	@if($message->send_id == Auth::id())	
+		<li color="red">{{ $message->content }}</li>
+	@else
+		<li><b>{{ $message->content}}</b></li>
+	@endif
 	</ul>
 @endforeach
+
