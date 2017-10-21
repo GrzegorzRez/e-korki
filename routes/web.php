@@ -32,4 +32,4 @@ Route::get('/loggedin', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('wiadomosci', 'MessageController@index')->name('messages.index');
 Route::post('wiadomosci/store', 'MessageController@store')->name('messages.store');
-Route::get('konwersacja/{receive_user_id}', 'MessageController@show')->name('conversation')->where(['receive_user_id' => '[0-9]+']);
+Route::get('konwersacja/{receive_user_id}', 'MessageController@show')->name('messages.conversation')->where(['receive_user_id' => '[0-9]+']);

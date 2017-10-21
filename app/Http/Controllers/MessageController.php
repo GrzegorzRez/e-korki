@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MessageRequest;
-use Illuminate\Http\Request;
 use App\Message;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -11,7 +10,9 @@ use App\User;
 class MessageController extends Controller
 {
     public function index(){
-        return view('messages.index');
+        $latestSendMessages = Message::findForAuthLatestSendMessage();
+        $latestReceiveMessages = Message::findForAuthLatestReceiveMessage();
+        return view('messages.index')->with('latestSendMessages',$latestSendMessages)->with('latestReceiveMessages',$latestReceiveMessages);
     }
 
     public function show( $receive_user_id ){
@@ -25,6 +26,6 @@ class MessageController extends Controller
         $message = new Message($request->all());
         $message->send_id = Auth::id();
         $message->save();
-        return redirect(route('conversation',['id'=>$request->receive_id]));
+        return redirect(route('messages.conversation',['receive_user_id'=>$request->receive_id]));
     }
 }
