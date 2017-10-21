@@ -12,6 +12,17 @@
 		</div>
 		<button type="submit" class="btn btn-default">Wyślij</button>
     </form>
+
+	@if ($errors->any())
+		<div class="alert alert-danger">
+			<ul>
+				@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+				@endforeach
+			</ul>
+		</div>
+	@endif
+
 	@forelse($messages as $message)
 		@include('messages.message')
 	@empty

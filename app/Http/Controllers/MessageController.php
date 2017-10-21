@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MessageRequest;
 use Illuminate\Http\Request;
 use App\Message;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,7 @@ class MessageController extends Controller
 
     }
 
-    public function store(Request $request){
+    public function store(MessageRequest $request){
         $message = new Message($request->all());
         $message->send_id = Auth::id();
         $message->save();
