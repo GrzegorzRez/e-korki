@@ -51,41 +51,48 @@ class OfferController extends Controller
 			{
 				$query->where('location', 'like', "%{$location}%");
 			}
-			if ($online)
+			if ($online OR $teacher_home OR $student_home)
 			{
-				 $query->where('online', '=', true);
-				 if($teacher_home)
-				 {
-				 	$query->orWhere('teacher_home', '=', true);
-				 }
-				 if($student_home)
-				 {
-				 	$query->orWhere('student_home', '=', true);
-				 }
-			}
-			if ($teacher_home)
-			{
-				 $query->where('teacher_home', '=', true);
-				 if($student_home)
-				 {
-				 	$query->orWhere('student_home', '=', true);
-				 }
-				 if($online)
-				 {
-				 	$query->orWhere('online', '=', true);
-				 }
-			}
-			if ($student_home)
-			{
-				 $query->where('student_home', '=', true);
-				 if($teacher_home)
-				 {
-				 	$query->orWhere('teacher_home', '=', true);
-				 }
-				 if($online)
-				 {
-				 	$query->orWhere('online', '=', true);
-				 }
+				$query->where(function($query) use ($online, $teacher_home, $student_home)
+				{
+					if ($online)
+					{
+						 $query->where('online', '=', true);
+						 if($teacher_home)
+						 {
+						 	$query->orWhere('teacher_home', '=', true);
+						 }
+						 if($student_home)
+						 {
+						 	$query->orWhere('student_home', '=', true);
+						 }
+					}
+					if ($teacher_home)
+					{
+						 $query->where('teacher_home', '=', true);
+						 if($student_home)
+						 {
+						 	$query->orWhere('student_home', '=', true);
+						 }
+						 if($online)
+						 {
+						 	$query->orWhere('online', '=', true);
+						 }
+					}
+					if ($student_home)
+					{
+						 $query->where('student_home', '=', true);
+						 if($teacher_home)
+						 {
+						 	$query->orWhere('teacher_home', '=', true);
+						 }
+						 if($online)
+						 {
+						 	$query->orWhere('online', '=', true);
+						 }
+					}
+				});
+			
 			}
 
 		})->orderBy('created_at','desc') -> Paginate(10);
