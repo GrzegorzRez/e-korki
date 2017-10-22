@@ -34,7 +34,7 @@ class OffersTableSeeder extends Seeder
         $locations = ['Warszawa','Kraków','Łódź','Poznań','Wrocław','Gdańsk','Szczecin','Bydgoszcz','Lublin','Katowice','Białystok','Gdynia','Częstochowa','Radom','Sosnowiec','Toruń','Kielce','Rzeszów','Gliwice','Zabrze','Bielsko-Biała','Bytom','Zielona Góra','Rybnik','Ruda Śląska'];
 
         $faker = Faker\Factory::create();
-        for( $i=1 ; $i <= 100 ; $i++ ){
+        for( $i=1 ; $i <= 20 ; $i++ ){
             $offer= new Offer();
             $offer->user_id=$i;
             $offer->category_id=2;

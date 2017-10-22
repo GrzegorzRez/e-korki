@@ -18,10 +18,24 @@ class UsersTableSeeder extends Seeder
             $user->name='Adam';
             $user->surname='Nowak';
             $user->location='Bydgoszcz';
-            $user->description='Opis życia i kom jestem';
+            $user->description='Jestem nauczycielem matematyki z dużym doświadczeniem. Zapraszam na korepetycje.';
             $user->email='adam@adam.pl';
             $user->phone='570858343';
+            $user->avatar = '1.jpg';
             $user->password=bcrypt('adam');
+            $user->save();
+        }
+
+        if( User::find(2) == null ){
+            $user= new User();
+            $user->name='Jan';
+            $user->surname='Wiśniewski';
+            $user->location='Warszawa';
+            $user->description='Witam serdecznie. Korepetycji z fizyki i matematyki udzielam od czasu studiów w Nauczycielskim Kolegium Fizyki UW (czyli od ok. 15 lat) i jest to zajęcie, które daje mi olbrzymią satysfakcję. Swoją ofertę kieruję głównie do osób chcących rzetelnie przygotować się do matury rozszerzonej. Zapraszam.';
+            $user->email='jan@jan.pl';
+            $user->phone='572848253';
+            $user->avatar = '2.jpg';
+            $user->password=bcrypt('jan');
             $user->save();
         }
 
@@ -29,8 +43,7 @@ class UsersTableSeeder extends Seeder
         $surnames = ['Nowak','Kowalski','Wiśniewski','Wójcik','Kowalczyk','Kamiński','Lewandowski','Zieliński','Szymański','Woźniak','Dąbrowski','Kozłowski','Jankowski','Mazur','Wojciechowski','Kwiatkowski','Krawczyk','Kaczmarek','Piotrowski','Grabowski','Zając','Pawłowski','Michalski','Król','Jabłoński'];
         $locations = ['Warszawa','Kraków','Łódź','Poznań','Wrocław','Gdańsk','Szczecin','Bydgoszcz','Lublin','Katowice','Białystok','Gdynia','Częstochowa','Radom','Sosnowiec','Toruń','Kielce','Rzeszów','Gliwice','Zabrze','Bielsko-Biała','Bytom','Zielona Góra','Rybnik','Ruda Śląska'];
 
-        $faker = Faker\Factory::create();
-        for( $i=0 ; $i < 100 ; $i++ ){
+        for( $i=0 ; $i < 18 ; $i++ ){
             $user = new User();
             $name = $names[array_rand($names)];
             $surname = $surnames[array_rand($surnames)];
@@ -39,13 +52,11 @@ class UsersTableSeeder extends Seeder
             $user->name = $name;
             $user->surname = $surname;
             $user->location = $location;
-            $user->description = $faker->sentence(64);
+            $user->description = 'Absolwent matematyki Uniwersytetu Warszawskiego z dużym doświadczeniem dydaktycznym oferuje bardzo skuteczne korepetycje z matematyki szkolnej (liceum, gimnazjum, podstawówka) oraz matematyki wyższej (rachunek prawdopodobieństwa, analiza matematyczna, algebra liniowa, statystyka i inne).';
             $user->email = $email;
             $user->phone = rand(500000000,890000000);
             $user->password = bcrypt('123456');
             $user->save();
-            $avatar = $faker->image(public_path('uploads\avatars'),300,300, 'people');
-            rename($avatar,public_path('uploads\avatars\\'.$user->id.'.jpg'));
             $user->avatar = $user->id.'.jpg';
             $user->save();
         }

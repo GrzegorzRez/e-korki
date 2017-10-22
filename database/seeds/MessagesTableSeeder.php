@@ -21,7 +21,7 @@ class MessagesTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         for($j=1; $j<=6; $j++)
         {
-            for( $i=1 ; $i <= 99 ; $i++ )
+            for( $i=1 ; $i <= 19 ; $i++ )
             {
                 $message = new Message();
                 $message->send_id=$i;
@@ -30,7 +30,7 @@ class MessagesTableSeeder extends Seeder
                 $message->save();
             }
 
-            for( $i=100 ; $i >= 2 ; $i-- )
+            for( $i=20 ; $i >= 2 ; $i-- )
             {
                 $messege = new Message();
                 $message->send_id=$i;

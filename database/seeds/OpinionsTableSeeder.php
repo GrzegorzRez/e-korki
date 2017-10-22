@@ -19,7 +19,7 @@ class OpinionsTableSeeder extends Seeder
         $opinion->save();
 
         $faker = Faker\Factory::create();
-        for( $i=1 ; $i <= 95 ; $i++ ){
+        for( $i=1 ; $i <= 15 ; $i++ ){
             for( $j=1 ; $j <= 5 ; $j++ ) {
                 $opinion = new Opinion();
                 $opinion->teacher_id=$i;
