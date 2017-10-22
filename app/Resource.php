@@ -16,4 +16,9 @@ class Resource extends Model
         return $this->belongsTo('App\User','user_id');
     }
 
+    public function sharedToUsers()
+    {
+        return $this->belongsToMany('App\User', 'resource_user', 'resource_id', 'user_id');
+    }
+
 }

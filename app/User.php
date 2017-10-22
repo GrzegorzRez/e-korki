@@ -39,6 +39,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Resource');
     }
 
+    public function sharedResources()
+    {
+        return $this->belongsToMany('App\Resource', 'resource_user', 'user_id', 'resource_id');
+    }
+
     public function getFullName(){
         return $this->name.' '.$this->surname;
     }
