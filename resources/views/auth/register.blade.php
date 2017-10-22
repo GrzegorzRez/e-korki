@@ -110,4 +110,9 @@
         </div>
     </div>
 </div>
+
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&region=PL" type="text/javascript"></script>
+    <script>
+        new google.maps.places.Autocomplete( document.getElementById('location'), { types: ['(cities)'], componentRestrictions: {country: 'pl'}});
+    </script>
 @endsection

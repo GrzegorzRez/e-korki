@@ -113,6 +113,7 @@
         @endif
     </div>
 
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&region=PL" type="text/javascript"></script>
     <script>
 
         checkboxStatusChange();
@@ -129,6 +130,8 @@
                 $('#submit_info').hide();
             }
         }
+
+        new google.maps.places.Autocomplete( document.getElementById('location'), { types: ['(cities)'], componentRestrictions: {country: 'pl'}});
 
     </script>
 @endsection
