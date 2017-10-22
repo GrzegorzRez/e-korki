@@ -11,17 +11,32 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner carousel" >
     <div class="item active ">
-      <h2 class="carousel-caption" >Tekst</h2>
+      <div class="carousel-caption">
+        <div class ="col-xs-1"></div>
+         <div class ="col-xs-10">
+        <span style="color:#4d4dff"><h3><i>Nie wstyd nie wiedzieć, lecz wstyd nie pragnąć swojej wiedzy uzupełnić.</i></h3>
+        <h5>Feliks Chwalibóg</h5></span>
+          </div>
+      </div>
       <img class="img-rounded center-block"  src="images/main_page_chalkboard_slider.jpg" alt="Tablica">
     </div>
 
     <div class="item">
-      <h2 class="carousel-caption" >Tekst</h2>
+      <div class="carousel-caption">
+        <h2><i>"Najmądrzejszy jest, który wie czego nie wie."</i></h2>
+        <h5>Sokrates</h5>
+      </div>
       <img class="img-rounded center-block" src="images/main_page_reading_book_slide.jpg" alt="Czyta">
     </div>
 
     <div class="item">
-      <h2 class="carousel-caption" >Tekst</h2>
+      <div class="carousel-caption">
+        <div class ="col-xs-5"></div>
+        <div class="col-xs-7">
+          <h3><i>"Sama wiedza nie wystarczy, trzeba jeszcze umieć ją stosować."</i></h3>
+          <h5>Johann Wolfgang Goethe</h5>
+        </div>
+      </div>
       <img class="img-rounded center-block" src="images/main_page_slider_photo.jpg" alt="apple">
     </div>
   </div>
