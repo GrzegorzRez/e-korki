@@ -102,7 +102,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     Zarejestruj
                                 </button>
-                                <a href="{{route('facebook.login')}}"><button type="button" class="btn btn-primary">Zaloguj przez Facebooka</button></a>
                             </div>
                         </div>
                     </form>

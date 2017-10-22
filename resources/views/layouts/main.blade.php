@@ -61,6 +61,7 @@
                 @endauth
                 @guest
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ route('facebook.login') }}">Zaloguj przez Facebooka</a></li>
                     <li><a href="{{ route('register') }}">Rejestracja</a></li>
                     <li><a href="{{ route('login') }}">Logowanie</a></li>
                 </ul>
