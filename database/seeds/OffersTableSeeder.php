@@ -53,7 +53,7 @@ class OffersTableSeeder extends Seeder
             $offer->category_id=$category->id;
             $offer->price_per_hour=$faker->numberBetween(10,60);
             $offer->name=$category->name.' dla '.$forWho[array_rand($forWho)];;
-            $offer->description=$greetings[array_rand($greetings)].' '.$aboutme[array_rand($aboutme)].$user->name.' .'.$admission[array_rand($admission)].$category->name.'? Jesteś w dobrym miejscu! '.$neutral[array_rand( $neutral)];
+            $offer->description=$greetings[array_rand($greetings)].' '.$aboutme[array_rand($aboutme)].$user->name.'. '.$admission[array_rand($admission)].$category->name.'? Jesteś w dobrym miejscu! '.$neutral[array_rand( $neutral)];
             $offer->location=$locations[array_rand($locations)];
             $offer->online=$faker->boolean;
             $offer->teacher_home=$faker->boolean;
