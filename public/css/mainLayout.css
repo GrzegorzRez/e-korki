@@ -13,3 +13,8 @@ body
     overflow-x: hidden;
 }
 
+.pac-icon {
+    width: 0;
+    background-image: none;
+}
+

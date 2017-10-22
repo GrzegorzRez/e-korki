@@ -10,7 +10,8 @@ class ResourcesController extends Controller
 {
     public function index(){
         $resources = Auth::user()->resources;
-        return view('resources.index')->with('resources',$resources);
+        $sharedResources = Auth::user()->sharedResources;
+        return view('resources.index')->with('resources',$resources)->with('sharedResources',$sharedResources);
     }
 
     public function show( Resource $resource ){

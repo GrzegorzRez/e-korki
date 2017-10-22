@@ -6,11 +6,9 @@
     <title>  @yield('title',env('APP_NAME')) </title>
 
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/mainLayout.css">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Kalam:400,700|Kaushan+Script" rel="stylesheet">
     @stack('styles')
-    @push('styles')
-        <link rel="stylesheet" href="/css/mainLayout.css">
-    @endpush
 </head>
 <body>
 <script src="/js/app.js"></script>
@@ -41,8 +39,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('profile.index')  }}">Profil</a></li>
                             <li><a href="{{ route('messages.index') }}">Wiadomości</a></li>
-                            <li><a href="#">Udostępnione materiały</a></li>
-                            <li><a href="{{ route('resources.index') }}">Moje materiały</a></li>
+                            <li><a href="{{ route('resources.index') }}">Materiały</a></li>
                             <li class="divider"></li>
                             <li>
                                 <a href="{{ route('logout') }}"

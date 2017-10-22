@@ -34,5 +34,27 @@ class ResourceTableSeeder extends Seeder
         szkoła -
         ";
         $resource->save();
+
+        $resource = new Resource();
+        $resource->user_id = 2;
+        $resource->title = "Treść użytkownika 2";
+        $resource->content = "2+2=4. Zasada dodawania jest prosta... ble ble ble. ";
+        $resource->save();
+        $resource = new Resource();
+        $resource->user_id = 2;
+        $resource->title = "Treść użytkownika 2-2";
+        $resource->content = "2+2=4. Zasada dodawania jest prosta... ble ble ble. ";
+        $resource->save();
+
+        $resource = new Resource();
+        $resource->user_id = 3;
+        $resource->title = "Treść użytkownika 3";
+        $resource->content = "2+2=4. Zasada dodawania jest prosta... ble ble ble. ";
+        $resource->save();
+        $resource = new Resource();
+        $resource->user_id = 3;
+        $resource->title = "Treść użytkownika 3 - 2";
+        $resource->content = "2+2=4. Zasada dodawania jest prosta... ble ble ble. ";
+        $resource->save();
     }
 }
