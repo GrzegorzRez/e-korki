@@ -39,7 +39,7 @@
 </div>
   <div class="form-group">
     <label>Lokalizacja:</label>
-    <input class="form-control" type="text" name="location" value="{{Input::get('location')}}">
+    <input class="form-control" type="text" name="location" id="location" value="{{Input::get('location')}}">
   </div>
 
   	<label>Tryb korepetycji:</label>
@@ -59,5 +59,9 @@
 	@each('offers.offer',$offers,'offer','offers.none');
 	{{ $offers->links() }}
 </div>
-</div>	
+</div>
+<script src="http://maps.googleapis.com/maps/api/js?libraries=places&region=PL&key=AIzaSyB9-t5hJzQFtw_kc6y4tojZ_TZ1MSRV2NM" type="text/javascript"></script>
+  <script>
+      new google.maps.places.Autocomplete( document.getElementById('location'), { types: ['(cities)'], componentRestrictions: {country: 'pl'}});
+  </script>
 @endsection
