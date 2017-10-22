@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Offer;
 use App\Tag;
 use App\Category;
-//use App\User;
+use App\User;
 
 class OffersTableSeeder extends Seeder
 
@@ -21,8 +21,8 @@ class OffersTableSeeder extends Seeder
         $tags = ['szkoła podstawowa','matura','technikum','liceum','gimnazjum','studia','tanio','duże doświadczenie','nauczyciel'];
         $forWho = ['wszystkich','każdego','potrzebujących','Ciebie'];
         //zmienne do kreowanej oferty
-        $greetings = ['Witam. ', 'Witam zainteresowanych!', 'Dzień dobry!', 'Cześć!'];
-        $aboutme = ['Mam na imię ', 'Jestem ', 'Nazywam się '];
+        $greetings = ['Witam. ', 'Witam zainteresowanych!', 'Dzień dobry!', 'Cześć!','Siema. ','Witam serdecznie. ','Czołem internet. '];
+        $aboutme = ['Mam na imię ', 'Jestem ', 'Nazywam się ','Z tej strony '];
         $admission = ['Twoją piętą achillesową jest ', 
             'Uczysz się niemal 24godziny/dobe, a mimo to wciąż problemem jest dla Ciebie ', 
             'Chciałbyś/chciałabyś poszerzyć swoja wiedzę z zakresu bardzo trudnej dziedziny, jaką niewątpliwie jest ', 
@@ -49,11 +49,11 @@ class OffersTableSeeder extends Seeder
             $offer= new Offer();
             $category = Category::inRandomOrder()->first();
             $offer->user_id=$i;
-            //$user = User::where('id', $i)->all();
+            $user = User::find($i);
             $offer->category_id=$category->id;
             $offer->price_per_hour=$faker->numberBetween(10,60);
             $offer->name=$category->name.' dla '.$forWho[array_rand($forWho)];;
-            $offer->description=$greetings[array_rand($greetings)].' '.$aboutme[array_rand($aboutme)].'X .'/*$user->name*/.$admission[array_rand($admission)].$category->name.'? Jesteś w dobrym miejscu! '.$neutral[array_rand( $neutral)];
+            $offer->description=$greetings[array_rand($greetings)].' '.$aboutme[array_rand($aboutme)].$user->name.' .'.$admission[array_rand($admission)].$category->name.'? Jesteś w dobrym miejscu! '.$neutral[array_rand( $neutral)];
             $offer->location=$locations[array_rand($locations)];
             $offer->online=$faker->boolean;
             $offer->teacher_home=$faker->boolean;
