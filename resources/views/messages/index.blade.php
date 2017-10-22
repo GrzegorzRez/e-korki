@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title','Wiadomości')
 @section('content')
     <div class="container">
         <h3>Ostatnie wysłane wiadomości</h3><hr>

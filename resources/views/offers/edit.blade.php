@@ -1,11 +1,8 @@
 @extends('layouts/main')
-
-@section('title','Edytuj ');
-
+@section('title','Edytuj ofertę')
 @push('styles')
     <link rel="stylesheet" href="/css/jquery.tagsinput.css">
 @endpush
-
 @section('content')
     <script src="/js/jquery.tagsinput.js"></script>
 

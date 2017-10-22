@@ -1,7 +1,6 @@
 @extends('layouts/main')
-
+@section('title',$offer->name)
 @section('content')
-
 <div class="container">
 
     <div class="col-lg-8 col-md-8 col-sm-8">

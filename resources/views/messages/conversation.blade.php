@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title',$receiveUser->getFullName())
 @section('content')
 <div class="container">
 	<h2 class="text-center">Konwersacja z {{  $receiveUser->getFullName()  }}</h2>

@@ -1,13 +1,11 @@
 @extends('layouts/main')
-
+@section('title','Dodaj nową ofertę')
 @push('styles')
     <link rel="stylesheet" href="/css/jquery.tagsinput.css">
 @endpush
-
 @section('content')
-    <script src="/js/jquery.tagsinput.js"></script>
-
     <h1 class="text-center">Dodaj ofertę</h1>
+    <script src="/js/jquery.tagsinput.js"></script>
 	<div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{route('offers.store')}}">
                         {{ csrf_field() }}

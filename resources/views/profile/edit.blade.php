@@ -1,5 +1,5 @@
 @extends('layouts/main')
-
+@section('title','Edytuj profil')
 @section('content')
 	<div class="row text-center">
     	<h2 class="text-center"><b>EDYCJA PROFILU UŻYTKOWNIKA</b></h2>

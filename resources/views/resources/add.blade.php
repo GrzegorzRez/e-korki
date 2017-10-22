@@ -1,4 +1,5 @@
 @extends('layouts/main')
+@section('title','Dodaj materiał')
 @section('content')
 <div class="container text-center">
  <form action="{{  route('resources.store')  }}" method="POST">

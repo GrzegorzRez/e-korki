@@ -1,4 +1,5 @@
 @extends('layouts/main')
+@section('title','Lista materiałów')
 @section('content')
 <div class="container">
   <h2>Utworzone materiały</h2>

@@ -11,8 +11,6 @@
     @push('styles')
         <link rel="stylesheet" href="/css/mainLayout.css">
     @endpush
-
-
 </head>
 <body>
 <script src="/js/app.js"></script>
