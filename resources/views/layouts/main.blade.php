@@ -22,7 +22,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ route('index') }}"><img src="/images/logoV2.png" height="33px"/></a>
+                <a class="navbar-brand" href="{{ route('index') }}"><img src="/images/logo.png" height="33px"/></a>
             </div>
             <!-- Collection of nav links, forms, and other content for toggling -->
             <div id="navbarCollapse" class="collapse navbar-collapse">
