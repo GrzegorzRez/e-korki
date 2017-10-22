@@ -17,7 +17,7 @@
       <tr>
         <td> {{ $resource->title }} </td>
         <td> {{ $resource->updated_at }} </td>
-        <td><a href="{{  route('resources.show',['id'=>$resource->id])  }}" class="btn btn-primary" role="button">Otwórz</a><a href="#" class="btn btn-default" role="button">Edytuj</a>
+        <td><a href="{{  route('resources.show',['resource'=>$resource])  }}" class="btn btn-primary" role="button">Otwórz</a><a href="{{ route('resources.edit',['resource'=>$resource])  }}" class="btn btn-default" role="button">Edytuj</a>
           <form action="{{  route('resources.delete',['resource'=>$resource]) }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}

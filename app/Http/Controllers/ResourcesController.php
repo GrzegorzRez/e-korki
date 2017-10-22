@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ResourceRequest;
 use App\Resource;
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ResourcesController extends Controller
@@ -14,13 +13,12 @@ class ResourcesController extends Controller
         return view('resources.index')->with('resources',$resources);
     }
 
-    public function add(){
-        return view('resources.add');
+    public function show( Resource $resource ){
+        return view('resources.show')->with('resource',$resource);
     }
 
-    public function show( $id ){
-        $resource = Resource::find($id);
-        return view('resources.show')->with('resource',$resource);
+    public function add(){
+        return view('resources.add');
     }
 
     public function store(ResourceRequest $request){
@@ -30,8 +28,27 @@ class ResourcesController extends Controller
         return redirect(route('resources.index'));
     }
 
+    public function edit( Resource $resource )
+    {
+        if ($resource->user_id == Auth::id()) {
+            return view('resources.edit')->with('resource', $resource);
+        }else{
+            return redirect(route('resources.index'));
+        }
+    }
+
+    public function update( Resource $resource , ResourceRequest $request )
+    {
+        if ($resource->user_id == Auth::id()) {
+            $resource->update($request->all());
+        }
+        return redirect(route('resources.index'));
+    }
+
     public function delete(Resource $resource){
-        $resource->delete();
+        if ($resource->user_id == Auth::id()) {
+            $resource->delete();
+        }
         return redirect(route('resources.index'));
     }
 }
