@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ResourceRequest;
 use App\Resource;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +23,7 @@ class ResourcesController extends Controller
         return view('resources.show')->with('resource',$resource);
     }
 
-    public function store(Request $request){
+    public function store(ResourceRequest $request){
         $resource = new Resource($request->all());
         $resource->user_id = Auth::id();
         $resource->save();
