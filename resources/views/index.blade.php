@@ -14,7 +14,7 @@
       <div class="carousel-caption">
         <div class ="col-xs-1"></div>
          <div class ="col-xs-10">
-        <span style="color:#4d4dff"><h3><i>Nie wstyd nie wiedzieć, lecz wstyd nie pragnąć swojej wiedzy uzupełnić.</i></h3>
+        <span style="text-shadow: 2px 2px 4px #000000"><h2><i>"Nie wstyd nie wiedzieć, lecz wstyd nie pragnąć swojej wiedzy uzupełnić."</i></h2>
         <h5>Feliks Chwalibóg</h5></span>
           </div>
       </div>
@@ -23,8 +23,8 @@
 
     <div class="item">
       <div class="carousel-caption">
-        <h2><i>"Najmądrzejszy jest, który wie czego nie wie."</i></h2>
-        <h5>Sokrates</h5>
+        <span style="text-shadow: 2px 2px 4px #000000"><h2><i>"Najmądrzejszy jest, który wie czego nie wie."</i></h2>
+        <h5>Sokrates</h5></span>
       </div>
       <img class="img-rounded center-block" src="images/main_page_reading_book_slide.jpg" alt="Czyta">
     </div>
@@ -33,8 +33,8 @@
       <div class="carousel-caption">
         <div class ="col-xs-5"></div>
         <div class="col-xs-7">
-          <h3><i>"Sama wiedza nie wystarczy, trzeba jeszcze umieć ją stosować."</i></h3>
-          <h5>Johann Wolfgang Goethe</h5>
+          <span style="text-shadow: 2px 2px 4px #000000"><h3><i>"Sama wiedza nie wystarczy, trzeba jeszcze umieć ją stosować."</i></h3>
+          <h5>Johann Wolfgang Goethe</h5></span>
         </div>
       </div>
       <img class="img-rounded center-block" src="images/main_page_slider_photo.jpg" alt="apple">
