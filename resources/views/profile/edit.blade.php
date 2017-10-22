@@ -76,7 +76,7 @@
             </div>
         @endif
     </div>
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&region=PL" type="text/javascript"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=places&region=PL&key=AIzaSyB9-t5hJzQFtw_kc6y4tojZ_TZ1MSRV2NM" type="text/javascript"></script>
     <script>
         new google.maps.places.Autocomplete( document.getElementById('location'), { types: ['(cities)'], componentRestrictions: {country: 'pl'}});
     </script>
