@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Offer;
 use App\Tag;
 use App\Category;
+//use App\User;
 
 class OffersTableSeeder extends Seeder
 
@@ -19,16 +20,40 @@ class OffersTableSeeder extends Seeder
         $locations = ['Warszawa','Kraków','Łódź','Poznań','Wrocław','Gdańsk','Szczecin','Bydgoszcz','Lublin','Katowice','Białystok','Gdynia','Częstochowa','Radom','Sosnowiec','Toruń','Kielce','Rzeszów','Gliwice','Zabrze','Bielsko-Biała','Bytom','Zielona Góra','Rybnik','Ruda Śląska'];
         $tags = ['szkoła podstawowa','matura','technikum','liceum','gimnazjum','studia','tanio','duże doświadczenie','nauczyciel'];
         $forWho = ['wszystkich','każdego','potrzebujących','Ciebie'];
+        //zmienne do kreowanej oferty
+        $greetings = ['Witam. ', 'Witam zainteresowanych!', 'Dzień dobry!', 'Cześć!'];
+        $aboutme = ['Mam na imię ', 'Jestem ', 'Nazywam się '];
+        $admission = ['Twoją piętą achillesową jest ', 
+            'Uczysz się niemal 24godziny/dobe, a mimo to wciąż problemem jest dla Ciebie ', 
+            'Chciałbyś/chciałabyś poszerzyć swoja wiedzę z zakresu bardzo trudnej dziedziny, jaką niewątpliwie jest ', 
+            'Szukasz osoby, która jest ekspertem w dziedzinie: ', 
+            'Szukasz korepetytora z prawdziwwego zdarzenia, a Twoim największym przekleństwem jest ', 
+            'Potrzebujesz nauczyciela, który sprawi, że nigdy więcej problemem dla Ciebie nie będzie ', 
+            'Szukasz osoby, której pasją jest ',
+            'Masz dużą wiedzę, ale wiesz, że stać Cię na jeszcze więcej? Szukasz kogoś, kto wniesie Cię na wyższy poziom w dziedzienie ',
+        ];
+        $neutral = ['Szybko, tanio i przyjemnie - tak w trzech słowach można określić korepetycje, które prowadzę. Jeżeli cenisz sobie jakość i miłą atmosfere podczas zajęć - ta oferta jest właśnie dla Ciebie! Nie czekaj - napisz do mnie, ustalmy termian i bierzmy się do roboty! :)', 
+        'Od wielu lat prowadzę korepetycję z różnych przedmiotów, w których czuję się wystarczająco kompetentną osobą. Oferuję wszystko co nalepsze: wiedzę, jakość, dobrą atmosferę podczas zajęć. Jedyne czego oczekuję od Ciebie to zaangażowanie! Daj mi szanse, a razem zdziałamy bardzo wiele.', 
+        'Korepetycje w przestępnej cenie i przestępnej formie - to dewiza mojego działania. Skontaktuj się ze mną - nie ma czasu do stracenia!:)', 
+        'Posiadam odpowiednią wiedzę i kompetencje, aby Tobie pomóc! Napisz do mnie, porozmawiajmy o szczegółach współpracy i Twoich oczekiwaniach.', 
+        'Korepetycję traktuję bardzo poważnie - to w końcu nasz wspólny czas i Twoje pieniądze. Bez obaw - jestem kometentną osobą, aby Ci pomóc. Wspólnie możemy osiągnąć wszystko!',
+        'Korepetycje to dla mnie świetny sposób, aby spełniać się jako nauczyciel. Dołącz do grona zadowolonych uczniów i napisz do mnie jeszcze dziś!',
+        'W korepetycjach nie chodzi tylko o to, by nauczyciel miał wiedzę, lecz by potrafił tą wiedzę przekazać. Z czystym sumieniem mogę powiedzieć, że jestem takim nauczycielem. Napisz do mnie i rozpocznijmy współpracę jeszcze dziś!',
+        'Daj mi szansę, a przekażę Ci całą swoją wiedzę. Tylko od Ciebie będzię zależeć jak ją wykorzystasz.',
+        'Przekazywanie wiedzy innym nie stanowi dla mnie żadnego problemu. Skontaktuj się ze mną, aby dogadać szczegóły. Uwierz mi - WARTO :)',
+        'Moja wiedza i Twoje zaangażowanie to idealna mieszanka, aby osiągnąć sukces. Napisz do mnie jeszcze dziś i przekonaj się, że zajęcia ze mną są warte swojej ceny!:)',
+    ];
 
         $faker = Faker\Factory::create();
         for( $i=1 ; $i <= 20 ; $i++ ){
             $offer= new Offer();
             $category = Category::inRandomOrder()->first();
             $offer->user_id=$i;
+            //$user = User::where('id', $i)->all();
             $offer->category_id=$category->id;
             $offer->price_per_hour=$faker->numberBetween(10,60);
             $offer->name=$category->name.' dla '.$forWho[array_rand($forWho)];;
-            $offer->description=$faker->sentence(40);
+            $offer->description=$greetings[array_rand($greetings)].' '.$aboutme[array_rand($aboutme)].'X .'/*$user->name*/.$admission[array_rand($admission)].$category->name.'? Jesteś w dobrym miejscu! '.$neutral[array_rand( $neutral)];
             $offer->location=$locations[array_rand($locations)];
             $offer->online=$faker->boolean;
             $offer->teacher_home=$faker->boolean;
