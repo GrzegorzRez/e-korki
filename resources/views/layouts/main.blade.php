@@ -77,18 +77,16 @@
     
     <footer class="footer-basic-centered">
 
-            <p class="footer-company-motto">There's more ahead...</p>
+            <p class="footer-company-motto">E-korki - Znajdź pomoc w nauce.</p>
 
             <p class="footer-links">
-                <a href="{{ route('index') }}">Home</a>
-                ·
-                <a href="#">Pricing</a>
-                ·
-                <a href="#">About</a>
-                ·
-                <a href="#">Faq</a>
-                ·
-                <a href="#">Contact</a>
+                <a href="{{ route('index') }}">Strona główna</a>
+                |
+                <a href="#">Reklama</a>
+                |
+                <a href="#">FAQ</a>
+                |
+                <a href="#">Kontakt</a>
             </p>
 
             <p class="footer-company-name">e-korki &copy; 2017</p>
