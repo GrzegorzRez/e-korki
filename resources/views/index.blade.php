@@ -14,7 +14,7 @@
       <div class="carousel-caption">
         <div class ="col-xs-1"></div>
          <div class ="col-xs-10">
-        <span style="text-shadow: 2px 2px 4px #000000"><h2><i>"Nie wstyd nie wiedzieć, lecz wstyd nie pragnąć swojej wiedzy uzupełnić."</i></h2>
+        <span style="text-shadow: 2px 2px 4px #000000"><h3><i>"Nie wstyd nie wiedzieć, lecz wstyd nie pragnąć swojej wiedzy uzupełnić."</i></h3>
         <h5>Feliks Chwalibóg</h5></span>
           </div>
       </div>
