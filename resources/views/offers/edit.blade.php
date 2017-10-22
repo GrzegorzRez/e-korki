@@ -42,13 +42,13 @@
                             <label class="col-md-4 control-label">Miejsce nauki:</label>
 
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="online" {{ old('online')=="on" ? 'checked' : ( $offer->online ? 'checked' : '') }}>Online
+                                <input type="checkbox" id="online" name="online" onchange="checkboxStatusChange()" {{ old('online')=="on" ? 'checked' : ( $offer->online ? 'checked' : '') }}>Online
                             </label>
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="teacher_home"{{ old('teacher_home')=="on" ? 'checked' : ( $offer->teacher_home ? 'checked' : '') }}>W domu nauczyciela
+                                <input type="checkbox" id="teacher_home" name="teacher_home" onchange="checkboxStatusChange()" {{ old('teacher_home')=="on" ? 'checked' : ( $offer->teacher_home ? 'checked' : '') }}>W domu nauczyciela
                             </label>
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="student_home" {{ old('student_home')=="on" ? 'checked' : ( $offer->student_home ? 'checked' : '')}}>W domu ucznia
+                                <input type="checkbox" id="student_home" name="student_home" onchange="checkboxStatusChange()" {{ old('student_home')=="on" ? 'checked' : ( $offer->student_home ? 'checked' : '')}}>W domu ucznia
                             </label>
                         </div>
 
@@ -81,6 +81,7 @@
                             <label for="tags" class="col-md-4 control-label">Tagi</label>
                             <div class="col-md-6">
                                 <input id="tags" type="text" class="form-control" name="tags" value="{{ (old('tags')=='') ? $tags : old('tags')}}" data-role="tagsinput">
+                                <small id="emailHelp" class="form-text text-muted">Wpisz tag, następnie zatwierdź go enterem.</small>
                             </div>
                         </div>
                         <script>
@@ -93,9 +94,10 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button id="submit" type="submit" class="btn btn-primary">
                                     Zapisz zmiany
                                 </button>
+                                <qq class='alert alert-danger' id="submit_info"></qq>
                             </div>
                         </div>
                     </form>
@@ -110,4 +112,23 @@
             </div>
         @endif
     </div>
+
+    <script>
+
+        checkboxStatusChange();
+        function checkboxStatusChange(){
+            if( !document.getElementById('online').checked && !document.getElementById('teacher_home').checked && !document.getElementById('student_home').checked ) {
+                $('#submit').attr("disabled", true);
+                $('#submit').hide();
+                $('#submit_info').html('Wybierz miejsce nauki!');
+                $('#submit_info').show();
+            }else{
+                $('#submit').attr("disabled", false);
+                $('#submit').show();
+                $('#submit_info').html('');
+                $('#submit_info').hide();
+            }
+        }
+
+    </script>
 @endsection
