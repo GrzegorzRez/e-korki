@@ -68,16 +68,16 @@
   	<div class="col-lg-12 text-center"><img width="25%" src="images/cloud_arrow_up.svg"/> </div>
     </div>
     <div class="row">
-        <div class="col-lg-12 text-center"><p class="lead"><b>Korzystaj z wbudowanego kalendarza, aby organizacja Twojej pracy była jeszcze wygodniejsza!</b></p></div>
+        <div class="col-lg-12 text-center"><p class="lead"><b>Udostępniaj pomoce dydaktyczne on-line, aby współpraca z Uczniem była jeszcze efektywniejsza!</b></p></div>
     </div>
   </div>
   
   <div class="col-sm-4">
     <div class="row">
-  	<div class="col-lg-12 text-center"><img width="25%" src="images/compass.svg"/> </div>
+  	<div class="col-lg-12 text-center"><img width="25%" src="images/chat_cloud.svg"/> </div>
     </div>
     <div class="row">
-        <div class="col-lg-12 text-center"><p class="lead"><b>Udostępniaj pomoce dydaktyczne on-line, aby współpraca z Uczniem była jeszcze efektywniejsza!</b></p></div>
+        <div class="col-lg-12 text-center"><p class="lead"><b>Korzystaj z wbudowanego komunikatora, aby organizacja Twojej pracy była jeszcze wygodniejsza!</b></p></div>
     </div>
   </div>
  </div>
