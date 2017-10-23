@@ -11,14 +11,14 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner carousel" >
     <div class="item active ">
-      <div class="carousel-caption">
+      <div class="carousel-caption" style="position:absolute;top: 5%; transform: translateY(-5%);">
         <div class ="col-xs-1"></div>
          <div class ="col-xs-10">
-        <span style="text-shadow: 2px 2px 4px #000000"><h3><i>"Nie wstyd nie wiedzieć, lecz wstyd nie pragnąć swojej wiedzy uzupełnić."</i></h3>
+        <span style="text-shadow: 2px 2px 4px #000000;"><h3><i>"Nie wstyd nie wiedzieć, lecz wstyd nie pragnąć swojej wiedzy uzupełnić."</i></h3>
         <h5>Feliks Chwalibóg</h5></span>
           </div>
       </div>
-      <img class="img-rounded center-block"  src="images/main_page_chalkboard_slider.jpg" alt="Tablica">
+      <img class="img-rounded center-block"  src="images/main_page/slider/math.jpg" alt="Tablica">
     </div>
 
     <div class="item">
@@ -26,18 +26,19 @@
         <span style="text-shadow: 2px 2px 4px #000000"><h2><i>"Najmądrzejszy jest, który wie czego nie wie."</i></h2>
         <h5>Sokrates</h5></span>
       </div>
-      <img class="img-rounded center-block" src="images/main_page_reading_book_slide.jpg" alt="Czyta">
+      <img class="img-rounded center-block" src="images/main_page/slider/reading_book.jpg" alt="Czyta">
     </div>
 
     <div class="item">
       <div class="carousel-caption">
         <div class ="col-xs-5"></div>
-        <div class="col-xs-7">
+        <div class="col-xs-6">
           <span style="text-shadow: 2px 2px 4px #000000"><h3><i>"Sama wiedza nie wystarczy, trzeba jeszcze umieć ją stosować."</i></h3>
           <h5>Johann Wolfgang Goethe</h5></span>
         </div>
+        <div class="col-xs-1"></div>
       </div>
-      <img class="img-rounded center-block" src="images/main_page_slider_photo.jpg" alt="apple">
+      <img class="img-rounded center-block" src="images/main_page/slider/apple_on_books.jpg" alt="apple">
     </div>
   </div>
 
