@@ -9,7 +9,7 @@
       <input type="text" class="form-control text-center" name="title" value="{{ (old('title')=='') ? $resource->title : old('title') }}">
   </div>
   <div class="form-group">
-      <textarea class="form-control" rows="15" name="content">{{ (old('content')=='') ? $resource->content : old('content') }}</textarea>
+      <textarea class="form-control" rows="15" name="content" id="content">{{ (old('content')=='') ? $resource->content : old('content') }}</textarea>
   </div>
 
   <button type="submit" class="btn btn-default">Zapisz</button>
@@ -24,5 +24,9 @@
         </ul>
     </div>
 @endif
+<script src="/js/enableTab.js"></script>
+<script>
+    enableTab('content');
+</script>
 @endsection
 
