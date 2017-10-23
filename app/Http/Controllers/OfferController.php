@@ -154,7 +154,7 @@ class OfferController extends Controller
             }
             $offer->save();
         }
-        return redirect(route('profile.index'));
+        return redirect(route('profile.offers',['user'=>$offer->user]));
     }
 
     public function delete(Offer $offer){
