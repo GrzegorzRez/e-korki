@@ -44,6 +44,18 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Resource', 'resource_user', 'user_id', 'resource_id');
     }
 
+    public function getCountOfOffers(){
+        return count(Offer::findFromAuthForUser($this));
+    }
+
+    public function getCountOfOpinions(){
+        return count(Opinion::findFromNotAuthForUser($this));
+    }
+
+    public function getAverageScope(){
+        return Opinion::averageGradeForUser($this);
+    }
+
     public function getFullName(){
         return $this->name.' '.$this->surname;
     }

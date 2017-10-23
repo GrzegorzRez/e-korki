@@ -18,7 +18,7 @@ class OpinionsController extends Controller
             $opinion->student_id = Auth::id();
         }
         $opinion->save();
-        return redirect(route('profile.show',['id' => $opinion->teacher->id ]));
+        return redirect(route('profile.opinions',['user' => $opinion->teacher ]));
     }
 
     public function delete( Opinion $opinion ){

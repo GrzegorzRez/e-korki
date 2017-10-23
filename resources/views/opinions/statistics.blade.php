@@ -1,16 +1,16 @@
-@if( $averageScope == 0 )
+@if( $user->getAverageScope() == 0 )
     <div class="row">
         <h4>Brak ocen</h4>
     </div>
 @else
 <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         <div class="rating-block">
             <h4>Średnia ocena</h4>
-            <h2 class="bold padding-bottom-7">{{ number_format($averageScope,2,'.','') }}<small>/ 6</small></h2>
+            <h2 class="bold padding-bottom-7">{{ number_format($user->getAverageScope(),1,'.','') }}</h2>
         </div>
     </div>
-    <div class="col-sm-7">
+    <div class="col-sm-9">
         <div class="pull-left col-md-12">
             <div class="pull-left" style="width:35px; line-height:1;">
                 <div style="height:9px; margin:5px 0;">6 ★</div>

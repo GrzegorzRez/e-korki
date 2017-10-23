@@ -17,12 +17,19 @@ class ProfileController extends Controller
         return redirect(route('profile.show',['id'=>Auth::id()]));
     }
 
-	public function show($id)
+	public function show(User $user)
     {
-    	$user = User::find($id);
-    	$opinions = Opinion::findFromNotAuthForUser($user);
-    	$authOpinions = Opinion::findFromAuthForUser($user);
+    	return view('profile.informations')->with('user', $user);
+    }
+
+    public function offers( User $user ){
         $offers = Offer::findFromAuthForUser($user);
+        return view('profile.offers')->with('user', $user)->with('offers',$offers);
+    }
+
+    public function opinions( User $user ){
+        $opinions = Opinion::findFromNotAuthForUser($user);
+        $authOpinions = Opinion::findFromAuthForUser($user);
         if( $authOpinions->count() == 1 ){
             $authOpinion = $authOpinions->first();
         }else{
@@ -30,7 +37,6 @@ class ProfileController extends Controller
         }
 
         //statistics
-        $averageScope = Opinion::averageGradeForUser($user);
         $gradesCount['all'] = Opinion::countOfGradeForUser($user);
         $gradesCount['1'] = Opinion::countOfGradeForUser($user,1);
         $gradesCount['2'] = Opinion::countOfGradeForUser($user,2);
@@ -39,13 +45,11 @@ class ProfileController extends Controller
         $gradesCount['5'] = Opinion::countOfGradeForUser($user,5);
         $gradesCount['6'] = Opinion::countOfGradeForUser($user,6);
 
-    	return view('profile.index')
+        return view('profile.opinions')
             ->with('user', $user)
             ->with('opinions', $opinions)
-            ->with('averageScope',$averageScope)
             ->with('authOpinion',$authOpinion)
-            ->with('gradesCount',$gradesCount)
-            ->with('offers',$offers);
+            ->with('gradesCount',$gradesCount);
     }
 
 	public function edit()

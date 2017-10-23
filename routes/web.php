@@ -5,7 +5,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profil', 'ProfileController@index')->name('profile.index');
-Route::get('/profil/{id}', 'ProfileController@show')->name('profile.show')->where(['id' => '[0-9]+']);
+Route::get('/profil/{user}', 'ProfileController@show')->name('profile.show')->where(['user' => '[0-9]+']);
+Route::get('/profil/{user}/oferty', 'ProfileController@offers')->name('profile.offers')->where(['user' => '[0-9]+']);
+Route::get('/profil/{user}/opinie', 'ProfileController@opinions')->name('profile.opinions')->where(['user' => '[0-9]+']);
 Route::get('/profil/edytuj', 'ProfileController@edit')->name('profile.edit');
 Route::post('/profil/store', 'ProfileController@store')->name('profile.store');
 

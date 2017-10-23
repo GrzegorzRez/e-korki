@@ -3,16 +3,14 @@
 
     <input type="hidden" class="form-control" name="teacher_id" value="{{ $teacher->id }}" required>
 
-    <div class="form-group">
-        <label for="content" class="col-md-4 control-label">Treść</label>
-
-        <div class="col-md-6">
-            <textarea id="content" class="form-control" name="content">@if(isset($authOpinion) && old('content') == ''){{ $authOpinion->content }}@else{{ old('content') }}@endif</textarea>
-        </div>
+    <div class="form-group col-xs-12 col-xs-offset-1">
+        <label for="content" class="control-label">Treść</label>
+        <textarea id="content" rows="5" class="form-control" name="content">@if(isset($authOpinion) && old('content') == ''){{ $authOpinion->content }}@else{{ old('content') }}@endif</textarea>
     </div>
+    <div class="col-xs-1"></div>
 
-    <div class="form-group">
-        <label for="grade" class="col-md-4 control-label">Ocena</label>
+    <div class="form-group col-xs-12">
+        <label for="grade" class="col-md-3 control-label">Ocena</label>
 
         <label class="radio-inline">
             <input type="radio" name="grade" value="1" {{ old('grade')=="1" ? 'checked' : ( (isset($authOpinion) && $authOpinion->grade=="1") ? 'checked' : '' ) }}>1
@@ -35,7 +33,7 @@
     </div>
 
     <div class="form-group">
-        <div class="col-md-6 col-md-offset-4">
+        <div class="col-xs-12">
             @if( $authOpinion == null )
             <button type="submit" class="btn btn-primary">
                 Prześlij opinię
