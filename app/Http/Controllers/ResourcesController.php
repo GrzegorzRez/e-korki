@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ResourceRequest;
+use App\Http\Requests\ShareResourceRequest;
 use App\Resource;
 use App\Attachment;
 use App\User;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -50,9 +52,14 @@ class ResourcesController extends Controller
         }
     }
 
-    public function share( Resource $resource , User $user ){
-        if( $resource->user_id == Auth::id() ){
-            $resource->sharedToUsers()->attach($user);
+    public function shareForUser( User $user ){
+        return view('resources.shareForUser')->with('resources',Auth::user()->resources)->with('user',$user);
+    }
+
+    public function share( User $user , ShareResourceRequest $request ){
+        $user->sharedResources()->detach();
+        foreach( $request->resources_id as $resource_id ){
+            $user->sharedResources()->attach($resource_id);
         }
         return redirect(route('messages.conversation',['receive_user_id'=>$user->id]));
     }
