@@ -18,12 +18,6 @@ class CreateResourceUserTable extends Migration
             $table->integer('resource_id')->unsigned();
             $table->timestamps();
         });
-        Schema::table('resource_user',function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-        });
-        Schema::table('resource_user',function (Blueprint $table) {
-            $table->foreign('resource_id')->references('id')->on('resources');
-        });
     }
 
     /**
