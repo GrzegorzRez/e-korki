@@ -31,39 +31,38 @@
             <div id="navbarCollapse" class="collapse navbar-collapse">
 
                 @auth
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ route('offers.add') }}">Ucz innych</a></li>
-                    <li><a href="{{ route('offers.index') }}">Naucz się</a></li>
-                </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#" style=" padding-top: 5px; padding-bottom: 5px;"><img width="40px" height="40px" src="{{  Auth::user()->getAvatarHref()  }}" class="profile-image" > {{ Auth::user()->getFullName() }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('profile.index')  }}">Profil</a></li>
+                                <li><a href="{{ route('messages.index') }}">Wiadomości</a></li>
+                                <li><a href="{{ route('resources.index') }}">Materiały</a></li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                        Wyloguj się
+                                    </a>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#"> {{ Auth::user()->getFullName() }} <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ route('profile.index')  }}">Profil</a></li>
-                            <li><a href="{{ route('messages.index') }}">Wiadomości</a></li>
-                            <li><a href="{{ route('resources.index') }}">Materiały</a></li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    Wyloguj się
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <a role="button" class="btn btn-primary navbar-btn" href="{{ route('offers.index') }}">Przeglądaj oferty</a>
+                        <a role="button" class="btn btn-success navbar-btn" href="{{ route('offers.add') }}">Dodaj ofertę</a>
+                    </ul>
                 @endauth
                 @guest
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ route('facebook.login') }}">Zaloguj przez Facebooka</a></li>
-                    <li><a href="{{ route('register') }}">Rejestracja</a></li>
-                    <li><a href="{{ route('login') }}">Logowanie</a></li>
+                    <a role="button" class="btn btn-info navbar-btn" href="{{ route('login') }}">Zaloguj</a>
+                    <a role="button" class="btn btn-info navbar-btn" href="{{ route('register') }}">Zarejestruj</a>
+                    <a role="button" class="btn btn-primary navbar-btn" href="{{ route('facebook.login') }}">Zaloguj przez Facebooka</a>
                 </ul>
                 @endguest
 
