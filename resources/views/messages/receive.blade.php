@@ -12,10 +12,7 @@
     </div>
     <h3>Ostatnie odebrane wiadomości</h3><hr>
     @foreach($latestReceiveMessages as $messages)
-    <h4>{{ $messages[0]->send->getFullName() }}</h4>
-    <p>{{ $messages[0]->content }}</p>
-    <a href="{{ route('messages.conversation',['receive_user_id'=>$messages[0]->send->id]) }}">Otwórz konwersację</a>
-    <hr>
+        @include( 'messages.littleMessage' , ['user'=>$messages[0]->send, 'message'=>$messages[0]] )
     @endforeach
 </div>
 @endsection
