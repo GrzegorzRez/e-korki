@@ -13,6 +13,7 @@ Route::post('/profil/store', 'ProfileController@store')->name('profile.store');
 
 Route::get('/materialy/moje', 'ResourcesController@index')->name('resources.index');
 Route::get('/materialy/moje/dodaj', 'ResourcesController@add')->name('resources.add');
+Route::get('/materialy/moje/{resource}/share/{user}', 'ResourcesController@share')->name('resources.share');
 Route::post('/materialy/moje/store', 'ResourcesController@store')->name('resources.store');
 Route::get('/materialy/moje/{resource}', 'ResourcesController@show')->name('resources.show')->where(['resource' => '[0-9]+']);
 Route::get('/materialy/moje/{resource}/edytuj', 'ResourcesController@edit')->name('resources.edit')->where(['resource' => '[0-9]+']);

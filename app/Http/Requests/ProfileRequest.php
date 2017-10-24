@@ -28,6 +28,7 @@ class ProfileRequest extends FormRequest
             'name' => 'string|max:191|required',
             'surname' => 'string|max:191|required',
             'email' => 'email|max:191|required',
+            'phone' => 'required|regex:/[0-9]{9}/',
             'location' => 'string|max:191',
             'description' => 'string|max:191'
         ];

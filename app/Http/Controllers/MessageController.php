@@ -18,7 +18,8 @@ class MessageController extends Controller
     public function show( $receive_user_id ){
         $receiveUser = User::find($receive_user_id);
         $messages = Message::findForAuthWithUser($receiveUser);
-        return view('messages.conversation')->with('receiveUser',$receiveUser)->with('messages',$messages);
+        $resources = Auth::user()->resources;
+        return view('messages.conversation')->with('receiveUser',$receiveUser)->with('messages',$messages)->with('resources',$resources);
 
     }
 
