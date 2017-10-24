@@ -81,5 +81,111 @@ class OffersTableSeeder extends Seeder
         $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'liceum']) );
         $offer->save();
 
+        $offer= new Offer();
+        $offer->user_id=2;
+        $offer->category_id=Category::where('name','Informatyka')->first()->id;
+        $offer->price_per_hour=70;
+        $offer->name='Udzielę korepetycji z informatyki';
+        $offer->description='Witaj,
+Serdecznie zapraszam na intensywne profesjonalne przygotowanie do matury z informatyki 2018 oraz 2019.
+Wiążesz swoją przyszłość z informatyką? Potrzebujesz dobrego wyniku z matury z informatyki, żeby dostać się na wymarzoną uczelnię? Chcesz solidnie opanować niezbędne zagadnienia informatyczne? Chcesz już w trakcie przygotowań do matury uczyć się najnowszych standardów, które panują obecnie na rynku IT? W takim razie to ogłoszenie jest dla Ciebie :)';
+        $offer->location='Warszawa';
+        $offer->online=0;
+        $offer->teacher_home=1;
+        $offer->student_home=0;
+        $offer->save();
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'matura']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'technikum']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'liceum']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'rozszerzenie']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'100%']) );
+        $offer->save();
+
+        $offer= new Offer();
+        $offer->user_id=2;
+        $offer->category_id=Category::where('name','Programowanie')->first()->id;
+        $offer->price_per_hour=60;
+        $offer->name='Udzielę korepetycji z programowania';
+        $offer->description='Witaj,
+Serdecznie zapraszam na profesjonalny, intensywny kurs programowania w językach Java, Java Script, C, C++, Python, C# oraz HTML, CSS, Spring, Spring Boot, JPA, Hibernate, QT, Windows Forms, ADO NET, ASP NET i innych powiązanych.';
+        $offer->location='Warszawa';
+        $offer->online=1;
+        $offer->teacher_home=1;
+        $offer->student_home=0;
+        $offer->save();
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'Java']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'C++']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'Spring']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'HTML']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'Python']) );
+        $offer->save();
+
+        $offer= new Offer();
+        $offer->user_id=16;
+        $offer->category_id=Category::where('name','Chemia')->first()->id;
+        $offer->price_per_hour=150;
+        $offer->name='Nauka chemii nie tylko dla zasady ;)';
+        $offer->description='Profesjonalne podejście i dobry kontakt sprawią, że odniesiesz swój Sukces. Gwarantuję wysoki poziom kultury osobistej oraz otwartość na indywidualne potrzeby Uczniów. Chemia jest moją pasją, jest ciekawa, logiczna – nie trzeba uczyć się jej na pamięć. Jeśli dobrze poznasz i zrozumiesz jej podstawy stanie się wprost oczywista!';
+        $offer->location='Gdańsk';
+        $offer->online=0;
+        $offer->teacher_home=0;
+        $offer->student_home=1;
+        $offer->save();
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'pierwiastki']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'matura']) );
+        $offer->save();
+
+        $offer= new Offer();
+        $offer->user_id=3;
+        $offer->category_id=Category::where('name','Programowanie')->first()->id;
+        $offer->price_per_hour=65;
+        $offer->name='Udzielę korepetycji z programowania';
+        $offer->description='C, C++, Qt, Java, C#, Python, Bash, SQL, Linux, algorytmika, struktury danych, JavaScript, Ajax, PHP, Html, CSS, systemy operacyjne, olimpiady informatyczne, projekty – również przez Skype / TeamViewer.';
+        $offer->location='Zabrze';
+        $offer->online=1;
+        $offer->teacher_home=1;
+        $offer->student_home=1;
+        $offer->save();
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'PHP']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'JavaScript']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'CSS']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'HTML']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'Python']) );
+        $offer->save();
+
+        $offer= new Offer();
+        $offer->user_id=19;
+        $offer->category_id=Category::where('name','Biologia')->first()->id;
+        $offer->price_per_hour=200;
+        $offer->name='Biologia w innym wymiarze!';
+        $offer->description='Inna Filozofia Edukacji – Profesjonalne, indywidualne zajęcia, w przyjaznej atmosferze, dostosowane do potrzeb i oczekiwań ucznia. Wiem, jak ważna jest edukacja, oferuję najwyższy poziom nauczania.
+
+Zapraszam Maturzystów oczekujących wysokich wyników z egzaminu, Uczniów Gimnazjum przygotowujących się do Konkursu Biologicznego, Licealistów startujących w zawodach Olimpiady Biologicznej także Studentów, w szczególności kierunku biotechnologia. ';
+        $offer->location='Leszno';
+        $offer->online=0;
+        $offer->teacher_home=1;
+        $offer->student_home=1;
+        $offer->save();
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'matura']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'olimpiady']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'finalista olimpiady']) );
+        $offer->save();
+
+        $offer= new Offer();
+        $offer->user_id=4;
+        $offer->category_id=Category::where('name','Programowanie')->first()->id;
+        $offer->price_per_hour=70;
+        $offer->name='Programowanie PHP i nie tylko!';
+        $offer->description='Programowanie w PHP oraz technologie webowe. Mam doświadczenie w PHP, Laravel, HTML, CSS, Sass, Less, Slim, Twitter Bootstrap, Foundation, Gulp, Git, GitHub, Vue.js i wielu więcej.';
+        $offer->location='Wrocław';
+        $offer->online=1;
+        $offer->teacher_home=0;
+        $offer->student_home=1;
+        $offer->save();
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'PHP']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'Laravel']) );
+        $offer->tags()->save( new Tag(['offer_id'=>$offer->id , 'name'=>'HTML']) );
+        $offer->save();
+
     }
 }
