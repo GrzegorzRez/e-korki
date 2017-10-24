@@ -5,14 +5,19 @@
  <form action="{{  route('resources.update',['resource'=>$resource])  }}" method="POST">
      {{ csrf_field() }}
      {{ method_field('PUT')  }}
-  <div class="form-group text-center">
-      <input type="text" class="form-control text-center" name="title" value="{{ (old('title')=='') ? $resource->title : old('title') }}">
-  </div>
-  <div class="form-group">
-      <textarea class="form-control" rows="15" name="content" id="content">{{ (old('content')=='') ? $resource->content : old('content') }}</textarea>
-  </div>
-
-  <button type="submit" class="btn btn-default">Zapisz</button>
+     <div class="form-group">
+         <label for="tags" class="control-label">Tytuł</label>
+         <input type="text" class="form-control" name="title" value="{{ (old('title')=='') ? $resource->title : old('title') }}">
+     </div>
+     <div class="form-group">
+         <label for="tags" class="control-label">Zawartość</label>
+         <textarea class="form-control" rows="15" name="content" id="content">{{ (old('content')=='') ? $resource->content : old('content') }}</textarea>
+     </div>
+     <div class="form-group">
+         <label for="tags" class="control-label">Załącznik</label>
+         <input type="file" name="attachment" id="file" />
+     </div>
+    <button type="submit" class="btn btn-primary">Zapisz</button>
 </form> 
 </div>
 @if ($errors->any())

@@ -1,17 +1,22 @@
 @extends('layouts/main')
 @section('title','Dodaj materiał')
 @section('content')
-<div class="container text-center">
+<div class="container">
  <form action="{{  route('resources.store')  }}" method="POST" enctype="multipart/form-data">
      {{ csrf_field() }}
-  <div class="form-group text-center">
-      <input type="text" class="form-control text-center" placeholder="Tytuł" name="title" value="{{ old('title') }}">
-  </div>
-  <div class="form-group">
-      <textarea class="form-control" rows="15" name="content" id="content">{{ old('content') }}</textarea>
-  </div>
-  <input type="file" name="file" id="file" >
-  <button type="submit" class="btn btn-default">Dodaj materiał</button>
+     <div class="form-group">
+         <label for="tags" class="control-label">Tytuł</label>
+         <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+     </div>
+      <div class="form-group">
+          <label for="tags" class="control-label">Zawartość</label>
+          <textarea class="form-control" rows="15" name="content" id="content">{{ old('content') }}</textarea>
+      </div>
+     <div class="form-group">
+         <label for="tags" class="control-label">Załącznik</label>
+         <input type="file" name="attachment" id="file" />
+     </div>
+    <button type="submit" class="btn btn-primary">Dodaj materiał</button>
 </form>
 
 </div>
