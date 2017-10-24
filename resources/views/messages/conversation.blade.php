@@ -23,6 +23,25 @@
 		</div>
 	@endif
 
+	<h2 class="text-center">Udostępnij materiały</h2>
+	<select class="form-control" >
+		@foreach( $resources as $resource )
+			<option value="{{ route('resources.share',['resource'=>$resource,'user'=>$receiveUser]) }}" >{{  $resource->title  }}</option>
+		@endforeach
+	</select>
+
+	<script>
+        $("select").click(function() {
+            var open = $(this).data("isopen");
+            if(open) {
+                window.location.href = $(this).val()
+            }
+            //set isopen to opposite so next time when use clicked select box
+            //it wont trigger this event
+            $(this).data("isopen", !open);
+        });
+	</script>
+
 	@forelse($messages as $message)
 		@include('messages.message')
 	@empty

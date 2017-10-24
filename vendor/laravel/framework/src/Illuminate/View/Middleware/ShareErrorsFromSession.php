@@ -48,4 +48,5 @@ class ShareErrorsFromSession
 
         return $next($request);
     }
+
 }
