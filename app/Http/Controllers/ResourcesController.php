@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ResourceRequest;
 use App\Resource;
+use App\Attachment;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+
 
 class ResourcesController extends Controller
 {
@@ -25,8 +27,16 @@ class ResourcesController extends Controller
 
     public function store(ResourceRequest $request){
         $resource = new Resource($request->all());
-        $resource->user_id = Auth::id();
+        $resource->user_id = Auth::id();       
+        $file = $request->file;
+        $file->store('upload');
+        
         $resource->save();
+
+        $attachment = new Attachment();
+        $attachment->resource_id = $resource->id;
+        $attachment->path = $file->hashName();
+        $attachment->save();
         
         return redirect(route('resources.index'));
     }

@@ -2,7 +2,7 @@
 @section('title','Dodaj materiał')
 @section('content')
 <div class="container text-center">
- <form action="{{  route('resources.store')  }}" method="POST">
+ <form action="{{  route('resources.store')  }}" method="POST" enctype="multipart/form-data">
      {{ csrf_field() }}
   <div class="form-group text-center">
       <input type="text" class="form-control text-center" placeholder="Tytuł" name="title" value="{{ old('title') }}">
@@ -10,6 +10,7 @@
   <div class="form-group">
       <textarea class="form-control" rows="15" name="content" id="content">{{ old('content') }}</textarea>
   </div>
+  <input type="file" name="file" id="file" >
   <button type="submit" class="btn btn-default">Dodaj materiał</button>
 </form>
 
