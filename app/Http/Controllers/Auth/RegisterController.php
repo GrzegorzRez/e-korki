@@ -53,9 +53,12 @@ class RegisterController extends Controller
             'location' => 'required|string|max:255',
             'description' => 'string',
             'email' => 'required|string|email|max:255|unique:users',
+            'phone' => 'required|numeric|min:9',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
+
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -71,6 +74,7 @@ class RegisterController extends Controller
             'location' => $data['location'],
             'description' => $data['description'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
         ]);
     }
