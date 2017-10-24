@@ -26,6 +26,7 @@ class ResourcesController extends Controller
         $resource = new Resource($request->all());
         $resource->user_id = Auth::id();
         $resource->save();
+        
         return redirect(route('resources.index'));
     }
 
@@ -51,5 +52,11 @@ class ResourcesController extends Controller
             $resource->delete();
         }
         return redirect(route('resources.index'));
+    }
+
+    public function upload(Request $request){
+       $path = $request->file('file')->store('file');
+
+       return $path;
     }
 }

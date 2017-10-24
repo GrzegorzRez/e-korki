@@ -42,6 +42,14 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="phone" class="col-md-4 control-label">Nr Telefonu</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="numeric" class="form-control" name="phone" value="{{$user->phone}}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label for="location" class="col-md-4 control-label">Miasto</label>
 
                             <div class="col-md-6">

@@ -33,6 +33,8 @@
 
   <a href="{{  route('resources.add')  }}" class="btn btn-primary" role="button">Dodaj nowy materiał</a>
 
+  
+
   <h2>Udostępnione mi materiały</h2>
   <p>Przeglądaj udostępnione materiały</p>
   <table class="table table-striped">

@@ -10,9 +10,9 @@
   <div class="form-group">
       <textarea class="form-control" rows="15" name="content" id="content">{{ old('content') }}</textarea>
   </div>
-
   <button type="submit" class="btn btn-default">Dodaj materiał</button>
-</form> 
+</form>
+
 </div>
 @if ($errors->any())
     <div class="alert alert-danger">
