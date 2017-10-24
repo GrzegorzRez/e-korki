@@ -55,9 +55,8 @@
 
                         <div class="form-group">
                             <label for="description" class="col-md-4 control-label">Opis</label>
-
                             <div class="col-md-6">
-                                <textarea id="description" class="form-control" name="description"></textarea>
+                                <textarea id="description" type="textarea" class="form-control" name="description" >{{ old('description') }}</textarea>
                             </div>
                         </div>
 
