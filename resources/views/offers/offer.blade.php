@@ -8,6 +8,7 @@
                 <div class="col-xs-10">
                     <h2>{{ $offer->name }}</h2>
                     <h4  class="card-title">{{ $offer->user->getFullName() }}</h4>
+                    <p><h4>{{ $offer->location }}</h4></p>
                     <p>{{ $offer->description }}</p>
                     @if( $offer->online )
                         <span class="badge badge-pill badge-success">On-line</span>

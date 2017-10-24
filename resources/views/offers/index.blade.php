@@ -20,7 +20,7 @@
   		<select name="category_id" class="form-control">
           <option value="">Wszystkie</option>
      	@foreach( $categories as $category )
-     		<option value="{{  $category->id  }}" {{ $category->id == Input::get('category_id') ? 'selected' : '' }}>{{  $category->name  }}</option>
+     		<option value="{{  $category->id  }}" {{ $category->id == Input::get('category_id') ? 'selected' : '' }}><b>{{  $category->name  }}</b></option>
      	@endforeach
   		</select>
   </div>
