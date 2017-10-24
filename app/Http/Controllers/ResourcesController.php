@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ResourceRequest;
 use App\Resource;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class ResourcesController extends Controller
@@ -37,6 +38,13 @@ class ResourcesController extends Controller
         }else{
             return redirect(route('resources.index'));
         }
+    }
+
+    public function share( Resource $resource , User $user ){
+        if( $resource->user_id == Auth::id() ){
+            $resource->sharedToUsers()->attach($user);
+        }
+        return redirect(route('messages.conversation',['receive_user_id'=>$user->id]));
     }
 
     public function update( Resource $resource , ResourceRequest $request )
