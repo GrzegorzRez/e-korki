@@ -1,7 +1,7 @@
 @if($message->send_id == Auth::id() && $message->receive_id == $receiveUser->id)
 
 <div class="row">
-    <div class="col-lg-7">
+    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-10">
 
   <div class="panel panel-primary">
     <div class="panel-body">
@@ -17,7 +17,7 @@
 
 
 <div class="row">
-    <div class="col-lg-7 pull-right">
+    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-10 pull-right">
 
   <div class="panel panel-primary">
     <div class="panel-body">
