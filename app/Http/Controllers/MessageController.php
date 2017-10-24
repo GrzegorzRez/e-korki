@@ -10,9 +10,17 @@ use App\User;
 class MessageController extends Controller
 {
     public function index(){
-        $latestSendMessages = Message::findForAuthLatestSendMessage();
+        return redirect(route('messages.receive'));
+    }
+
+    public function receive(){
         $latestReceiveMessages = Message::findForAuthLatestReceiveMessage();
-        return view('messages.index')->with('latestSendMessages',$latestSendMessages)->with('latestReceiveMessages',$latestReceiveMessages);
+        return view('messages.receive')->with('latestReceiveMessages',$latestReceiveMessages);
+    }
+
+    public function send(){
+        $latestSendMessages = Message::findForAuthLatestSendMessage();
+        return view('messages.send')->with('latestSendMessages',$latestSendMessages);
     }
 
     public function show( $receive_user_id ){
@@ -20,7 +28,6 @@ class MessageController extends Controller
         $messages = Message::findForAuthWithUser($receiveUser);
         $resources = Auth::user()->resources;
         return view('messages.conversation')->with('receiveUser',$receiveUser)->with('messages',$messages)->with('resources',$resources);
-
     }
 
     public function store(MessageRequest $request){

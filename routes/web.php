@@ -37,5 +37,7 @@ Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('f
 Route::get('/loggedin', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('wiadomosci', 'MessageController@index')->name('messages.index');
+Route::get('wiadomosci/odebrane', 'MessageController@receive')->name('messages.receive');
+Route::get('wiadomosci/wyslane', 'MessageController@send')->name('messages.send');
 Route::post('wiadomosci/store', 'MessageController@store')->name('messages.store');
 Route::get('konwersacja/{receive_user_id}', 'MessageController@show')->name('messages.conversation')->where(['receive_user_id' => '[0-9]+']);
