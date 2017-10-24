@@ -13,5 +13,10 @@
     <div class="row">
         <div class="col-lg-12 text-justify" id="resource_content">{{ $resource->content }}</div>
     </div>
+    @foreach($resource->attachments as $attachment)
+    <div class="row">
+    	<div class="col-lg-12 text-justify"> {{ $attachment->path }}</div>
+    </div>
+    @endforeach
 </div>
 @endsection
