@@ -16,6 +16,7 @@
                 @else
                     <a role="button" class="btn btn-success btn-sm" href="{{ route('messages.conversation',['receive_user_id'=>$user->id]) }}">Wiadomość</a>
                     <a role="button" class="btn btn-primary btn-sm" href="{{ route('profile.opinions',['user'=>$user])  }}">Opinia</a>
+                    <a role="button" class="btn btn-default btn-sm" href="{{ route('resources.shareForUser',['user'=>$user])  }}" >Udostępnij materiały</a>
                 @endif
                 <div class="profile-usermenu">
                     <ul class="nav" role="tablist">
