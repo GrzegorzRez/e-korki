@@ -23,7 +23,7 @@
 
     <div class="item">
       <div class="carousel-caption">
-        <span style="text-shadow: 2px 2px 4px #000000"><h2><i>"Najmądrzejszy jest, który wie czego nie wie."</i></h2>
+        <span style="text-shadow: 2px 2px 4px #000000"><h3><i>"Najmądrzejszy jest, który wie czego nie wie."</i></h3>
         <h5>Sokrates</h5></span>
       </div>
       <img class="img-rounded center-block" src="images/main_page/slider/reading_book.jpg" alt="Czyta">

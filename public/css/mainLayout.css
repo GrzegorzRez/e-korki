@@ -17,4 +17,31 @@ body
     width: 0;
     background-image: none;
 }
+@media(max-width: 473px) {
+.carousel-caption h3 {
+font-size: 20px;
+}
+.carousel-caption h5 {
+    white-space: nowrap;
+font-size: 17px;
+}
+}
+@media(max-width: 425px) {
+.carousel-caption h3 {
+font-size: 15px;
+}
+.carousel-caption h5 {
+    white-space: nowrap;
+font-size: 14px;
+}
+}
+@media(max-width: 354px) {
+.carousel-caption h3 {
+font-size: 13px;
+}
+.carousel-caption h5 {
+    white-space: nowrap;
+font-size: 11px;
+}
+}
 
