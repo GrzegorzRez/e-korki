@@ -53,7 +53,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <label for="description" class="col-md-4 control-label">Opis</label>
 
                             <div class="col-md-6">

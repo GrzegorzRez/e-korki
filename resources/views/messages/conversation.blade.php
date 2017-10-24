@@ -29,7 +29,7 @@
 			<option value="{{ route('resources.share',['resource'=>$resource,'user'=>$receiveUser]) }}" >{{  $resource->title  }}</option>
 		@endforeach
 	</select>
-
+        <div class="row"><p></p></div>
 	<script>
         $("select").click(function() {
             var open = $(this).data("isopen");
