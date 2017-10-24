@@ -10,8 +10,10 @@
 			<label for="content">Treść wiadomości:</label>
 			<textarea class="form-control" rows="5" id="content" name="content"></textarea>
 		</div>
-		<button type="submit" class="btn btn-default">Wyślij</button>
+		<button type="submit" class="btn btn-primary">Wyślij</button>
+		<a role="button" href="{{ route('resources.shareForUser',['user'=>$receiveUser])  }}" class="btn btn-default">Udostępnij materiały</a>
     </form>
+
 
 	@if ($errors->any())
 		<div class="alert alert-danger">
@@ -22,25 +24,6 @@
 			</ul>
 		</div>
 	@endif
-
-	<h2 class="text-center">Udostępnij materiały</h2>
-	<select class="form-control" >
-		@foreach( $resources as $resource )
-			<option value="{{ route('resources.share',['resource'=>$resource,'user'=>$receiveUser]) }}" >{{  $resource->title  }}</option>
-		@endforeach
-	</select>
-        <div class="row"><p></p></div>
-	<script>
-        $("select").click(function() {
-            var open = $(this).data("isopen");
-            if(open) {
-                window.location.href = $(this).val()
-            }
-            //set isopen to opposite so next time when use clicked select box
-            //it wont trigger this event
-            $(this).data("isopen", !open);
-        });
-	</script>
 
 	@forelse($messages as $message)
 		@include('messages.message')
