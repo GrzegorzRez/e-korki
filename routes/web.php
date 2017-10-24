@@ -41,3 +41,17 @@ Route::get('wiadomosci/odebrane', 'MessageController@receive')->name('messages.r
 Route::get('wiadomosci/wyslane', 'MessageController@send')->name('messages.send');
 Route::post('wiadomosci/store', 'MessageController@store')->name('messages.store');
 Route::get('konwersacja/{receive_user_id}', 'MessageController@show')->name('messages.conversation')->where(['receive_user_id' => '[0-9]+']);
+
+Route::get('/zalacznik/{filename}', function ($filename)
+{
+    $path = storage_path() . '/app/upload/' . $filename;
+
+    if(!File::exists($path)) abort(404);
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    return $response;
+})->name('attachment');

@@ -15,7 +15,7 @@
     </div>
     @foreach($resource->attachments as $attachment)
     <div class="row">
-    	<div class="col-lg-12 text-justify"> {{ $attachment->path }}</div>
+    	<img src="{{ route('attachment',$attachment->path)  }}"/>
     </div>
     @endforeach
 </div>

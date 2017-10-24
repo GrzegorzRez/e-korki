@@ -14,8 +14,8 @@
          <textarea class="form-control" rows="15" name="content" id="content">{{ (old('content')=='') ? $resource->content : old('content') }}</textarea>
      </div>
      <div class="form-group">
-         <label for="tags" class="control-label">Załącznik</label>
-         <input type="file" name="attachment" id="file" />
+         <label for="tags" class="control-label">Zdjęcia</label>
+         <input type="file" name="attachment" id="file" accept="image/*" />
      </div>
     <button type="submit" class="btn btn-primary">Zapisz</button>
 </form> 
