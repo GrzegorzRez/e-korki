@@ -9,6 +9,7 @@
       <tr>
         <th>Tytuł</th>
         <th>Ostatnia edycja</th>
+        <th>Udostępnienia</th>
         <th>Akcja</th>
       </tr>
     </thead>
@@ -17,6 +18,17 @@
       <tr>
         <td> {{ $resource->title }} </td>
         <td> {{ $resource->updated_at }} </td>
+        <td>
+            <?php $shareCount = count($resource->sharedToUsers);
+            if($shareCount == 0){
+                echo 'Nie udostępniono.';
+            }else if($shareCount == 1){
+                echo 'Udostępniono dla '.$resource->sharedToUsers[0]->getFullName();
+            }else{
+                echo 'Udostępniono '.$shareCount.' osobom.';
+            }
+            ?>
+        </td>
         <td>
           <form action="{{  route('resources.delete',['resource'=>$resource]) }}" method="POST">
             {{ csrf_field() }}

@@ -1,7 +1,7 @@
 @extends('layouts/main')
 @section('content')
     <div class="container">
-        <h2>Materiały udostępnione dla użytkownika {{  $user->getFullName()  }}</h2>
+        <h3>Wybierz materiały które mają być udostępnione dla użytkownika {{  $user->getFullName()  }}</h3>
         <form action="{{  route('resources.share',['user'=>$user])  }}" method="POST">
             {{ csrf_field() }}
             <div class="form-group">
