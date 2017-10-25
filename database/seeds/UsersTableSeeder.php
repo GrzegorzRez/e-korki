@@ -18,8 +18,8 @@ class UsersTableSeeder extends Seeder
             $user->name='Adam';
             $user->surname='Nowak';
             $user->location='Bydgoszcz';
-            $user->description='Jestem nauczycielem matematyki z dużym doświadczeniem. Zapraszam na korepetycje.';
-            $user->email='adam@adam.pl';
+            $user->description='Jestem nauczycielem matematyki z dużym doświadczeniem. Korepetycji z programownia i matematyki udzielam od czasu studiów. Zapraszam na korepetycje.';
+            $user->email='adam@wp.pl';
             $user->phone='570858343';
             $user->avatar = '1.jpg';
             $user->password=bcrypt('adam');

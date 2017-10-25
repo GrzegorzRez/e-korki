@@ -45,7 +45,7 @@ class OffersTableSeeder extends Seeder
     ];
 
         $faker = Faker\Factory::create();
-        for( $i=1 ; $i <= 20 ; $i++ ){
+        for( $i=2 ; $i <= 20 ; $i++ ){
             $offer= new Offer();
             $category = Category::inRandomOrder()->first();
             $offer->user_id=$i;

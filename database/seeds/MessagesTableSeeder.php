@@ -11,34 +11,31 @@ class MessagesTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
+
         $message = new Message();
-        $message->send_id=1;
-        $message->receive_id=2;
+        $message->send_id=2;
+        $message->receive_id=1;
+        $message->content='Kiedy ma pan czas wolny?';
+        $message->save();
+
+        $message = new Message();
+        $message->send_id=3;
+        $message->receive_id=1;
+        $message->content='Czy jest możliwość odbycia korepetycji godzinach wieczornych?';
+        $message->save();
+
+        $message = new Message();
+        $message->send_id=4;
+        $message->receive_id=1;
         $message->content='Witam, ma Pan ochotę mnnie pouczyć?';
         $message->save();
 
-        $faker = Faker\Factory::create();
-        for($j=1; $j<=6; $j++)
-        {
-            for( $i=1 ; $i <= 19 ; $i++ )
-            {
-                $message = new Message();
-                $message->send_id=$i;
-                $message->receive_id=$i+1;
-                $message->content = $faker->sentence(20);
-                $message->save();
-            }
-
-            for( $i=20 ; $i >= 2 ; $i-- )
-            {
-                $messege = new Message();
-                $message->send_id=$i;
-                $message->receive_id=$i-1;
-                $message->content = $faker->sentence(20);
-                $message->save();
-            }
-        }
+        $message = new Message();
+        $message->send_id=4;
+        $message->receive_id=2;
+        $message->content='Oczywiście!';
+        $message->save();
 
     }
 }
